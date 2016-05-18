@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 
@@ -25,6 +26,8 @@ public class ExerciseManager : MonoBehaviour {
         //Call method from object to get data on what sort of exercise/how much of that exercise
         //Start the measurement (possibly by calling and external method)
 
+        SceneManager.LoadScene("ChallengeScene");
+        //TODO: Think about how to properly link components up.
 
         //Need some sort of callback
         //Figure out currency works (just return some currency for now)
