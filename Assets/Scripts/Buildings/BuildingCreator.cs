@@ -41,9 +41,9 @@ public class BuildingCreator : MonoBehaviour {
 
 	public GameObject Grass2x,Grass3x,Grass4x;// the grass prefabs
 		
-	private GameObject selectedBuilding;//current selected building
-	private GameObject selectedGrass;//current selected grass
-	private GameObject selectedConstruction;//current selected "under construction" prefab
+	public static GameObject selectedBuilding;//current selected building
+    public static GameObject selectedGrass;//current selected grass
+    public static GameObject selectedConstruction;//current selected "under construction" prefab
 	
 	public bool isReselect = false;//building is under construction or reselected
 	public int buildingIndex = -1;//associates the underlying grass with the building on top, so they can be reselected together
@@ -263,6 +263,11 @@ public class BuildingCreator : MonoBehaviour {
 	void Update () {
 	
 	}
+    //TODO: make this less horrible
+    //maybe pass the prefab and build it from there...
+    //have a petID in the XML file
+
+
 	//receive a NGUI button message to build
 	public void OnBuild0()	 { currentSelection=0; 	VerifyConditions("Academy"); }//when a building construction menu button is pressed
 	public void OnBuild1()	 { currentSelection=1;  VerifyConditions("Barrel"); }
@@ -277,19 +282,25 @@ public class BuildingCreator : MonoBehaviour {
 	public void OnBuild10() { currentSelection=10; VerifyConditions("Workshop"); }
 	
 	//receive a Tk2d button message to select an existing building; the button is in the middle of each building prefab and is invisible 
-	public void OnReselect0(){currentSelection = 0; StartCoroutine(ReselectObject("Academy"));}//when a building is reselected
-	public void OnReselect1(){currentSelection = 1; StartCoroutine(ReselectObject("Barrel"));}
-	public void OnReselect2(){currentSelection = 2; StartCoroutine(ReselectObject("Chessboard"));}
-	public void OnReselect3(){currentSelection = 3; StartCoroutine(ReselectObject("Classroom"));}
-	public void OnReselect4(){currentSelection = 4; StartCoroutine(ReselectObject("Forge"));}
-	public void OnReselect5(){currentSelection = 5; StartCoroutine(ReselectObject("Generator"));}
-	public void OnReselect6(){currentSelection = 6; StartCoroutine(ReselectObject("Globe"));}
-	public void OnReselect7(){currentSelection = 7; StartCoroutine(ReselectObject("Summon"));}
-	public void OnReselect8(){currentSelection = 8; StartCoroutine(ReselectObject("Toolhouse"));}
-	public void OnReselect9(){currentSelection = 9; StartCoroutine(ReselectObject("Vault"));}
-	public void OnReselect10(){currentSelection = 10; StartCoroutine(ReselectObject("Workshop"));}
-	
-	public void CancelObject()//cancel construction, or reselect building and destroy/cancel
+	//public void OnReselect0(){currentSelection = 0; StartCoroutine(ReselectObject("Academy"));}//when a building is reselected
+	//public void OnReselect1(){currentSelection = 1; StartCoroutine(ReselectObject("Barrel"));}
+	//public void OnReselect2(){currentSelection = 2; StartCoroutine(ReselectObject("Chessboard"));}
+	//public void OnReselect3(){currentSelection = 3; StartCoroutine(ReselectObject("Classroom"));}
+	//public void OnReselect4(){currentSelection = 4; StartCoroutine(ReselectObject("Forge"));}
+	//public void OnReselect5(){currentSelection = 5; StartCoroutine(ReselectObject("Generator"));}
+	//public void OnReselect6(){currentSelection = 6; StartCoroutine(ReselectObject("Globe"));}
+	//public void OnReselect7(){currentSelection = 7; StartCoroutine(ReselectObject("Summon"));}
+	//public void OnReselect8(){currentSelection = 8; StartCoroutine(ReselectObject("Toolhouse"));}
+	//public void OnReselect9(){currentSelection = 9; StartCoroutine(ReselectObject("Vault"));}
+	//public void OnReselect10(){currentSelection = 10; StartCoroutine(ReselectObject("Workshop"));}
+
+    public void OnReselect(int selection, string type) {
+
+        currentSelection = selection; StartCoroutine(ReselectObject(type));
+
+    }
+
+    public void CancelObject()//cancel construction, or reselect building and destroy/cancel
 	{	
 		if (!isReselect) 
 		{
