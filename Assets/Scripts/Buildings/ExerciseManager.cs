@@ -36,7 +36,13 @@ public class ExerciseManager : MonoBehaviour {
         mainMenu.onDoingExercise();
     }
 
-    public void FinishExercise()
+    /// <summary>
+    /// Called when the player either completes the exercise or gives up on the exercise.
+    /// </summary>
+    /// <param name="completedValue">Amount of exercise done by the player.</param>
+    /// <param name="targetDistance">Target amount of exercise for the challenge.</param>
+    /// <param name="rewardValue">Total value of the reward associated with the challenge.</param>
+    public void FinishExercise(int completedValue, int targetValue, int rewardValue)
     {
         // Get text from DoingExercise dialog.
 
