@@ -65,6 +65,13 @@ public class SaveLoad : MonoBehaviour {
 		statsSc = Stats.GetComponent("Stats");// Stats.cs for HUD data
 
 		loadDateTime = System.DateTime.Now;//current time
+
+        //TODO: Add back in for full build.
+        //FileInfo file = new FileInfo(filePath + fileName + fileExt);
+        //if (file.Exists && file.Length != 0)
+        //{
+        //    LoadGame();
+        //}
 	}
 
 	// Update is called once per frame
@@ -495,6 +502,8 @@ public class SaveLoad : MonoBehaviour {
 
 		print ("current time " + loadDateTime.ToString ());
 		print ("saved time " + saveDateTime.ToString ());
+
+        sReader.Close();
 	}
 
 

@@ -7,6 +7,8 @@ public class ExerciseManager : MonoBehaviour {
 
     public MainMenu mainMenu;
     public Stats stats;
+    public SaveLoad saveLoad;
+
     public UILabel rewardLabel;
 
     // Use this for initialization
@@ -59,7 +61,9 @@ public class ExerciseManager : MonoBehaviour {
 
         stats.gold = stats.gold + actualReward;
         stats.update = true;
-       
+
+        saveLoad.SaveGame();
+
         // Show the exercise done dialog.
         mainMenu.OnExerciseDone();
     }
