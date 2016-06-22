@@ -19,6 +19,7 @@ TagManager:
   - Grass
   - Grasspatch
   - OutofMap
+  - RewardLabel
   layers:
   - Default
   - TransparentFX

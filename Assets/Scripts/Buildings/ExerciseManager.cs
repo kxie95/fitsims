@@ -6,6 +6,8 @@ using System;
 public class ExerciseManager : MonoBehaviour {
 
     public MainMenu mainMenu;
+    public Stats stats;
+    public UILabel rewardLabel;
 
     // Use this for initialization
     void Start () {
@@ -44,16 +46,20 @@ public class ExerciseManager : MonoBehaviour {
     /// <param name="rewardValue">Total value of the reward associated with the challenge.</param>
     public void FinishExercise(int completedValue, int targetValue, int rewardValue)
     {
-        // Get text from DoingExercise dialog.
-
-        // Convert to double.
-
-        // Divide by assigned distance.
+        //TODO: Uncomment these lines when integrating.
+        // Calculate the distance completed as a percentage.
+        //double percentCompleted = (double)completedValue / targetValue;
 
         // Multiply by the associated reward.
+        //int actualReward = (int)Math.Round(percentCompleted * rewardValue);
+        int actualReward = 500; // TODO: Remove this line later.
 
         // Set the text.
+        rewardLabel.text = actualReward + " coins!";
 
+        stats.gold = stats.gold + actualReward;
+        stats.update = true;
+       
         // Show the exercise done dialog.
         mainMenu.OnExerciseDone();
     }
