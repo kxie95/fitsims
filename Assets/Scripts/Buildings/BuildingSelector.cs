@@ -11,7 +11,6 @@ public class BuildingSelector : MonoBehaviour {//attached to each building as an
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame

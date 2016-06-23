@@ -71,6 +71,8 @@ public class BuildingCreator : MonoBehaviour {
 	private GameObject SoundFX;//sound source attached to the camera
 	private Component soundFXSc;
 
+    public SaveLoad saveLoad;
+
 	// Use this for initialization
 	void Start () {
 		GetBuildingsXML();//reads Buildings.xml
@@ -328,7 +330,7 @@ public class BuildingCreator : MonoBehaviour {
 			}
 
 			DeactivateStatsPad ();
-		}
+        }
 
 		((Stats)StatsCo).experience -= int.Parse (buildings [currentSelection] ["XpAward"]);
 
@@ -340,8 +342,9 @@ public class BuildingCreator : MonoBehaviour {
 		MovingPad.SetActive(false);//deactivates the arrow building moving platform
 		BuildingSelectedPanel.SetActive (false);//deactivates the buttons move/upgrade/place/cancel, at the bottom of the screen
 		((Relay)gameManager.GetComponent("Relay")).pauseInput = false;//while the building is selected, pressing other buttons has no effect
-		if(isReselect){ isReselect = false;}//end the reselect state		
-	}
+        if(isReselect){isReselect = false; } //end the reselect state
+	
+    }
 
 	private void DecreaseStorage(int restype)//when a building is reselected and destroyed, the gold/mana storage capacity decrease; 
 	{
@@ -427,8 +430,9 @@ public class BuildingCreator : MonoBehaviour {
 			}
 
 			((Stats)StatsCo).update=true;//tells stats to update the interface - otherwise new numbers are updated but not displayed
-			LoadBuilding ();
-		} 
+
+            LoadBuilding ();
+        } 
 		else 
 		{
 			((MainMenu)UIAnchor.GetComponent("MainMenu")).constructionGreenlit = false;//halts construction - the button message is sent anyway, but ignored
@@ -513,7 +517,7 @@ public class BuildingCreator : MonoBehaviour {
 			break;				
 		default:
 		break;
-		}	
+		}
 	}
 			
 	private void SelectObject(string buildingTag) //after the grass/building prefabs are instantiated, they must be selected from the existing buildings on the map
@@ -684,7 +688,7 @@ public class BuildingCreator : MonoBehaviour {
 	public void MoveNE(){Move(1);}//++
 	public void MoveSE(){Move(2);}//+-
 	public void MoveSW(){Move(3);}//--
-	public void Cancel(){CancelObject();}
+	public void Cancel(){CancelObject(); saveLoad.SaveGame(); }
 	public void OK()
 	{
 		inCollision = selectedGrass.GetComponentInChildren<GrassCollider>().inCollision;
@@ -692,8 +696,9 @@ public class BuildingCreator : MonoBehaviour {
 		{
 			if(isReselect){	DeactivateStatsPad();}
 			PlaceObject ();
-		}
-	}
+            saveLoad.SaveGame();
+        }
+    }
 	
 	private void Move(int i)
 	{
