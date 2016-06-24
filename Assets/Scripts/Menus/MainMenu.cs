@@ -45,8 +45,8 @@ public class MainMenu : MonoBehaviour {
 	public void OnCloseUpgrade(){OnDeactivateButton (5);}
 
     // For controlling exercise in progress frame.
-    public void onDoingExercise() { OnActivateButton(6); }
-    public void onCloseDoingExercise() { OnDeactivateButton(6); }
+    public void onDoingExercise() { OnActivateButton(7); }
+    public void onCloseDoingExercise() { OnDeactivateButton(7); }
 
     // For controlling exercise done frame.
     public void OnExerciseDone() { OnActivateButton(6); }

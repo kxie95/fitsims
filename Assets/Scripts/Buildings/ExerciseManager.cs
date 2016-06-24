@@ -32,7 +32,8 @@ public class ExerciseManager : MonoBehaviour {
         //SceneManager.LoadScene("ChallengeScene");
         //TODO: Think about how to properly link components up.
         // mainMenu.OnDoingExercise();
-
+        StepCounter s = (StepCounter)gameObject.GetComponent("StepCounter");
+        s.StartCounting();
         //Need some sort of callback
         //Figure out currency works (just return some currency for now)
         //Get a new UI pane up (possibly) for when the service is done
@@ -50,11 +51,11 @@ public class ExerciseManager : MonoBehaviour {
     {
         //TODO: Uncomment these lines when integrating.
         // Calculate the distance completed as a percentage.
-        //double percentCompleted = (double)completedValue / targetValue;
+        double percentCompleted = (double)completedValue / targetValue;
 
         // Multiply by the associated reward.
-        //int actualReward = (int)Math.Round(percentCompleted * rewardValue);
-        int actualReward = 500; // TODO: Remove this line later.
+        int actualReward = (int)Math.Round(percentCompleted * rewardValue);
+        //int actualReward = 500; // TODO: Remove this line later.
 
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
