@@ -39,17 +39,9 @@ public class StepCounter : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        // Set list capacity.
-        cosineOfAngleData.Capacity = LIST_SIZE;
-
-        // Initialize previous acceleration.
-        previousAccel = Input.acceleration;
-        previousAccel.Normalize();
-
-        stepCountText = GetComponent<Text>();
+        
         coinSfx = GetComponent<AudioSource>();
 
-        time = Time.time;
     }
 	
 	// Update is called once per frame
@@ -98,7 +90,7 @@ public class StepCounter : MonoBehaviour {
                         // If goal reached, move to victory screen.
                         if (stepCount == stepGoal)
                         {
-                            SceneManager.LoadScene("RewardScene");
+                            FinishQuest();
                         }
 
                         if (coinSoundClip != null && coinSfx != null)
@@ -132,18 +124,28 @@ public class StepCounter : MonoBehaviour {
     {
         inQuest = false;
         //Clean up the bars; make the 0 and stuff
-        ((UISlider)exerciseBar.GetComponent("UISlider")).value = 0;
-        exerciseLabel.text = "0";
-
         mainMenu.onCloseDoingExercise();
         //Make call to the finish screen
-        //ExerciseManager exManager = (ExerciseManager)GameObject.Find("ExerciseManager").GetComponent("ExerciseManager");
-        //exManager.FinishExercise()
+        ExerciseManager exManager = (ExerciseManager)GameObject.Find("ExerciseManager").GetComponent("ExerciseManager");
+        exManager.FinishExercise(stepCount, stepGoal, rewardTotal);
+
+        ((UISlider)exerciseBar.GetComponent("UISlider")).value = 0;
+        exerciseLabel.text = "0";
+        stepCount = 0;
     }
 
 
     public void StartCounting()
     {
+        // Set list capacity.
+        cosineOfAngleData.Capacity = LIST_SIZE;
+
+        // Initialize previous acceleration.
+        previousAccel = Input.acceleration;
+        previousAccel.Normalize();
+
+        time = Time.time;
+
         ((UISlider)exerciseBar.GetComponent("UISlider")).value = 0;
         exerciseLabel.text = "0";
         //read in the parameters for the specific quest here
