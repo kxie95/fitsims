@@ -25,7 +25,6 @@ public class StepCounter : MonoBehaviour {
 
     public UIProgressBar exerciseBar;
     public UILabel exerciseLabel;
-    public BuildingCreator creator;
     private string taskType;
 
     private static int LIST_SIZE = 10; // Capacity of list.
@@ -35,13 +34,17 @@ public class StepCounter : MonoBehaviour {
     private bool isLeft = false;
     private float time;
 
-    public MainMenu mainMenu;
+    private MainMenu mainMenu;
+    private BuildingCreator creator;
+    private ExerciseManager exManager;
 
     // Use this for initialization
     void Start () {
         
         coinSfx = GetComponent<AudioSource>();
-
+        exManager = (ExerciseManager)GameObject.Find("ExerciseManager").GetComponent("ExerciseManager");
+        mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
+        creator = (BuildingCreator)GameObject.Find("BuildingCreator").GetComponent("BuildingCreator");
     }
 	
 	// Update is called once per frame
@@ -126,7 +129,7 @@ public class StepCounter : MonoBehaviour {
         //Clean up the bars; make the 0 and stuff
         mainMenu.onCloseDoingExercise();
         //Make call to the finish screen
-        ExerciseManager exManager = (ExerciseManager)GameObject.Find("ExerciseManager").GetComponent("ExerciseManager");
+        
         exManager.FinishExercise(stepCount, stepGoal, rewardTotal);
 
         ((UISlider)exerciseBar.GetComponent("UISlider")).value = 0;

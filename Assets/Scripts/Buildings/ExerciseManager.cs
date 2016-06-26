@@ -5,7 +5,7 @@ using System;
 
 public class ExerciseManager : MonoBehaviour {
 
-    public MainMenu mainMenu;
+    private MainMenu mainMenu;
     public Stats stats;
     public SaveLoad saveLoad;
 
@@ -13,8 +13,8 @@ public class ExerciseManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
 
-       
     }
 	
 	// Update is called once per frame
