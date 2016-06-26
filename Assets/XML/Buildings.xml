@@ -49,7 +49,7 @@
     <TaskReward>250</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
     
 	</Building>	
 	
@@ -100,7 +100,7 @@
     <TaskReward>110</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	
 	<Building>
@@ -150,7 +150,7 @@
     <TaskReward>200</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	
 	<Building>
@@ -201,7 +201,7 @@
     <TaskReward>10</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	<Building>
 		<ID>7</ID>
@@ -251,7 +251,7 @@
     <TaskReward>130</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 		
 	<Building>
@@ -302,7 +302,7 @@
     <TaskReward>150</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	<Building>
 		<ID>5</ID>
@@ -352,7 +352,7 @@
     <TaskReward>175</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	
 	<Building>
@@ -403,7 +403,7 @@
     <TaskReward>80</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	
 	<Building>
@@ -454,7 +454,7 @@
     <TaskReward>125</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	
 	
@@ -508,7 +508,7 @@
     <TaskReward>155</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>
 	
 	<Building>
@@ -559,7 +559,7 @@
     <TaskReward>215</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
-    <TaskRequirement>2000</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
 	</Building>	
 
 	
