@@ -60,7 +60,6 @@ public class BuildingCreator : MonoBehaviour {
 	private bool pivotCorrection = false;//adjusts the position to match the grid
 	private bool displacedonZ = false;
 
-
 	public TextAsset BuildingsXML;//variables for loading building characteristics from XML
 	private List<Dictionary<string,string>> buildings = new List<Dictionary<string,string>>();
 	private Dictionary<string,string> dictionary;
@@ -81,6 +80,11 @@ public class BuildingCreator : MonoBehaviour {
 		SoundFX =  GameObject.Find("SoundFX"); //connects to SoundFx - a sound source near the camera
 		soundFXSc = SoundFX.GetComponent ("SoundFX");// gets the SoundFx script
 	}
+
+    public Dictionary<string, string> GetCurrentBuildingDictionary()
+    {
+        return buildings[currentSelection];
+    }
 
 	private void GetBuildingsXML()//reads buildings XML
 	{
@@ -789,6 +793,7 @@ public class BuildingCreator : MonoBehaviour {
 
 	}
 
+    //TODO:Remove this?
     public void CollectTaskReward()
     {
         if (buildings[currentSelection]["GoldReward"] == "true")
