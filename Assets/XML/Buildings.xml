@@ -13,7 +13,8 @@
 		<ProdPerSec>0</ProdPerSec><!--the amount of the resource generated per second-->
 		<StoreCap>0</StoreCap><!--the total amount of resource storage added by that building-->
 		<MaxCap>1</MaxCap><!--max number of buildings allowed-->
-		
+    <GrassSize>2</GrassSize>
+    
 		<Time>0</Time><!--the time (in minutes) needed to create the building-->
 		<XpAward>650</XpAward><!--experience awarded for the completion of an object-->
 		<GoldBased>true</GoldBased><!--which resource is needed to complete this kind of building-->
@@ -64,7 +65,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>7500</StoreCap>
 		<MaxCap>3</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>300</XpAward>
 		<GoldBased>true</GoldBased>
@@ -114,6 +116,7 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>1</MaxCap>
+    <GrassSize>2</GrassSize>
     
 		<Time>0</Time>
 		<XpAward>200</XpAward>
@@ -164,7 +167,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>4</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>150</XpAward>
 		<GoldBased>true</GoldBased>
@@ -214,7 +218,8 @@
 		<ProdPerSec>0.2</ProdPerSec>
 		<StoreCap>1250</StoreCap>
 		<MaxCap>5</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>60</XpAward>
 		<GoldBased>false</GoldBased>
@@ -265,7 +270,8 @@
 		<ProdPerSec>0.2</ProdPerSec>
 		<StoreCap>1250</StoreCap>
 		<MaxCap>5</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>60</XpAward>
 		<GoldBased>true</GoldBased>
@@ -315,7 +321,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>1</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>450</XpAward>
 		<GoldBased>true</GoldBased>
@@ -366,7 +373,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>3</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>45</XpAward>
 		<GoldBased>false</GoldBased>
@@ -417,7 +425,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>1</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>150</XpAward>
 		<GoldBased>true</GoldBased>
@@ -471,7 +480,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>7500</StoreCap>
 		<MaxCap>3</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>300</XpAward>
 		<GoldBased>false</GoldBased>
@@ -522,7 +532,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>2</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>45</XpAward>
 		<GoldBased>true</GoldBased>
