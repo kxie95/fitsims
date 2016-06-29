@@ -55,6 +55,19 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 1
     paddingBottom: 233
+  - name: PixelFontAtlas
+    x: 508
+    y: 259
+    width: 511
+    height: 253
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 3
+    paddingBottom: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

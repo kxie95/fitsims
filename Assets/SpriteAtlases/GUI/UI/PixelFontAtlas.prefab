@@ -40,27 +40,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4eb3a400afab046abb8471a9d746d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMat: {fileID: 2100000, guid: b4624c971fce70e40a176bce68031666, type: 2}
+  mMat: {fileID: 2100000, guid: c7f2ec6612acece48a69d15818be155a, type: 2}
   mUVRect:
     serializedVersion: 2
-    x: 0
-    y: 0.49902344
+    x: 0.49609375
+    y: 0
     width: 0.5
-    height: 0.25
+    height: 0.5
   mFont:
     mSize: 70
     mBase: 0
     mWidth: 512
     mHeight: 256
-    mSpriteName: 
+    mSpriteName: PixelFontAtlas
     mSaved:
     - index: 32
       x: 0
-      y: 0
+      y: 3
       width: 0
-      height: 0
+      height: -3
       offsetX: 0
-      offsetY: 0
+      offsetY: 3
       advance: 32
       channel: 15
       kerning: 
@@ -1004,7 +1004,7 @@ MonoBehaviour:
       advance: 32
       channel: 15
       kerning: 
-  mAtlas: {fileID: 11423862, guid: b6ce4dc2be49c8541b3c02064762c511, type: 2}
+  mAtlas: {fileID: 11400000, guid: cc2b084935bc2f94987db942b4e3d32f, type: 2}
   mReplacement: {fileID: 0}
   mSymbols: []
   mDynamicFont: {fileID: 0}
