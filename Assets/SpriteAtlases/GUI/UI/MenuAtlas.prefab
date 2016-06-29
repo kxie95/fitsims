@@ -42,76 +42,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: b4624c971fce70e40a176bce68031666, type: 2}
   mSprites:
-  - name: arrow
-    x: 431
-    y: 279
-    width: 41
-    height: 41
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 1
-    paddingRight: 1
-    paddingTop: 12
-    paddingBottom: 11
-  - name: button_emerald
-    x: 0
-    y: 193
-    width: 220
-    height: 64
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: button_emerald-hover
-    x: 0
-    y: 129
-    width: 220
-    height: 64
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: button_orange
-    x: 0
-    y: 65
-    width: 220
-    height: 64
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: button_orange-hover
-    x: 0
-    y: 1
-    width: 220
-    height: 64
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
   - name: button_tab
-    x: 220
-    y: 173
-    width: 84
-    height: 84
+    x: 0
+    y: 195
+    width: 220
+    height: 64
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -121,8 +56,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: center
-    x: 431
-    y: 448
+    x: 0
+    y: 131
     width: 64
     height: 64
     borderLeft: 0
@@ -134,8 +69,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: center_inner
-    x: 431
-    y: 384
+    x: 0
+    y: 67
     width: 64
     height: 64
     borderLeft: 0
@@ -147,8 +82,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: corner
-    x: 431
-    y: 320
+    x: 0
+    y: 3
     width: 64
     height: 64
     borderLeft: 0
@@ -160,8 +95,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: corner_inner
-    x: 220
-    y: 109
+    x: 64
+    y: 131
     width: 64
     height: 64
     borderLeft: 0
@@ -174,20 +109,20 @@ MonoBehaviour:
     paddingBottom: 0
   - name: PixelFontAtlas
     x: 0
-    y: 257
-    width: 431
-    height: 255
+    y: 259
+    width: 511
+    height: 253
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
     paddingLeft: 0
-    paddingRight: 81
-    paddingTop: 1
+    paddingRight: 1
+    paddingTop: 3
     paddingBottom: 0
   - name: side
-    x: 220
-    y: 45
+    x: 128
+    y: 131
     width: 64
     height: 64
     borderLeft: 0
