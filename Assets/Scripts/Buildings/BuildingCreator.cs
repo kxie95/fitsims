@@ -15,11 +15,11 @@ public class BuildingCreator : MonoBehaviour {
 	
 	
 	public UILabel HintText;// a top screen label that displays user messages when necessary
-	//public UILabel UserMessages;
-	public UILabel[] BuildingPriceLbs = new UILabel[noOfBuildings];//price labels
+                            //public UILabel UserMessages;
+    public NamedPriceLabels[] BuildingPriceLabels;
 
-	//public GameObject[] BuildingPrefabs = new GameObject[noOfBuildings];
-	public GameObject ConstructionPrefab;//the building "under construction" sand and materials prefab
+    //public GameObject[] BuildingPrefabs = new GameObject[noOfBuildings];
+    public GameObject ConstructionPrefab;//the building "under construction" sand and materials prefab
 	public GameObject BuildingSelectedPanel; //menu that appears when you reselect a finished building - buttons: upgrade, move, ok, cancel
 
 	//public int[] existingBuildings = new int[noOfBuildings]; // necessary to keep track of each buiding type number and enforce conditions
@@ -120,11 +120,15 @@ public class BuildingCreator : MonoBehaviour {
 
 	private void UpdatePrices()//updates price labels on building buttons
 	{
-		for (int i = 0; i < noOfBuildings; i++) 
-		{   //TODO: Figure this out
-			//BuildingPriceLbs[i].text = buildings [i] ["ResCost"];
-		}
-	}
+		//for (int i = 0; i < noOfBuildings; i++) 
+		//{   //TODO: Figure this out
+		//	BuildingPriceLbs[i].text = buildings [i] ["ResCost"];
+		//}
+        foreach (NamedPriceLabels n in BuildingPriceLabels)
+        {
+            n.label.text = buildings[n.name]["ResCost"];
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -602,3 +606,4 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
         }
     }
 }
+
