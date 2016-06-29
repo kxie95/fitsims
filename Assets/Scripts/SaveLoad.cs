@@ -78,8 +78,9 @@ public class SaveLoad : MonoBehaviour {
 	void Update () {
 	
 	}
+    
 
-	public void SaveGame()
+    public void SaveGame()
 	{
 		StreamWriter sWriter = new StreamWriter (filePath + fileName + fileExt);
 		ReadObjects ();//reads all buildings/grass/under construction
@@ -245,69 +246,69 @@ public class SaveLoad : MonoBehaviour {
 			case "Academy":			
 				GameObject Academy = (GameObject)Instantiate(BuildingPrefabs[0], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Academy", int.Parse(currentBuilding[1]));//tag + building index
-				existingBuildings["Academy"]++;//a local array that holds how many buildings of each type
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);//a local array that holds how many buildings of each type
 			break;
 			
 			case "Barrel":
 				GameObject Barrel = (GameObject)Instantiate(BuildingPrefabs[1], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Barrel", int.Parse(currentBuilding[1]));
-				existingBuildings["Barrel"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 
 			case "Chessboard":
 				GameObject Chessboard = (GameObject)Instantiate(BuildingPrefabs[2], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Chessboard", int.Parse(currentBuilding[1]));
-				existingBuildings["Chessboard"]++;
-				break;
+                existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
+                break;
 
 			case "Classroom":
 			GameObject Classroom = (GameObject)Instantiate(BuildingPrefabs[3], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Classroom", int.Parse(currentBuilding[1]));
-				existingBuildings["Classroom"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 			
 			case "Forge":
 			GameObject Forge = (GameObject)Instantiate(BuildingPrefabs[4], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Forge", int.Parse(currentBuilding[1]));
 					((Stats)statsSc).productionBuildings[0]++;//sends the Forge to the production buildings array in stats; used at 1 second to produce resources
-				existingBuildings["Forge"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 			
 			case "Generator":
 			GameObject Generator = (GameObject)Instantiate(BuildingPrefabs[5], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Generator", int.Parse(currentBuilding[1]));
 					((Stats)statsSc).productionBuildings[1]++;//sends the Generator to the production buildings array in stats; used at 1 second to produce resources
-				existingBuildings["Generator"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 			
 			case "Globe":
 			GameObject Globe = (GameObject)Instantiate(BuildingPrefabs[6], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Globe", int.Parse(currentBuilding[1]));
-				existingBuildings["Globe"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 			
 			case "Summon":
 			GameObject Summon = (GameObject)Instantiate(BuildingPrefabs[7], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Summon", int.Parse(currentBuilding[1]));
-				existingBuildings["Summon"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 			
 			case "Toolhouse":
 			GameObject Toolhouse = (GameObject)Instantiate(BuildingPrefabs[8], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Toolhouse", int.Parse(currentBuilding[1]));
-				existingBuildings["Toolhouse"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 			
 			case "Vault":
 			GameObject Vault = (GameObject)Instantiate(BuildingPrefabs[9], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Vault", int.Parse(currentBuilding[1]));
-				existingBuildings["Vault"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 			
 			case "Workshop":
 			GameObject Workshop = (GameObject)Instantiate(BuildingPrefabs[10], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 				ProcessBuilding("Workshop", int.Parse(currentBuilding[1]));
-				existingBuildings["Workshop"]++;
+				existingBuildings.GetValueOrInitAndIncrement(currentBuilding[0]);
 				break;
 
 			}
@@ -364,67 +365,67 @@ public class SaveLoad : MonoBehaviour {
 					GameObject Academy = (GameObject)Instantiate(BuildingPrefabs[0], new Vector3(posX,posY,buildingZ), Quaternion.identity);
 					ProcessConstruction("Academy", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]), int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
 									//buildingType, constructionIndex, buildingTime, remainingTime,storageincrease,  position.x, position.y
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 				break;
 					
 				case "Barrel":
 					GameObject Barrel = (GameObject)Instantiate(BuildingPrefabs[1], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Barrel", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 				break;
 					
 				case "Chessboard":
 					GameObject Chessboard = (GameObject)Instantiate(BuildingPrefabs[2], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Chessboard", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;
 					
 				case "Classroom":
 					GameObject Classroom = (GameObject)Instantiate(BuildingPrefabs[3], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Classroom", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;
 					
 				case "Forge":
 					GameObject Forge = (GameObject)Instantiate(BuildingPrefabs[4], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Forge", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;
 					
 				case "Generator":
 					GameObject Generator = (GameObject)Instantiate(BuildingPrefabs[5], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Generator", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;
 					
 				case "Globe":
 					GameObject Globe = (GameObject)Instantiate(BuildingPrefabs[6], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Globe", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;
 					
 				case "Summon":
 					GameObject Summon = (GameObject)Instantiate(BuildingPrefabs[7], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Summon", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+					existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;
 					
 				case "Toolhouse":
 					GameObject Toolhouse = (GameObject)Instantiate(BuildingPrefabs[8], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Toolhouse", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);   
 					break;
 					
 				case "Vault":
 					GameObject Vault = (GameObject)Instantiate(BuildingPrefabs[9], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Vault", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;
 					
 				case "Workshop":
 					GameObject Workshop = (GameObject)Instantiate(BuildingPrefabs[10], new Vector3(posX,posY,buildingZ), Quaternion.identity);	
 					ProcessConstruction("Workshop", int.Parse(currentConstruction[1]),int.Parse(currentConstruction [2]),int.Parse(currentConstruction [3]), int.Parse(currentConstruction [4]));
-					existingBuildings[currentConstruction[0]]++;
+				    existingBuildings.GetValueOrInitAndIncrement(currentConstruction[0]);
 					break;					
 				}
 			}
@@ -529,7 +530,7 @@ public class SaveLoad : MonoBehaviour {
 	}
 
 	private void ProcessGrass(int grassType, int grassIndex)
-	{
+	{   
 		GameObject[] selectedGrassType = GameObject.FindGameObjectsWithTag("Grass");
 
 		foreach (GameObject grass in selectedGrassType) 
@@ -746,14 +747,14 @@ public class SaveLoad : MonoBehaviour {
 
 				//the existingBuildings array holds accurate finished/unfinished buildings number; substract unfinished 
 
-		if(existingBuildings["Forge"] -finishTimesGold.Count > 0)
+		if(existingBuildings.GetValueOrInit("Forge") -finishTimesGold.Count > 0)
 		{
-			((Stats)statsSc).gold += (existingBuildings["Forge"]-finishTimesGold.Count) * ((Stats)statsSc).productionRates[0]*elapsedTime*60;
+			((Stats)statsSc).gold += (existingBuildings.GetValueOrInit("Forge") - finishTimesGold.Count) * ((Stats)statsSc).productionRates[0]*elapsedTime*60;
 		}
 
-		if (existingBuildings ["Generator"] - finishTimesMana.Count > 0) 
+		if (existingBuildings.GetValueOrInit("Generator") - finishTimesMana.Count > 0) 
 		{
-			((Stats)statsSc).mana += (existingBuildings["Generator"] - finishTimesMana.Count) * ((Stats)statsSc).productionRates[1]*elapsedTime*60;
+			((Stats)statsSc).mana += (existingBuildings.GetValueOrInit("Generator") - finishTimesMana.Count) * ((Stats)statsSc).productionRates[1]*elapsedTime*60;
 		}
 
 

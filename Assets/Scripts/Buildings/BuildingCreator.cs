@@ -105,8 +105,9 @@ public class BuildingCreator : MonoBehaviour {
                 //read everything into the dictionary
 
                 if (buildingItems.Name != "#comment")
-                {   if(buildingItems.Name == "Name")
+                {   if(buildingItems.Name == "Key")
                     {
+                        Debug.Log("Key found: " + buildingItems.InnerText);
                         key = buildingItems.InnerText;
                     }
                     dictionary.Add(buildingItems.Name, buildingItems.InnerText);
@@ -130,8 +131,10 @@ public class BuildingCreator : MonoBehaviour {
 	
 	}
 	//receive a NGUI button message to build
-    public void OnBuild(GameObject newPet, string selection) {
-        currentSelection = selection;
+    //the prefab names must be correct the whole way through
+    public void OnBuild(GameObject newPet) {
+        Debug.Log(newPet.name);
+        currentSelection = newPet.name.Trim();
         VerifyConditions(newPet);
     }
 	
@@ -226,10 +229,9 @@ public class BuildingCreator : MonoBehaviour {
 	private void VerifyConditions(GameObject newPet)
 	{
 		bool canBuild = true;//must pass as true through all verifications
-
-		//max allowed buildings ok?
-		if (int.Parse (buildings [currentSelection] ["MaxCap"]) > 0 && //there is a maximum number of buildings permitted for this one; 0 means irrelevant, you can have as many as you want
-		existingBuildings[currentSelection] >= int.Parse(buildings [currentSelection] ["MaxCap"]))//max already reached
+        //max allowed buildings ok?
+        if (int.Parse (buildings [currentSelection] ["MaxCap"]) > 0 && //there is a maximum number of buildings permitted for this one; 0 means irrelevant, you can have as many as you want
+existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [currentSelection] ["MaxCap"]))//max already reached
 		{					
 			canBuild = false;
 			((Stats)StatsCo).userMessagesTxt = "Maximum " + buildings [currentSelection] ["MaxCap"] + 
@@ -265,7 +267,7 @@ public class BuildingCreator : MonoBehaviour {
 		{
 			((MainMenu)UIAnchor.GetComponent("MainMenu")).constructionGreenlit = true;//ready to close menus and place the building; 
 			//constructionGreenlit bool necessary because the command is sent by pressing the button anyway
-			existingBuildings [currentSelection]++;//an array that keeps track of how many buildings of each type exist
+			existingBuildings.GetValueOrInitAndIncrement(currentSelection);//an array that keeps track of how many buildings of each type exist
 
 			((Stats)StatsCo).maxPopulation += int.Parse (buildings [currentSelection] ["PopBonus"]); //increase maxPopulation ; not displayed on interface/taken into account yet - no units
 			((Stats)StatsCo).experience += int.Parse (buildings [currentSelection] ["XpAward"]); //increases Stats experience
@@ -289,8 +291,6 @@ public class BuildingCreator : MonoBehaviour {
 			((MainMenu)UIAnchor.GetComponent("MainMenu")).constructionGreenlit = false;//halts construction - the button message is sent anyway, but ignored
 			((Stats)StatsCo).initUserMessages = true; // the hint message is breefly displayed - why can not build
 		}
-
-
 	}
 
     private void LoadBuilding(GameObject newBuilding)//instantiates the building and grass prefabs

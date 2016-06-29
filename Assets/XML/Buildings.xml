@@ -4,7 +4,8 @@
 	
 	<Building>
 		<ID>1</ID>
-		<Name>Wizard Academy</Name>		
+		<Name>Wizard Academy</Name>	
+    <Key>Academy</Key>
 		<Description>This is the home of a wizard. A master wizard, not just like the apprentices.</Description>
 		<Type>Generation</Type>
 		
@@ -56,7 +57,8 @@
 	
 	<Building>
 		<ID>10</ID>
-		<Name>Mana Barrel</Name>		
+		<Name>Mana Barrel</Name>
+    <Key>Barrel</Key>
 		<Description>Tasty. Mages favorite drink. You never have enough of it.</Description>
 		<Type>Resource Extra Storage</Type>
 		
@@ -107,7 +109,8 @@
 	
 	<Building>
 		<ID>13</ID>
-		<Name>Planar Chessboard</Name>		
+		<Name>Planar Chessboard</Name>
+    <Key>Chessboard</Key>
 		<Description>This building enables challenges. Are you ready for them?</Description>
 		<Type>Competition</Type>
 		
@@ -158,7 +161,8 @@
 	
 	<Building>
 		<ID>11</ID>
-		<Name>Classroom</Name>		
+		<Name>Classroom</Name>
+    <Key>Classroom</Key>
 		<Description>The more apprentice you have the more creature could be summoned or assembled.</Description>
 		<Type>General</Type>
 		
@@ -207,10 +211,12 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
 	</Building>
+  
 	<Building>
 		<ID>7</ID>
-		<Name>Gold Forge</Name>		
-		<Description>Gold mines are outdated. Mages create the gold out of thin air.</Description>
+		<Name>Gold Forge</Name>
+    <Key>Forge</Key>
+    <Description>Gold mines are outdated. Mages create the gold out of thin air.</Description>
 		<Type>Resource Generation</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -261,7 +267,8 @@
 		
 	<Building>
 		<ID>8</ID>
-		<Name>Mana Generator</Name>		
+		<Name>Mana Generator</Name>
+    <Key>Generator</Key>
 		<Description>A squeezable crystal that produces Mana Juice. Do you want to try?</Description>
 		<Type>Resource Generation</Type>
 		
@@ -312,7 +319,8 @@
 	</Building>
 	<Building>
 		<ID>5</ID>
-		<Name>Research Globe</Name>		
+		<Name>Research Globe</Name>
+    <Key>Globe</Key>
 		<Description>Gain new levels of knowledge.</Description>
 		<Type>Research</Type>
 		
@@ -364,7 +372,8 @@
 	
 	<Building>
 		<ID>3</ID>
-		<Name>Summoning Circle</Name>		
+		<Name>Summoning Circle</Name>
+    <Key>Summon</Key>
 		<Description>Wizards main hobby is summoning weird creatures.</Description>
 		<Type>Generation</Type>
 		
@@ -416,7 +425,8 @@
 	
 	<Building>
 		<ID>12</ID>
-		<Name>Dobbit Toolhouse</Name>		
+		<Name>Dobbit Toolhouse</Name>
+    <Key>Toolhouse</Key>
 		<Description>Do you want to build something? Who you gonna call? The dobbits, of course.</Description>
 		<Type>General</Type>
 		
@@ -471,7 +481,8 @@
 
 	<Building>
 		<ID>9</ID>
-		<Name>Gold Vault</Name>		
+		<Name>Gold Vault</Name>
+    <Key>Vault</Key>
 		<Description>A place to store your gold. It's always hungry!</Description>
 		<Type>Resource Extra Storage</Type>
 		
@@ -523,7 +534,8 @@
 	
 	<Building>
 		<ID>2</ID>
-		<Name>Workshop</Name>		
+		<Name>Workshop</Name>
+    <Key>Workshop</Key>
 		<Description>A place of wonders to create magical creatures.</Description>
 		<Type>Generation</Type>
 		
