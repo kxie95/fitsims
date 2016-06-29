@@ -41,7 +41,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 97c7ebbc5ba831343a70322e970a6715, type: 2}
-  mSprites: []
+  mSprites:
+  - name: arrow
+    x: 0
+    y: 215
+    width: 41
+    height: 41
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 12
+    paddingBottom: 11
+  - name: button_emerald
+    x: 0
+    y: 448
+    width: 220
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_emerald-hover
+    x: 0
+    y: 320
+    width: 220
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_orange
+    x: 0
+    y: 384
+    width: 220
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_orange-hover
+    x: 0
+    y: 256
+    width: 220
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

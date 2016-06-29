@@ -44,23 +44,23 @@ MonoBehaviour:
   mUVRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 0.5
+    y: 0.49902344
+    width: 0.5
+    height: 0.25
   mFont:
     mSize: 70
     mBase: 0
     mWidth: 512
     mHeight: 256
-    mSpriteName: PixelFontAtlas
+    mSpriteName: 
     mSaved:
     - index: 32
       x: 0
-      y: 3
+      y: 0
       width: 0
-      height: -3
+      height: 0
       offsetX: 0
-      offsetY: 3
+      offsetY: 0
       advance: 32
       channel: 15
       kerning: 

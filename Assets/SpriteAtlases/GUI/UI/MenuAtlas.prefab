@@ -44,7 +44,7 @@ MonoBehaviour:
   mSprites:
   - name: button_tab
     x: 0
-    y: 195
+    y: 196
     width: 220
     height: 64
     borderLeft: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: center
-    x: 0
-    y: 131
+    x: 879
+    y: 960
     width: 64
     height: 64
     borderLeft: 0
@@ -69,8 +69,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: center_inner
-    x: 0
-    y: 67
+    x: 943
+    y: 960
     width: 64
     height: 64
     borderLeft: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: corner
-    x: 0
-    y: 3
+    x: 879
+    y: 896
     width: 64
     height: 64
     borderLeft: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: corner_inner
-    x: 64
-    y: 131
+    x: 943
+    y: 896
     width: 64
     height: 64
     borderLeft: 0
@@ -107,9 +107,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: menu_back
+    x: 0
+    y: 513
+    width: 879
+    height: 511
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: PixelFontAtlas
     x: 0
-    y: 259
+    y: 260
     width: 511
     height: 253
     borderLeft: 0
@@ -121,8 +134,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 0
   - name: side
-    x: 128
-    y: 131
+    x: 879
+    y: 832
     width: 64
     height: 64
     borderLeft: 0
