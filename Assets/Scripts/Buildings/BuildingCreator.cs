@@ -9,22 +9,23 @@ using System.Text;
 public class BuildingCreator : MonoBehaviour {
 	
 	private const int noOfBuildings = 11;//number of existing buildings ingame 
-	private int currentSelection = 0;//when a construct building button is pressed, this determines which one
+	private string currentSelection = "";//when a construct building button is pressed, this determines which one
 	private int gridx = 256;//necessary to adjust the middle screen "target" to the exact grid X position
 	private int gridy = 181;//necessary to adjust the middle screen "target" to the exact grid Y position
 	
 	
 	public UILabel HintText;// a top screen label that displays user messages when necessary
-	//public UILabel UserMessages;
-	public UILabel[] BuildingPriceLbs = new UILabel[noOfBuildings];//price labels
+                            //public UILabel UserMessages;
+    public NamedPriceLabels[] BuildingPriceLabels;
 
-	public GameObject[] BuildingPrefabs = new GameObject[noOfBuildings];
-	public GameObject ConstructionPrefab;//the building "under construction" sand and materials prefab
+    //public GameObject[] BuildingPrefabs = new GameObject[noOfBuildings];
+    public GameObject ConstructionPrefab;//the building "under construction" sand and materials prefab
 	public GameObject BuildingSelectedPanel; //menu that appears when you reselect a finished building - buttons: upgrade, move, ok, cancel
 
-	public int[] existingBuildings = new int[noOfBuildings]; // necessary to keep track of each buiding type number and enforce conditions
-	
-	public GameObject gameManager;
+	//public int[] existingBuildings = new int[noOfBuildings]; // necessary to keep track of each buiding type number and enforce conditions
+    public Dictionary<string, int> existingBuildings = new Dictionary<string, int>();
+
+    public GameObject gameManager;
 	public GameObject UIAnchor;//MainMenu script is there
 	public GameObject DummyObj;// a crosshair that follows the middle of the screen, for placing a new building; position is adjusted to exact grid middle point
 	public GameObject BuildingsGroup;// to keep all buildings in one place in the ierarchy, they are parented to this empty object
@@ -61,7 +62,7 @@ public class BuildingCreator : MonoBehaviour {
 	private bool displacedonZ = false;
 
 	public TextAsset BuildingsXML;//variables for loading building characteristics from XML
-	private List<Dictionary<string,string>> buildings = new List<Dictionary<string,string>>();
+	private Dictionary<string,Dictionary<string,string>> buildings = new Dictionary<string, Dictionary<string, string>>();
 	private Dictionary<string,string> dictionary;
 
 	public GameObject Stats;//the stats object
@@ -96,205 +97,58 @@ public class BuildingCreator : MonoBehaviour {
 		{
 			XmlNodeList buildingsContent = buildingInfo.ChildNodes;	
 			dictionary = new Dictionary<string, string>();
-			
+            string key = "";
+
 			foreach (XmlNode buildingItems in buildingsContent) // levels itens nodes.
 			{
                 Debug.Log(buildingItems.Name);
                 //read everything into the dictionary
 
                 if (buildingItems.Name != "#comment")
-                {
+                {   if(buildingItems.Name == "Key")
+                    {
+                        Debug.Log("Key found: " + buildingItems.InnerText);
+                        key = buildingItems.InnerText;
+                    }
                     dictionary.Add(buildingItems.Name, buildingItems.InnerText);
                 }
-                //if (buildingItems.Name == "ID")
-                //{
-                //    dictionary.Add("ID", buildingItems.InnerText); // put this in the dictionary.
-                //}
-                //if (buildingItems.Name == "Name")
-                //{
-                //    dictionary.Add("Name", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Description")
-                //{
-                //    dictionary.Add("Description", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Type")
-                //{
-                //    dictionary.Add("Type", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "BuilderPop")
-                //{
-                //    dictionary.Add("BuilderPop", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "PopBonus")
-                //{
-                //    dictionary.Add("PopBonus", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "ProdPerSec")
-                //{
-                //    dictionary.Add("ProdPerSec", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "StoreCap")
-                //{
-                //    dictionary.Add("StoreCap", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "MaxCap")
-                //{
-                //    dictionary.Add("MaxCap", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Time")
-                //{
-                //    dictionary.Add("Time", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "XpAward")
-                //{
-                //    dictionary.Add("XpAward", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "GoldBased")
-                //{
-                //    dictionary.Add("GoldBased", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "ResCost")
-                //{
-                //    dictionary.Add("ResCost", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "StoreCategory")
-                //{
-                //    dictionary.Add("StoreCategory", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "ObjPrereq")
-                //{
-                //    dictionary.Add("ObjPrereq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Cap1Prereq")
-                //{
-                //    dictionary.Add("Cap1Prereq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Cap2Prereq")
-                //{
-                //    dictionary.Add("Cap2Prereq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Cap3Prereq")
-                //{
-                //    dictionary.Add("Cap3Prereq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Cap4Prereq")
-                //{
-                //    dictionary.Add("Cap4Prereq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Cap5Prereq")
-                //{
-                //    dictionary.Add("Cap5Prereq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up2LevelReq")
-                //{
-                //    dictionary.Add("Up2LevelReq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up2ObjReq")
-                //{
-                //    dictionary.Add("Up2ObjReq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up2Cost")
-                //{
-                //    dictionary.Add("Up2Cost", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up2Time")
-                //{
-                //    dictionary.Add("Up2Time", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up2XpAward")
-                //{
-                //    dictionary.Add("Up2XpAward", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Lev2StoreCap")
-                //{
-                //    dictionary.Add("Lev2StoreCap", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Lev2Prod")
-                //{
-                //    dictionary.Add("Lev2Prod", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Lev2PopBonus")
-                //{
-                //    dictionary.Add("Lev2PopBonus", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up3LevReq")
-                //{
-                //    dictionary.Add("Up3LevReq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up3ObjReq")
-                //{
-                //    dictionary.Add("Up3ObjReq", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up3Cost")
-                //{
-                //    dictionary.Add("Up3Cost", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up3Time")
-                //{
-                //    dictionary.Add("Up3Time", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Up3XpAward")
-                //{
-                //    dictionary.Add("Up3XpAward", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Lev3StoreCap")
-                //{
-                //    dictionary.Add("Lev3StoreCap", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Lev3Prod")
-                //{
-                //    dictionary.Add("Lev3Prod", buildingItems.InnerText);
-                //}
-                //if (buildingItems.Name == "Lev3PopBonus")
-                //{
-                //    dictionary.Add("Lev3PopBonus", buildingItems.InnerText);
-                //}
+              
             }
-            buildings.Add(dictionary);
+            buildings.Add(key, dictionary);
 		}
 	}
 
 	private void UpdatePrices()//updates price labels on building buttons
 	{
-		for (int i = 0; i < noOfBuildings; i++) 
-		{
-			BuildingPriceLbs[i].text = buildings [i] ["ResCost"];
-		}
-
-
-	}
+		//for (int i = 0; i < noOfBuildings; i++) 
+		//{   //TODO: Figure this out
+		//	BuildingPriceLbs[i].text = buildings [i] ["ResCost"];
+		//}
+        foreach (NamedPriceLabels n in BuildingPriceLabels)
+        {
+            n.label.text = buildings[n.name]["ResCost"];
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
 	
 	}
 	//receive a NGUI button message to build
-	public void OnBuild0()	 { currentSelection=0; 	VerifyConditions("Academy"); }//when a building construction menu button is pressed
-	public void OnBuild1()	 { currentSelection=1;  VerifyConditions("Barrel"); }
-	public void OnBuild2()	 { currentSelection=2;  VerifyConditions("Chessboard"); }
-	public void OnBuild3()	 { currentSelection=3;  VerifyConditions("Classroom"); }
-	public void OnBuild4()	 { currentSelection=4; 	VerifyConditions("Forge"); }
-	public void OnBuild5()	 { currentSelection=5;  VerifyConditions("Generator"); }
-	public void OnBuild6()	 { currentSelection=6;  VerifyConditions("Globe"); }
-	public void OnBuild7()	 { currentSelection=7;  VerifyConditions("Summon"); }
-	public void OnBuild8()	 { currentSelection=8;  VerifyConditions("Toolhouse"); }
-	public void OnBuild9()	 { currentSelection=9;  VerifyConditions("Vault"); }
-	public void OnBuild10() { currentSelection=10; VerifyConditions("Workshop"); }
+    //the prefab names must be correct the whole way through
+    public void OnBuild(GameObject newPet) {
+        Debug.Log(newPet.name);
+        currentSelection = newPet.name.Trim();
+        VerifyConditions(newPet);
+    }
 	
 	//receive a Tk2d button message to select an existing building; the button is in the middle of each building prefab and is invisible 
-	public void OnReselect0(){currentSelection = 0; StartCoroutine(ReselectObject("Academy"));}//when a building is reselected
-	public void OnReselect1(){currentSelection = 1; StartCoroutine(ReselectObject("Barrel"));}
-	public void OnReselect2(){currentSelection = 2; StartCoroutine(ReselectObject("Chessboard"));}
-	public void OnReselect3(){currentSelection = 3; StartCoroutine(ReselectObject("Classroom"));}
-	public void OnReselect4(){currentSelection = 4; StartCoroutine(ReselectObject("Forge"));}
-	public void OnReselect5(){currentSelection = 5; StartCoroutine(ReselectObject("Generator"));}
-	public void OnReselect6(){currentSelection = 6; StartCoroutine(ReselectObject("Globe"));}
-	public void OnReselect7(){currentSelection = 7; StartCoroutine(ReselectObject("Summon"));}
-	public void OnReselect8(){currentSelection = 8; StartCoroutine(ReselectObject("Toolhouse"));}
-	public void OnReselect9(){currentSelection = 9; StartCoroutine(ReselectObject("Vault"));}
-	public void OnReselect10(){currentSelection = 10; StartCoroutine(ReselectObject("Workshop"));}
-	
+    public void OnReselect(string selection)
+    {
+        currentSelection = selection;
+        StartCoroutine(ReselectObject(selection));
+    }
+
 	public void CancelObject()//cancel construction, or reselect building and destroy/cancel
 	{	
 		if (!isReselect) 
@@ -312,23 +166,23 @@ public class BuildingCreator : MonoBehaviour {
 		}
 
 		else 
-		{
-			if (currentSelection == 1) //1=Barrel (mana)
+		{   //TODO: Remove these later when stripping out functionality
+			if (currentSelection == "Barrel") //1=Barrel (mana)
 			{
 				DecreaseStorage(2);
 			}
-			else if (currentSelection == 4) //4=forge
+			else if (currentSelection == "Forge") //4=forge
 			{
 				((Stats)StatsCo).productionBuildings[0]--;
 				DecreaseStorage(1);
 			} 
-			else if (currentSelection == 5) //5=Generator (mana)
+			else if (currentSelection == "Generator") //5=Generator (mana)
 			{
 				((Stats)StatsCo).productionBuildings[1]--;	
 				DecreaseStorage(2);
 			}
 
-			else if (currentSelection == 9) //9=Vault gold
+			else if (currentSelection == "Vault") //9=Vault gold
 			{
 				DecreaseStorage(1);
 			}
@@ -376,13 +230,12 @@ public class BuildingCreator : MonoBehaviour {
 	//  verifies if the building can be constructed:
 	//  exceeds max number of buildings / enough gold/mana/free dobbits to build?
 	//  pays the price to Stats; updates the Stats interface numbers
-	private void VerifyConditions(string type)
+	private void VerifyConditions(GameObject newPet)
 	{
 		bool canBuild = true;//must pass as true through all verifications
-
-		//max allowed buildings ok?
-		if (int.Parse (buildings [currentSelection] ["MaxCap"]) > 0 && //there is a maximum number of buildings permitted for this one; 0 means irrelevant, you can have as many as you want
-		existingBuildings[currentSelection] >= int.Parse(buildings [currentSelection] ["MaxCap"]))//max already reached
+        //max allowed buildings ok?
+        if (int.Parse (buildings [currentSelection] ["MaxCap"]) > 0 && //there is a maximum number of buildings permitted for this one; 0 means irrelevant, you can have as many as you want
+existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [currentSelection] ["MaxCap"]))//max already reached
 		{					
 			canBuild = false;
 			((Stats)StatsCo).userMessagesTxt = "Maximum " + buildings [currentSelection] ["MaxCap"] + 
@@ -418,7 +271,7 @@ public class BuildingCreator : MonoBehaviour {
 		{
 			((MainMenu)UIAnchor.GetComponent("MainMenu")).constructionGreenlit = true;//ready to close menus and place the building; 
 			//constructionGreenlit bool necessary because the command is sent by pressing the button anyway
-			existingBuildings [currentSelection]++;//an array that keeps track of how many buildings of each type exist
+			existingBuildings.GetValueOrInitAndIncrement(currentSelection);//an array that keeps track of how many buildings of each type exist
 
 			((Stats)StatsCo).maxPopulation += int.Parse (buildings [currentSelection] ["PopBonus"]); //increase maxPopulation ; not displayed on interface/taken into account yet - no units
 			((Stats)StatsCo).experience += int.Parse (buildings [currentSelection] ["XpAward"]); //increases Stats experience
@@ -435,96 +288,43 @@ public class BuildingCreator : MonoBehaviour {
 
 			((Stats)StatsCo).update=true;//tells stats to update the interface - otherwise new numbers are updated but not displayed
 
-            LoadBuilding ();
+            LoadBuilding (newPet);
         } 
 		else 
 		{
 			((MainMenu)UIAnchor.GetComponent("MainMenu")).constructionGreenlit = false;//halts construction - the button message is sent anyway, but ignored
 			((Stats)StatsCo).initUserMessages = true; // the hint message is breefly displayed - why can not build
 		}
-
-
 	}
 
-	private void LoadBuilding()//instantiates the building and grass prefabs
-	{
-		((Stats)StatsCo).occupiedDobbitNo++;//get one dobbit
+    private void LoadBuilding(GameObject newBuilding)//instantiates the building and grass prefabs
+    {
+        ((Stats)StatsCo).occupiedDobbitNo++;//get one dobbit
 
-		((Relay)gameManager.GetComponent("Relay")).pauseInput = true;//pause all other input - the user starts moving the building
-		
-		pivotCorrection = false;//used to flag necessary correction so all buildings are centered on the grid square
-		
-		switch (currentSelection) //instantiates the building + appropriate underlying grass patch
-		{
-		case 0:
-			GameObject Academy = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);			
-			GameObject G4xAcademy = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			pivotCorrection = true;
-			SelectObject("Academy");
-			break;
-		case 1:
-			GameObject Barrel = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);
-			GameObject G3xBarrel = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			SelectObject("Barrel");			
-			break;
-		case 2:
-			GameObject Chessboard = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	 
-			GameObject G3xChessboard = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			SelectObject("Chessboard");
-			break;
-		case 3:
-			GameObject Classroom = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	 
-			GameObject G3xClassroom = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			SelectObject("Classroom");
-			break;
-		case 4:
-			GameObject Forge = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	
-			GameObject G3xForge = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);
+        ((Relay)gameManager.GetComponent("Relay")).pauseInput = true;//pause all other input - the user starts moving the building
 
-			((Stats)StatsCo).productionRates[0] = float.Parse(buildings [currentSelection] ["ProdPerSec"]);//if the building produces resources, the productionRates is passed to Stats;
-
-			SelectObject("Forge");
-			break;
-		case 5:
-			GameObject Generator = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	
-			GameObject G3xGenerator = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-
-			((Stats)StatsCo).productionRates[1] = float.Parse(buildings [currentSelection] ["ProdPerSec"]);
-
-			SelectObject("Generator");						
-			break;
-		case 6:
-			GameObject Globe = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	
-			GameObject G3xGlobe = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			SelectObject("Globe");
-			break;
-		case 7:			
-			GameObject Summon = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	
-			GameObject G3xSummon = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			SelectObject("Summon");
-			break;
-		case 8:
-			GameObject Toolhouse = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	
-			GameObject G2xToolhouse = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			pivotCorrection = true;
-			SelectObject("Toolhouse");
-			break;	
-		case 9:
-			GameObject Vault = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);;	
-			GameObject G3xVault = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			SelectObject("Vault");
-			break;
-		case 10:
-			GameObject Workshop = (GameObject)Instantiate(BuildingPrefabs[currentSelection], new Vector3(0,0,buildingZ), Quaternion.identity);	
-			GameObject G3xWorkshop = (GameObject)Instantiate(Grass2x, new Vector3(0,0,grassZ), Quaternion.identity);	
-			SelectObject("Workshop");
-			break;				
-		default:
-		break;
-		}
-	}
-			
-	private void SelectObject(string buildingTag) //after the grass/building prefabs are instantiated, they must be selected from the existing buildings on the map
+        pivotCorrection = false;//used to flag necessary correction so all buildings are centered on the grid square
+        
+        GameObject NewPet = (GameObject)Instantiate(newBuilding, new Vector3(0, 0, buildingZ), Quaternion.identity);
+        string grass = buildings[currentSelection]["GrassSize"];
+        if (grass == "2")
+        {
+            GameObject NewPetGrass = (GameObject)Instantiate(Grass2x, new Vector3(0, 0, grassZ), Quaternion.identity);
+        }
+        else if (grass == "3")
+        {
+            GameObject NewPetGrass = (GameObject)Instantiate(Grass3x, new Vector3(0, 0, grassZ), Quaternion.identity);
+        }
+        else
+        {
+            GameObject NewPetGrass = (GameObject)Instantiate(Grass4x, new Vector3(0, 0, grassZ), Quaternion.identity);
+        }
+        pivotCorrection = true;
+        SelectObject(currentSelection);
+              
+    }
+    
+    private void SelectObject(string buildingTag) //after the grass/building prefabs are instantiated, they must be selected from the existing buildings on the map
 	{
 		BuildingSelectedPanel.SetActive (true);// the move/upgrade/place/cancel, at the bottom of the screen
 		selectedBuildingType = GameObject.FindGameObjectsWithTag(buildingTag);//finds all existing buildings with the apropriate string tag(ex “Forge”)	
@@ -806,3 +606,4 @@ public class BuildingCreator : MonoBehaviour {
         }
     }
 }
+

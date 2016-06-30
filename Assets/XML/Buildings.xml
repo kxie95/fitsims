@@ -4,7 +4,8 @@
 	
 	<Building>
 		<ID>1</ID>
-		<Name>Wizard Academy</Name>		
+		<Name>Wizard Academy</Name>	
+    <Key>Academy</Key>
 		<Description>This is the home of a wizard. A master wizard, not just like the apprentices.</Description>
 		<Type>Generation</Type>
 		
@@ -13,7 +14,8 @@
 		<ProdPerSec>0</ProdPerSec><!--the amount of the resource generated per second-->
 		<StoreCap>0</StoreCap><!--the total amount of resource storage added by that building-->
 		<MaxCap>1</MaxCap><!--max number of buildings allowed-->
-		
+    <GrassSize>2</GrassSize>
+    
 		<Time>0</Time><!--the time (in minutes) needed to create the building-->
 		<XpAward>650</XpAward><!--experience awarded for the completion of an object-->
 		<GoldBased>true</GoldBased><!--which resource is needed to complete this kind of building-->
@@ -55,7 +57,8 @@
 	
 	<Building>
 		<ID>10</ID>
-		<Name>Mana Barrel</Name>		
+		<Name>Mana Barrel</Name>
+    <Key>Barrel</Key>
 		<Description>Tasty. Mages favorite drink. You never have enough of it.</Description>
 		<Type>Resource Extra Storage</Type>
 		
@@ -64,7 +67,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>7500</StoreCap>
 		<MaxCap>3</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>300</XpAward>
 		<GoldBased>true</GoldBased>
@@ -105,7 +109,8 @@
 	
 	<Building>
 		<ID>13</ID>
-		<Name>Planar Chessboard</Name>		
+		<Name>Planar Chessboard</Name>
+    <Key>Chessboard</Key>
 		<Description>This building enables challenges. Are you ready for them?</Description>
 		<Type>Competition</Type>
 		
@@ -114,6 +119,7 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>1</MaxCap>
+    <GrassSize>2</GrassSize>
     
 		<Time>0</Time>
 		<XpAward>200</XpAward>
@@ -155,7 +161,8 @@
 	
 	<Building>
 		<ID>11</ID>
-		<Name>Classroom</Name>		
+		<Name>Classroom</Name>
+    <Key>Classroom</Key>
 		<Description>The more apprentice you have the more creature could be summoned or assembled.</Description>
 		<Type>General</Type>
 		
@@ -164,7 +171,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>4</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>150</XpAward>
 		<GoldBased>true</GoldBased>
@@ -203,10 +211,12 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
 	</Building>
+  
 	<Building>
 		<ID>7</ID>
-		<Name>Gold Forge</Name>		
-		<Description>Gold mines are outdated. Mages create the gold out of thin air.</Description>
+		<Name>Gold Forge</Name>
+    <Key>Forge</Key>
+    <Description>Gold mines are outdated. Mages create the gold out of thin air.</Description>
 		<Type>Resource Generation</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -214,7 +224,8 @@
 		<ProdPerSec>0.2</ProdPerSec>
 		<StoreCap>1250</StoreCap>
 		<MaxCap>5</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>60</XpAward>
 		<GoldBased>false</GoldBased>
@@ -256,7 +267,8 @@
 		
 	<Building>
 		<ID>8</ID>
-		<Name>Mana Generator</Name>		
+		<Name>Mana Generator</Name>
+    <Key>Generator</Key>
 		<Description>A squeezable crystal that produces Mana Juice. Do you want to try?</Description>
 		<Type>Resource Generation</Type>
 		
@@ -265,7 +277,8 @@
 		<ProdPerSec>0.2</ProdPerSec>
 		<StoreCap>1250</StoreCap>
 		<MaxCap>5</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>60</XpAward>
 		<GoldBased>true</GoldBased>
@@ -306,7 +319,8 @@
 	</Building>
 	<Building>
 		<ID>5</ID>
-		<Name>Research Globe</Name>		
+		<Name>Research Globe</Name>
+    <Key>Globe</Key>
 		<Description>Gain new levels of knowledge.</Description>
 		<Type>Research</Type>
 		
@@ -315,7 +329,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>1</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>450</XpAward>
 		<GoldBased>true</GoldBased>
@@ -357,7 +372,8 @@
 	
 	<Building>
 		<ID>3</ID>
-		<Name>Summoning Circle</Name>		
+		<Name>Summoning Circle</Name>
+    <Key>Summon</Key>
 		<Description>Wizards main hobby is summoning weird creatures.</Description>
 		<Type>Generation</Type>
 		
@@ -366,7 +382,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>3</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>45</XpAward>
 		<GoldBased>false</GoldBased>
@@ -408,7 +425,8 @@
 	
 	<Building>
 		<ID>12</ID>
-		<Name>Dobbit Toolhouse</Name>		
+		<Name>Dobbit Toolhouse</Name>
+    <Key>Toolhouse</Key>
 		<Description>Do you want to build something? Who you gonna call? The dobbits, of course.</Description>
 		<Type>General</Type>
 		
@@ -417,7 +435,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>1</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>150</XpAward>
 		<GoldBased>true</GoldBased>
@@ -462,7 +481,8 @@
 
 	<Building>
 		<ID>9</ID>
-		<Name>Gold Vault</Name>		
+		<Name>Gold Vault</Name>
+    <Key>Vault</Key>
 		<Description>A place to store your gold. It's always hungry!</Description>
 		<Type>Resource Extra Storage</Type>
 		
@@ -471,7 +491,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>7500</StoreCap>
 		<MaxCap>3</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>300</XpAward>
 		<GoldBased>false</GoldBased>
@@ -513,7 +534,8 @@
 	
 	<Building>
 		<ID>2</ID>
-		<Name>Workshop</Name>		
+		<Name>Workshop</Name>
+    <Key>Workshop</Key>
 		<Description>A place of wonders to create magical creatures.</Description>
 		<Type>Generation</Type>
 		
@@ -522,7 +544,8 @@
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
 		<MaxCap>2</MaxCap>
-		
+		<GrassSize>2</GrassSize>
+    
 		<Time>0</Time>
 		<XpAward>45</XpAward>
 		<GoldBased>true</GoldBased>
