@@ -606,4 +606,3 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
         }
     }
 }
-
