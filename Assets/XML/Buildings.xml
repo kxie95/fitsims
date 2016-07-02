@@ -4,9 +4,9 @@
 	
 	<Building>
 		<ID>1</ID>
-		<Name>Wizard Academy</Name>	
+		<Name>*Placeholder name*</Name>	
     <Key>Academy</Key>
-		<Description>This is the home of a wizard. A master wizard, not just like the apprentices.</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Generation</Type>
 		
 		<BuilderPop>0</BuilderPop><!-- the number of buildings that could be built or upgraded at the same time-->
@@ -57,9 +57,9 @@
 	
 	<Building>
 		<ID>10</ID>
-		<Name>Mana Barrel</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Barrel</Key>
-		<Description>Tasty. Mages favorite drink. You never have enough of it.</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Resource Extra Storage</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -109,9 +109,9 @@
 	
 	<Building>
 		<ID>13</ID>
-		<Name>Planar Chessboard</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Chessboard</Key>
-		<Description>This building enables challenges. Are you ready for them?</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Competition</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -161,9 +161,9 @@
 	
 	<Building>
 		<ID>11</ID>
-		<Name>Classroom</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Classroom</Key>
-		<Description>The more apprentice you have the more creature could be summoned or assembled.</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>General</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -214,9 +214,9 @@
   
 	<Building>
 		<ID>7</ID>
-		<Name>Gold Forge</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Forge</Key>
-    <Description>Gold mines are outdated. Mages create the gold out of thin air.</Description>
+    <Description>*Placeholder description*</Description>
 		<Type>Resource Generation</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -267,9 +267,9 @@
 		
 	<Building>
 		<ID>8</ID>
-		<Name>Mana Generator</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Generator</Key>
-		<Description>A squeezable crystal that produces Mana Juice. Do you want to try?</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Resource Generation</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -319,9 +319,9 @@
 	</Building>
 	<Building>
 		<ID>5</ID>
-		<Name>Research Globe</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Globe</Key>
-		<Description>Gain new levels of knowledge.</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Research</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -372,9 +372,9 @@
 	
 	<Building>
 		<ID>3</ID>
-		<Name>Summoning Circle</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Summon</Key>
-		<Description>Wizards main hobby is summoning weird creatures.</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Generation</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -425,9 +425,9 @@
 	
 	<Building>
 		<ID>12</ID>
-		<Name>Dobbit Toolhouse</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Toolhouse</Key>
-		<Description>Do you want to build something? Who you gonna call? The dobbits, of course.</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>General</Type>
 		
 		<BuilderPop>1</BuilderPop>
@@ -481,9 +481,9 @@
 
 	<Building>
 		<ID>9</ID>
-		<Name>Gold Vault</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Vault</Key>
-		<Description>A place to store your gold. It's always hungry!</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Resource Extra Storage</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -534,9 +534,9 @@
 	
 	<Building>
 		<ID>2</ID>
-		<Name>Workshop</Name>
+		<Name>*Placeholder name*</Name>	
     <Key>Workshop</Key>
-		<Description>A place of wonders to create magical creatures.</Description>
+		<Description>*Placeholder description*</Description>
 		<Type>Generation</Type>
 		
 		<BuilderPop>0</BuilderPop>
