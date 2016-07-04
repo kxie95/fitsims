@@ -27,4 +27,8 @@ ExportedObj/
 sysinfo.txt
 
 # Project specific settings
-Assets/Prefabs/Default*
+NGUI/
+TK2DROOT/
+NGUI.meta
+TK2DROOT.meta
+Assets/Prefabs/Default/*
