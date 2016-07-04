@@ -56,8 +56,68 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 	{
 		if(inConstruction)
 		{
-			ProgressBar();
-		}
+            //ProgressBar();
+
+            progCounter = 0;
+
+            ((UISlider)ProgressBarObj.GetComponent("UISlider")).value += (float)(Time.deltaTime / buildingTime);
+
+            ((UISlider)ProgressBarObj.GetComponent("UISlider")).value =
+            Mathf.Clamp(((UISlider)ProgressBarObj.GetComponent("UISlider")).value, 0, 1);
+
+            remainingTime = (int)(buildingTime * (1 - ((UISlider)ProgressBarObj.GetComponent("UISlider")).value));
+
+            UpdatePrice(remainingTime);
+            UpdateTimeCounter(remainingTime);
+
+            if (((UISlider)ProgressBarObj.GetComponent("UISlider")).value == 1)
+            {
+                ((SoundFX)soundFXSc).BuildingFinished();
+                ((Stats)StatsCo).occupiedDobbitNo--;
+                ((Stats)StatsCo).update = true;
+
+                if (buildingType == "Barrel")
+                {
+                    ((Stats)StatsCo).maxStorageMana += storageIncrease;
+                }
+                else if (buildingType == "Forge")
+                {
+                    ((Stats)StatsCo).productionBuildings[0]++;
+                    ((Stats)StatsCo).maxStorageGold += storageIncrease;
+                }
+                else if (buildingType == "Generator")
+                {
+                    ((Stats)StatsCo).productionBuildings[1]++;
+                    ((Stats)StatsCo).maxStorageMana += storageIncrease;
+                }
+                else if (buildingType == "Vault")
+                {
+                    ((Stats)StatsCo).maxStorageGold += storageIncrease;
+                }
+
+                foreach (Transform child in transform)
+                {
+                    if (child.gameObject.tag == buildingType)
+                    {
+                        child.gameObject.SetActive(true);
+                        ((BuildingSelector)child.gameObject.GetComponent("BuildingSelector")).inConstruction = false;
+                        foreach (Transform childx in transform)
+                        {
+                            if (childx.gameObject.tag == "Grass")
+                            {
+                                childx.gameObject.transform.parent = child.gameObject.transform;
+                                child.gameObject.transform.parent = BuildingsGroup.transform;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                Destroy(this.gameObject);
+                inConstruction = false;
+
+            }
+        }
 	}
 	
 	private void ProgressBar()
@@ -123,25 +183,22 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 				Destroy(this.gameObject);
 				inConstruction = false;	
 
-			}
-			
+			}	
 		}
-		
-		
 	}
 
 	private void UpdateTimeCounter(int remainingTime)
 	{
 		hours = (int)remainingTime/60; //93 1
 		minutes = (int)remainingTime%60;//33
-		seconds = (int)(60 - (((UISlider)ProgressBarObj.GetComponent("UISlider")).value*buildingTime*60)%60);			
+		seconds = (int)(60 - (((UISlider)ProgressBarObj.GetComponent("UISlider")).value*buildingTime*60)%60);
 		UpdateTimeLabel ();
 	}
 
 	private void UpdateTimeLabel()
 	{
 		if(hours>0 && minutes >0 && seconds>=0 )
-		{			
+		{
 
 			((UILabel)TimeCounterLb).text = 
 				hours.ToString() +" h " +
@@ -160,7 +217,6 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 			((UILabel)TimeCounterLb).text = 
 				seconds.ToString() +" s ";
 		}
-
 	}
 
 

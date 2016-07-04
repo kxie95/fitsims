@@ -541,7 +541,6 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 			((BuildingSelector)selectedBuilding.GetComponent("BuildingSelector")).buildingIndex = buildingIndex;
 			((GrassSelector)selectedGrass.GetComponent("GrassSelector")).grassIndex = buildingIndex;
 
-
 			//instantiates the construction prefab and pass the relevant info;
 			GameObject Construction = (GameObject)Instantiate(ConstructionPrefab, selectedBuilding.transform.position, Quaternion.identity);
 			selectedConstruction = Construction;
