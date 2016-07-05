@@ -15,17 +15,23 @@ public class Settings : MonoBehaviour {
 	private bool isPlaying = true;
 	private float musicVoume = 1;
 
-	public AudioClip music;
+    private AudioSource audioSource;
+    public AudioClip mainMusic;
+    public const int musicCollectionSize = 3;
+    public AudioClip[] exerciseMusicCollection = new AudioClip[musicCollectionSize];
+
 	private GameObject SoundFX;
 	private Component soundFXSc;
 
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<AudioSource>().clip = music;
-		GetComponent<AudioSource>().Play ();
-		GetComponent<AudioSource>().loop = true;
-		GetComponent<AudioSource>().ignoreListenerVolume = true;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = mainMusic;
+		audioSource.Play ();
+		audioSource.loop = true;
+		audioSource.ignoreListenerVolume = true;
+
 		SoundFX =  GameObject.Find("SoundFX");
 		soundFXSc = SoundFX.GetComponent ("SoundFX");
 	}
@@ -86,7 +92,7 @@ public class Settings : MonoBehaviour {
 			{
 			musicVoume += 0.01f;
 				musicVoume = Mathf.Clamp(musicVoume,0,1);
-				GetComponent<AudioSource>().volume = musicVoume;
+				audioSource.volume = musicVoume;
 			}
 			else
 			{
@@ -101,13 +107,13 @@ public class Settings : MonoBehaviour {
 			{
 				musicVoume -= 0.01f;
 				musicVoume = Mathf.Clamp(musicVoume,0,1);
-				GetComponent<AudioSource>().volume = musicVoume;
+				audioSource.volume = musicVoume;
 			}
 			else
 			{
 				fadeOut = false;
 				busy = false;
-				GetComponent<AudioSource>().Pause();
+				audioSource.Pause();
 				isPlaying = false;
 			}			
 		}
@@ -138,4 +144,19 @@ public class Settings : MonoBehaviour {
 		StopSoundBt.SetActive (soundOn);
 	}
 
+    public void PlayExerciseMusic()
+    {
+        // Select a random track from the music collection.
+        // TODO: Possibly change this to suit the exercise later.
+        System.Random r = new System.Random();
+        int randomNumber = r.Next(0, musicCollectionSize);
+        audioSource.clip = exerciseMusicCollection[randomNumber];
+        audioSource.Play();
+    }
+
+    public void PlayMainMusic()
+    {
+        audioSource.clip = mainMusic;
+        audioSource.Play();
+    }
 }

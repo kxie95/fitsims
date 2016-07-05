@@ -8,6 +8,8 @@ public class ExerciseManager : MonoBehaviour {
     private MainMenu mainMenu;
     public Stats stats;
     public SaveLoad saveLoad;
+    public Settings settings;
+    public SoundFX soundFx;
 
     public UILabel rewardLabel;
 
@@ -25,10 +27,10 @@ public class ExerciseManager : MonoBehaviour {
     public void PerformExercise()
     {
         Debug.Log("Exercise performed");
+        settings.PlayExerciseMusic();
         //Get the current selected object
         //Call method from object to get data on what sort of exercise/how much of that exercise
         //Start the measurement (possibly by calling and external method)
-
         //SceneManager.LoadScene("ChallengeScene");
         //TODO: Think about how to properly link components up.
         // mainMenu.OnDoingExercise();
@@ -49,14 +51,13 @@ public class ExerciseManager : MonoBehaviour {
     /// <param name="rewardValue">Total value of the reward associated with the challenge.</param>
     public void FinishExercise(int completedValue, int targetValue, int rewardValue)
     {
-        //TODO: Uncomment these lines when integrating.
+        settings.PlayMainMusic();
+        soundFx.Victory();
+
         // Calculate the distance completed as a percentage.
         double percentCompleted = (double)completedValue / targetValue;
-
         // Multiply by the associated reward.
         int actualReward = (int)Math.Round(percentCompleted * rewardValue);
-        //int actualReward = 500; // TODO: Remove this line later.
-
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
 
