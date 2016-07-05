@@ -143,25 +143,6 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 				((Stats)StatsCo).occupiedDobbitNo--;
 				((Stats)StatsCo).update = true;
 
-				if(buildingType=="Barrel")
-				{
-					((Stats)StatsCo).maxStorageMana += storageIncrease;
-				}
-				else if(buildingType=="Forge")
-				{
-					((Stats)StatsCo).productionBuildings[0]++;
-					((Stats)StatsCo).maxStorageGold += storageIncrease;
-				}
-				else if(buildingType=="Generator")
-				{
-					((Stats)StatsCo).productionBuildings[1]++;
-					((Stats)StatsCo).maxStorageMana += storageIncrease;
-				}
-				else if(buildingType=="Vault")
-				{
-					((Stats)StatsCo).maxStorageGold += storageIncrease;
-				}
-
 				foreach (Transform child in transform) 
 				{					
 					if(child.gameObject.tag == buildingType)
@@ -179,10 +160,8 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 						}
 					}
 				}
-
 				Destroy(this.gameObject);
 				inConstruction = false;	
-
 			}	
 		}
 	}

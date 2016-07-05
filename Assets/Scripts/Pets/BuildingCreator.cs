@@ -166,27 +166,7 @@ public class BuildingCreator : MonoBehaviour {
 		}
 
 		else 
-		{   //TODO: Remove these later when stripping out functionality
-			if (currentSelection == "Barrel") //1=Barrel (mana)
-			{
-				DecreaseStorage(2);
-			}
-			else if (currentSelection == "Forge") //4=forge
-			{
-				((Stats)StatsCo).productionBuildings[0]--;
-				DecreaseStorage(1);
-			} 
-			else if (currentSelection == "Generator") //5=Generator (mana)
-			{
-				((Stats)StatsCo).productionBuildings[1]--;	
-				DecreaseStorage(2);
-			}
-
-			else if (currentSelection == "Vault") //9=Vault gold
-			{
-				DecreaseStorage(1);
-			}
-
+		{   
 			DeactivateStatsPad ();
         }
 
@@ -204,28 +184,29 @@ public class BuildingCreator : MonoBehaviour {
 	
     }
 
-	private void DecreaseStorage(int restype)//when a building is reselected and destroyed, the gold/mana storage capacity decrease; 
-	{
-		if(restype==1)//gold
-		{
-			((Stats)StatsCo).maxStorageGold -= int.Parse (buildings [currentSelection] ["StoreCap"]);//the destroyed building storage cap
-			if(((Stats)StatsCo).gold > ((Stats)StatsCo).maxStorageGold)//more gold than max storage?
-			{
-				((Stats)StatsCo).gold = ((Stats)StatsCo).maxStorageGold;//discards resources exceeding storage capacity
+    //DEPRECATED
+	//private void DecreaseStorage(int restype)//when a building is reselected and destroyed, the gold/mana storage capacity decrease; 
+	//{
+	//	if(restype==1)//gold
+	//	{
+	//		((Stats)StatsCo).maxStorageGold -= int.Parse (buildings [currentSelection] ["StoreCap"]);//the destroyed building storage cap
+	//		if(((Stats)StatsCo).gold > ((Stats)StatsCo).maxStorageGold)//more gold than max storage?
+	//		{
+	//			((Stats)StatsCo).gold = ((Stats)StatsCo).maxStorageGold;//discards resources exceeding storage capacity
 
-			}
-		}
-		else if (restype==2) //mana
-		{
-			((Stats)StatsCo).maxStorageMana -= int.Parse (buildings [currentSelection] ["StoreCap"]);
-			if(((Stats)StatsCo).mana > ((Stats)StatsCo).maxStorageMana)
-			{
-				((Stats)StatsCo).mana = ((Stats)StatsCo).maxStorageMana;
+	//		}
+	//	}
+	//	else if (restype==2) //mana
+	//	{
+	//		((Stats)StatsCo).maxStorageMana -= int.Parse (buildings [currentSelection] ["StoreCap"]);
+	//		if(((Stats)StatsCo).mana > ((Stats)StatsCo).maxStorageMana)
+	//		{
+	//			((Stats)StatsCo).mana = ((Stats)StatsCo).maxStorageMana;
 
-			}
-		}
-		((Stats)StatsCo).update = true;//updates the interface numbers
-	}
+	//		}
+	//	}
+	//	((Stats)StatsCo).update = true;//updates the interface numbers
+	//}
 
 	//  verifies if the building can be constructed:
 	//  exceeds max number of buildings / enough gold/mana/free dobbits to build?
