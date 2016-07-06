@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SitupCounter : MonoBehaviour {
 
     private AndroidJavaObject sensorPlugin;
-    public UILabel label;
+    public Text text;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +25,7 @@ public class SitupCounter : MonoBehaviour {
         if (sensorPlugin != null)
         {
             float[] sensorValue = sensorPlugin.Call<float[]>("getSensorValues", "proximity");
-            label.text = sensorValue[0].ToString();
+            text.text = sensorValue[0].ToString();
         }
         #endif
     }
