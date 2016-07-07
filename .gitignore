@@ -28,3 +28,6 @@ sysinfo.txt
 
 # Project specific settings
 Assets/Prefabs/Default*
+Assets/NGUI*
+Assets/TK2DROOT*
+-tk2d.asset*

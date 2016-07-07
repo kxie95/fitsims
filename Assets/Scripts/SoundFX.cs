@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SoundFX : MonoBehaviour {
 
-	public AudioClip buildingFinished, move, click, close;//sounds
+	public AudioClip buildingFinished, move, click, close, victory;//sounds
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +26,8 @@ public class SoundFX : MonoBehaviour {
 	public void Click()	{ GetComponent<AudioSource>().PlayOneShot(click);	}
 
 	public void Close()	{ GetComponent<AudioSource>().PlayOneShot(close);	}
+
+    public void Victory() { GetComponent<AudioSource>().PlayOneShot(victory); }
 
 	public void SoundOn() 
 	{ 
