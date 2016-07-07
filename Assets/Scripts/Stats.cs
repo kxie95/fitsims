@@ -8,7 +8,7 @@ public class Stats : MonoBehaviour {
 	public int currentPopulation = 1;
 	public int maxPopulation = 50;
 
-	public int dobbitNo = 1;
+	public int dobbitNo = 5;
 	public int occupiedDobbitNo = 0;
 
 	public UIProgressBar experienceBar;
@@ -18,8 +18,8 @@ public class Stats : MonoBehaviour {
 	public UIProgressBar crystalsBar;
 
 	public int experience = 0;
-	public float gold = 5000;//5000;
-	public float mana = 500;//500;
+	public float gold = 1500;//5000;
+	public float mana = 0;//500;
 	public int crystals = 5;//5
 
 	//when user hard buys resources, storage capacity permanently increases 
@@ -108,7 +108,6 @@ public class Stats : MonoBehaviour {
 		{
 			StartCoroutine(DisplayUserMessages());
 		}
-
 	}
 
 	public void ApplyMaxCaps()//cannot exceed storage+bought capacity
