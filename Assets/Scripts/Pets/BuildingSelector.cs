@@ -24,9 +24,9 @@ public class BuildingSelector : MonoBehaviour {//attached to each building as an
         print("reselect called");
 		GameObject gameManager = GameObject.Find("GameManager");
 		GameObject buildingCreator = GameObject.Find("BuildingCreator");
-        GameObject playerManager = GameObject.Find("PlayerManager");
+        
 
-        PlayerManager manager = (PlayerManager)playerManager.GetComponent("PlayerManager");
+        
         Component relayScript = (Relay)gameManager.GetComponent("Relay");
 		Component buildingCreatorScript = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
 		
@@ -37,10 +37,6 @@ public class BuildingSelector : MonoBehaviour {//attached to each building as an
 			((BuildingCreator)buildingCreatorScript).isReselect = true;
 
             ((BuildingCreator)buildingCreatorScript).OnReselect(buildingType);
-            manager.MovePlayerToSelected();
-
         }
-        
-
 	}
 }

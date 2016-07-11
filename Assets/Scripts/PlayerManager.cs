@@ -20,9 +20,9 @@ public class PlayerManager : MonoBehaviour
 
     public void MovePlayerToSelected()
     {
-        print("moving player to selected");
         BuildingCreator creator = (BuildingCreator)GameObject.Find("BuildingCreator").GetComponent("BuildingCreator");
         Transform target = creator.selectedBuilding.transform.Find("PlayerTarget");
+        print(target.position.ToString());
         Player.transform.position = target.position;
     }
 
