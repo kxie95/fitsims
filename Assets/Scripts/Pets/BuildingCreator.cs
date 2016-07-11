@@ -22,6 +22,8 @@ public class BuildingCreator : MonoBehaviour {
     public GameObject ConstructionPrefab;//the building "under construction" sand and materials prefab
 	public GameObject BuildingSelectedPanel; //menu that appears when you reselect a finished building - buttons: upgrade, move, ok, cancel
 
+    public GameObject PlayerManager;
+    
 	//public int[] existingBuildings = new int[noOfBuildings]; // necessary to keep track of each buiding type number and enforce conditions
     public Dictionary<string, int> existingBuildings = new Dictionary<string, int>();
 
@@ -42,7 +44,7 @@ public class BuildingCreator : MonoBehaviour {
 
 	public GameObject Grass2x,Grass3x,Grass4x;// the grass prefabs
 		
-	private GameObject selectedBuilding;//current selected building
+	public GameObject selectedBuilding;//current selected building
 	private GameObject selectedGrass;//current selected grass
 	private GameObject selectedConstruction;//current selected "under construction" prefab
 	
@@ -437,18 +439,21 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		{
 		if(((BuildingSelector)building.GetComponent("BuildingSelector")).isSelected)				
 			{
-				//print ("object found");
+			//	print ("object found");
+                print("selected "+building.name);
 
-				selectedBuilding = building;
-
+                selectedBuilding = building;
+                
 				MovingPad.transform.position = 
 					new Vector3(building.transform.position.x,
 						building.transform.position.y, padZ);
 					
 				//MovingPad.SetActive(true);					
 				//selectedBuilding.transform.parent = MovingPad.transform;
-				((Relay)gameManager.GetComponent("Relay")).pauseInput = true;		
-				break;
+				((Relay)gameManager.GetComponent("Relay")).pauseInput = true;
+                PlayerManager manager = (PlayerManager)PlayerManager.GetComponent("PlayerManager");
+                manager.MovePlayerToSelected();
+                break;
 			}
 		}
 		
