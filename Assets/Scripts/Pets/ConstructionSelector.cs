@@ -53,6 +53,7 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 	void FixedUpdate()
 	{
 		if(inConstruction)
+        //if(false)
 		{
             //ProgressBar();
 
@@ -67,7 +68,7 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 
             //UpdatePrice(remainingTime);
             //UpdateTimeCounter(remainingTime);
-            
+            print("In construction: "+buildingType);
             ((SoundFX)soundFXSc).BuildingFinished();
             ((Stats)StatsCo).occupiedDobbitNo--;
             ((Stats)StatsCo).update = true;
@@ -111,8 +112,6 @@ public class ConstructionSelector : MonoBehaviour {//controls the behaviour of a
 
             Destroy(this.gameObject);
             inConstruction = false;
-
-            
         }
 	}
 	
