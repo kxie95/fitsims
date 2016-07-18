@@ -136,6 +136,7 @@ public class BuildingCreator : MonoBehaviour {
 	void Update () {
 	
 	}
+
 	//receive a NGUI button message to build
     //the prefab names must be correct the whole way through
     public void OnBuild(GameObject newPet) {
@@ -515,8 +516,6 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		default:
 		break;
 		}	
-		
-		
 	}
 	
 	public void PlaceObject()
@@ -544,7 +543,7 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		((GrassSelector)selectedGrass.GetComponent("GrassSelector")).isSelected = false;
 		
 		((GrassCollider)selectedGrass.GetComponentInChildren<GrassCollider>()).isMoving = false;		
-		selectedGrass.GetComponentInChildren<GrassCollider>().enabled = false;		
+		selectedGrass.GetComponentInChildren<GrassCollider>().enabled = false;
 				
 		//-->
 		if(!isReselect)
@@ -578,16 +577,5 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 
 	}
 
-    //TODO:Remove this?
-    public void CollectTaskReward()
-    {
-        if (buildings[currentSelection]["GoldReward"] == "true")
-        {
-            ((Stats)StatsCo).gold += int.Parse(buildings[currentSelection]["TaskReward"]);
-        }
-        else
-        {
-            ((Stats)StatsCo).mana += int.Parse(buildings[currentSelection]["TaskReward"]);
-        }
-    }
+
 }
