@@ -37,11 +37,11 @@ public class SaveLoad : MonoBehaviour
     public GameObject BuildingsGroup;//object used to parent the buildings, once they are instantiated
     public GameObject BuildingCreator;//the object that holds the BuildingCreator.cs script
     public GameObject Stats;//object that holds the HUD data - Heads Up Display
+    public GameObject HomeExpansionMenu;
     private Component statsSc;//script for the above
     private Component menuUnitSc;//script
     private const int noOfBuildings = 11;
-    public Dictionary<string, int> existingBuildings = new Dictionary<string, int>();//the entire array is transfered to BuildingCreator.cs; 
-                                                                                     //records how many buildings of each type, when they are built/game is loaded
+    public Dictionary<string, int> existingBuildings = new Dictionary<string, int>();//the entire array is transfered to BuildingCreator.cs;                                                                                  //records how many buildings of each type, when they are built/game is loaded
 
     //lists for these elements - unknown number of elements
     private List<GameObject> LoadedBuildings = new List<GameObject>();
@@ -169,6 +169,8 @@ public class SaveLoad : MonoBehaviour
 
         sWriter.WriteLine(String.Join(",", new List<int>(trainingTimes).ConvertAll(i => i.ToString()).ToArray()));
 
+
+
         //qIndex, objIndex, trainingIndex  
         //0  5  10 
         // 0 = first position in queue ; 5 = object index - the fifth button/unit type ; 10 = number of units under construction
@@ -182,6 +184,15 @@ public class SaveLoad : MonoBehaviour
         }
 
         sWriter.WriteLine("###Stats###");
+        
+        HomeExpansionMenu menu = (HomeExpansionMenu)HomeExpansionMenu.GetComponent("HomeExpansionMenu");
+        BoolToKey[] cStatus = menu.ColliderStatus;
+        for (int i = 0; i < cStatus.Length; i++)
+        {
+            print("saving line: " + cStatus[i].name + "," + cStatus[i].status);
+            sWriter.WriteLine(cStatus[i].name + "," + cStatus[i].status);
+        }
+        sWriter.WriteLine("###HomeExpansion###");
 
         sWriter.WriteLine(((Stats)statsSc).experience + "," +
                            ((Stats)statsSc).dobbitNo + "," +
@@ -197,6 +208,8 @@ public class SaveLoad : MonoBehaviour
                            );
 
         sWriter.WriteLine(System.DateTime.Now);
+
+       
 
         sWriter.WriteLine("###EndofFile###");
 
@@ -354,6 +367,33 @@ public class SaveLoad : MonoBehaviour
                 }
             }
         }
+
+        HomeExpansionMenu menu = (HomeExpansionMenu)HomeExpansionMenu.GetComponent("HomeExpansionMenu");
+
+        while (currentLine != "###HomeExpansion###")
+        {
+            print(currentLine);
+            currentLine = sReader.ReadLine();
+            if (currentLine != "###HomeExpansion###")
+            {
+
+                string[] colliderStatusList = currentLine.Split(","[0]);
+                print("in the file " + colliderStatusList[0]);
+                for (int i = 0; i < menu.ColliderStatus.Length; i++)
+                {
+                    if (menu.ColliderStatus[i].name.Equals(colliderStatusList[0]))
+                    {
+                        menu.ColliderStatus[i].status = Convert.ToBoolean(colliderStatusList[1]);
+                        if (!Convert.ToBoolean(colliderStatusList[1]))
+                        {
+                            //Delete the collider
+                            Destroy(GameObject.Find(colliderStatusList[0]));
+                        }
+                    }
+                }
+            }
+        }
+
         ((MenuUnitProc)unitProcSc).start = true;
         ((MenuUnit)menuUnitSc).unitProcScript = unitProcSc;
         ((MenuUnit)menuUnitSc).GetUnitsXML();

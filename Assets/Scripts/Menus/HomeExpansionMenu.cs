@@ -21,7 +21,6 @@ public class HomeExpansionMenu : MonoBehaviour {
     //Use this for initialization
     void Start () {
         UpdatePriceLabels();
-
     }
 	
 	// Update is called once per frame
