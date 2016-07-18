@@ -14,13 +14,15 @@ public class HomeExpansionMenu : MonoBehaviour {
     public PriceToKey[] ColliderPrice;
 
     public NamedPriceLabels[] PriceLabels;
-
-    public GameObject stats;
+    public GameObject ConfirmationDialog;
+    public GameObject Stats;
+    private GameObject PurchaseBuffer;
 
     //Use this for initialization
     void Start () {
-	    
-	}
+        UpdatePriceLabels();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,27 +32,42 @@ public class HomeExpansionMenu : MonoBehaviour {
     //TODO: (F) Complete this
     private void UpdatePriceLabels()
     {
+        for (int i = 0; i < PriceLabels.Length; i++)
+        {
+            PriceLabels[i].label.text = getPrice(PriceLabels[i].name).price.ToString();
+        }
+    }
 
+    public void ClearBuffer()
+    {
+        PurchaseBuffer = null;
     }
 
     //Bring up confirmation screen
     public void TryDestroyCollider(GameObject collider)
     {
-        if (getStatus(collider.name).status)
-        {
-            //Remove this later
-            ConfirmDestroyCollider(collider);
+        if(collider!=null){
+            if (getStatus(collider.name).status)
+            {
+                PurchaseBuffer = collider;
+                //show confirm dialog
+                ConfirmationDialog.SetActive(true);
+            }
         }
-
     }
 
-    public void ConfirmDestroyCollider(GameObject collider)
+    public void CloseConfirmationDialog()
     {
-        Destroy(collider);
-        Stats statsComp = (Stats)stats.GetComponent("Stats");
-        statsComp.gold -= getPrice(collider.name).price;
+        ConfirmationDialog.SetActive(false);
+    }
+
+    public void ConfirmDestroyCollider()
+    {
+        Destroy(PurchaseBuffer);
+        Stats statsComp = (Stats)Stats.GetComponent("Stats");
+        statsComp.gold -= getPrice(PurchaseBuffer.name).price;
         statsComp.update = true;
-        setStatus(collider.name, false);
+        setStatus(PurchaseBuffer.name, false);
     }
 
     private void setStatus(string s, bool b)
