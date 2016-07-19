@@ -36,6 +36,7 @@ public class SaveLoad : MonoBehaviour
     public GameObject MenuUnit;//the object that holds the MenuUnit script
     public GameObject BuildingsGroup;//object used to parent the buildings, once they are instantiated
     public GameObject BuildingCreator;//the object that holds the BuildingCreator.cs script
+    public GameObject ExerciseManager;
     public GameObject Stats;//object that holds the HUD data - Heads Up Display
     public GameObject HomeExpansionMenu;
     private Component statsSc;//script for the above
@@ -215,7 +216,10 @@ public class SaveLoad : MonoBehaviour
 
         sWriter.Flush();
         sWriter.Close();
-        existingBuildings = new Dictionary<string, int>(); //reset for next save - remove if automatic	
+        existingBuildings = new Dictionary<string, int>(); //reset for next save - remove if automatic
+        ExerciseManager ex = (ExerciseManager)ExerciseManager.GetComponent("ExerciseManager");
+        PlayerPrefs.SetInt("claimedBonus", ex.claimedBonus);
+        PlayerPrefs.SetString("lastSavedDate", DateTime.Today.ToLongDateString());
     }
 
     private void ReadObjects()//reads all buildings/grass/under construction
@@ -428,6 +432,13 @@ public class SaveLoad : MonoBehaviour
         print("saved time " + saveDateTime.ToString());
 
         sReader.Close();
+
+        ExerciseManager ex = (ExerciseManager)ExerciseManager.GetComponent("ExerciseManager");
+        DateTime lastSave = DateTime.Parse(PlayerPrefs.GetString("lastSavedDate"));
+        int claimed = PlayerPrefs.GetInt("claimedBonus");
+        
+        ex.claimedBonus = claimed;
+        ex.currentDate = lastSave;
     }
 
 

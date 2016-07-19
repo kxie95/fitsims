@@ -19,6 +19,8 @@ TagManager:
   - Grass
   - Grasspatch
   - OutofMap
+  - RewardLabel
+  - BDra
   layers:
   - Default
   - TransparentFX

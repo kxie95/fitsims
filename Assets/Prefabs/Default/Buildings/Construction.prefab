@@ -98,7 +98,6 @@ MonoBehaviour:
   progCounter: 0
   buildingTime: 1
   remainingTime: 1
-  Price: {fileID: 0}
   priceno: 0
   storageIncrease: 0
   constructionIndex: -1

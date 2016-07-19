@@ -10,19 +10,27 @@ public class ExerciseManager : MonoBehaviour {
     public SaveLoad saveLoad;
     public Settings settings;
     public SoundFX soundFx;
-
+    public float bonusReward;
+    public int bonusThreshold;
     public UILabel rewardLabel;
-
-    // Use this for initialization
+    public DateTime currentDate;
+    public int claimedBonus;
+    
     void Start () {
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
-
+        claimedBonus = 0;
+        //fish out current date
     }
 	
-	// Update is called once per frame
 	void Update () {
-	    
-	}
+
+        //reset the claimed bonus if the date changes
+        if(currentDate.Date < DateTime.Now.Date)
+        {
+            claimedBonus = 0;
+            currentDate = DateTime.Now.Date;
+        }
+    }
 
     public void PerformExercise()
     {
@@ -61,9 +69,19 @@ public class ExerciseManager : MonoBehaviour {
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
 
-        stats.gold = stats.gold + actualReward;
-        stats.update = true;
+        if (claimedBonus < bonusThreshold)
+        {
+            print("BONUS CLAIMED "+claimedBonus);
+            actualReward = (int)(actualReward * bonusReward);
+            stats.gold = stats.gold + actualReward;
+            stats.update = true;
+            claimedBonus++;
+        }
 
+        else {
+            stats.gold = stats.gold + actualReward;
+            stats.update = true;
+        }
         saveLoad.SaveGame();
 
         // Show the exercise done dialog.

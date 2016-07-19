@@ -601,7 +601,7 @@
     
 		<Time>0</Time>
 		<XpAward>300</XpAward>
-		<GoldBased>false</GoldBased>
+		<GoldBased>true</GoldBased>
 		<ResCost>600</ResCost>
 		<StoreCategory>Buildings</StoreCategory>
 		
