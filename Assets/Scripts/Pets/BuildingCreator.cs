@@ -396,9 +396,17 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		StatsPad.SetActive (true);
 
 		StatsName.text = buildings [currentSelection] ["Name"];
-		StatsDescription.text = buildings [currentSelection] ["Description"];
+        //Set the description here
+        //StatsDescription.text = buildings [currentSelection] ["Description"];
+        StatsDescription.text = "";
+        //Task type
+        StatsDescription.text = StatsDescription.text + "Task type: "+ buildings[currentSelection]["TaskType"]+"\n\n";
+        //Task requirement
+        StatsDescription.text = StatsDescription.text + "Task requirement: " + buildings[currentSelection]["TaskRequirement"] +" "+ buildings[currentSelection]["TaskUnit"] + "\n\n";
+        //Task reward
+        StatsDescription.text = StatsDescription.text + "Task reward: " + buildings[currentSelection]["TaskReward"] +" Coins" +"\n\n";
 
-		ProductionLabel.SetActive (false);
+        ProductionLabel.SetActive (false);
 		StatsCoin.SetActive (false);
 		StatsMana.SetActive (false);
 
