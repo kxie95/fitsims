@@ -33,8 +33,8 @@ public class Stats : MonoBehaviour {
 	public UILabel dobbitLb;
 	public UILabel xpLb;
 	public UILabel goldLb;
-	public UILabel manaLb;
-	public UILabel crystalsLb;
+	//public UILabel manaLb;
+	//public UILabel crystalsLb;
 
 	public UILabel UserMessages;
 	private bool displayUserMessages = false;
@@ -121,16 +121,16 @@ public class Stats : MonoBehaviour {
 		((UISlider)experienceBar.GetComponent ("UISlider")).value = (float)experience/(float)maxExperience;
 		((UISlider)dobbitsBar.GetComponent ("UISlider")).value = 1-((float)occupiedDobbitNo/(float)dobbitNo);
 		((UISlider)goldBar.GetComponent ("UISlider")).value = (float)gold/(float)maxStorageGold;
-		((UISlider)manaBar.GetComponent ("UISlider")).value = (float)mana/(float)maxStorageMana;
-		((UISlider)crystalsBar.GetComponent ("UISlider")).value = (float)crystals/(float)maxCrystals;
+		//((UISlider)manaBar.GetComponent ("UISlider")).value = (float)mana/(float)maxStorageMana;
+		//((UISlider)crystalsBar.GetComponent ("UISlider")).value = (float)crystals/(float)maxCrystals;
 			
 		curPopLb.text = currentPopulation.ToString ();
 		maxPopLb.text = maxPopulation.ToString ();
 		xpLb.text = experience.ToString ();
 		dobbitLb.text = (dobbitNo-occupiedDobbitNo).ToString () + " / " + dobbitNo.ToString ();
 		goldLb.text = ((int)gold).ToString ();
-		manaLb.text = ((int)mana).ToString ();
-		crystalsLb.text = crystals.ToString ();
+		//manaLb.text = ((int)mana).ToString ();
+		//crystalsLb.text = crystals.ToString ();
 	}
 
 	private IEnumerator DisplayUserMessages()//displays the hint- "maximum 3 buildings of type x allowed"

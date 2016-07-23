@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MainMenu : MonoBehaviour {
 	
-	private const int noIFElements = 13;
+	private const int noIFElements = 11;
 	public GameObject[] InterfaceElements = new GameObject[noIFElements];
 		
 	private const int noScreens = 6;
