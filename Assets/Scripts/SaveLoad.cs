@@ -13,11 +13,11 @@ public class SaveLoad : MonoBehaviour
     private string fileName = "SOMSave";
     private string fileExt = ".txt";
 
-    private const int buildingTypesNo = 11;//the building tags
-    private string[] buildingTypes = new string[buildingTypesNo]{"Academy","Barrel","Chessboard","Classroom","Forge",
-        "Generator","Globe","Summon","Toolhouse","Vault","Workshop"};
+    //private const int buildingTypesNo = 11;//the building tags
+    //private string[] buildingTypes = new string[buildingTypesNo]{"Academy","Barrel","Chessboard","Classroom","Forge",
+    //    "Generator","Globe","Summon","Toolhouse","Vault","Workshop"};
 
-    public GameObject[] BuildingPrefabs = new GameObject[buildingTypesNo];
+    public GameObject[] BuildingPrefabs;
     private Dictionary<string, GameObject> BuildingPrefabsDict = new Dictionary<string, GameObject>();
 
     private const int grassTypesNo = 3;
@@ -109,6 +109,7 @@ public class SaveLoad : MonoBehaviour
         sWriter.WriteLine("###Buildings###");
         for (int i = 0; i < buildingList.Count; i++)
         {
+            print("Something in list");
             GameObject[] buildingArray = buildingList[i];
 
             for (int j = 0; j < buildingArray.Length; j++)
@@ -120,7 +121,6 @@ public class SaveLoad : MonoBehaviour
                                   buildingArray[j].transform.position.x + "," +
                                   buildingArray[j].transform.position.y
                                   );
-
             }
         }
 
@@ -170,8 +170,6 @@ public class SaveLoad : MonoBehaviour
 
         sWriter.WriteLine(String.Join(",", new List<int>(trainingTimes).ConvertAll(i => i.ToString()).ToArray()));
 
-
-
         //qIndex, objIndex, trainingIndex  
         //0  5  10 
         // 0 = first position in queue ; 5 = object index - the fifth button/unit type ; 10 = number of units under construction
@@ -209,9 +207,7 @@ public class SaveLoad : MonoBehaviour
                            );
 
         sWriter.WriteLine(System.DateTime.Now);
-
-       
-
+        
         sWriter.WriteLine("###EndofFile###");
 
         sWriter.Flush();
@@ -226,9 +222,9 @@ public class SaveLoad : MonoBehaviour
     {
         buildingList.Clear();
 
-        for (int i = 0; i < buildingTypes.Length; i++) //find all buildings
+        for (int i = 0; i < BuildingPrefabs.Length; i++) //find all buildings
         {
-            buildingList.Add(GameObject.FindGameObjectsWithTag(buildingTypes[i]));
+            buildingList.Add(GameObject.FindGameObjectsWithTag(BuildingPrefabs[i].name));
         }
 
         Grass = GameObject.FindGameObjectsWithTag("Grass");//finds all patches of grass from underneath the buildings
@@ -335,7 +331,6 @@ public class SaveLoad : MonoBehaviour
         currentLine = sReader.ReadLine();
         ((BuildingCreator)BuildingCreator.GetComponent("BuildingCreator")).buildingIndex = int.Parse(currentLine);
 
-
         //UNITS
         currentLine = sReader.ReadLine();//#Add verification for empty que
         UnitProc.SetActive(true);
@@ -380,7 +375,6 @@ public class SaveLoad : MonoBehaviour
             currentLine = sReader.ReadLine();
             if (currentLine != "###HomeExpansion###")
             {
-
                 string[] colliderStatusList = currentLine.Split(","[0]);
                 print("in the file " + colliderStatusList[0]);
                 for (int i = 0; i < menu.ColliderStatus.Length; i++)

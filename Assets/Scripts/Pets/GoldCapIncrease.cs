@@ -8,11 +8,10 @@ public class GoldCapIncrease : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        print(gameObject.transform.parent.gameObject.tag + " IN GOLD CAP INCREASE");
         stats = (Stats)GameObject.Find("Stats").GetComponent("Stats");
         creator = (BuildingCreator)GameObject.Find("BuildingCreator").GetComponent("BuildingCreator");
-
-        stats.maxStorageGold += int.Parse(creator.GetCurrentBuildingDictionary()["StoreCap"]);
+        stats.maxStorageGold += int.Parse(creator.GetBuildingDictionary(gameObject.transform.parent.gameObject.tag)["StoreCap"]);
 
     }
 	
