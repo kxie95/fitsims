@@ -43,8 +43,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d0d52f1aba8511e46a86cbaaea95327d, type: 2}
   mSprites:
   - name: +
-    x: 933
-    y: 855
+    x: 939
+    y: 762
     width: 83
     height: 81
     borderLeft: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Bar-Right_256
-    x: 442
-    y: 547
+    x: 350
+    y: 477
     width: 256
     height: 37
     borderLeft: 0
@@ -69,8 +69,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Bar-Right_256_fill
-    x: 699
-    y: 549
+    x: 606
+    y: 479
     width: 254
     height: 35
     borderLeft: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: Brown-Button-hover_220x64
-    x: 663
-    y: 650
+    x: 373
+    y: 901
     width: 220
     height: 64
     borderLeft: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Brown-Button-normal_220x64
-    x: 221
-    y: 585
+    x: 0
+    y: 54
     width: 220
     height: 64
     borderLeft: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Brown-Button-pressed_220x64
-    x: 442
-    y: 650
+    x: 618
+    y: 779
     width: 220
     height: 64
     borderLeft: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Check-button
-    x: 221
-    y: 81
+    x: 220
+    y: 89
     width: 73
     height: 72
     borderLeft: 0
@@ -134,8 +134,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Close-button2
-    x: 933
-    y: 937
+    x: 220
+    y: 161
     width: 89
     height: 87
     borderLeft: 0
@@ -147,8 +147,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Coin
-    x: 122
-    y: 12
+    x: 220
+    y: 346
     width: 91
     height: 111
     borderLeft: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Coming Soon
-    x: 804
+    x: 895
     y: 892
     width: 128
     height: 132
@@ -174,7 +174,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Competition
     x: 0
-    y: 252
+    y: 255
     width: 157
     height: 198
     borderLeft: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Destroy-Building
-    x: 533
+    x: 756
     y: 887
     width: 139
     height: 137
@@ -199,8 +199,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Dobbit
-    x: 221
-    y: 278
+    x: 593
+    y: 854
     width: 113
     height: 111
     borderLeft: 0
@@ -212,8 +212,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Gold-Button-Coin_70x87
-    x: 131
-    y: 164
+    x: 139
+    y: 168
     width: 70
     height: 87
     borderLeft: 0
@@ -225,8 +225,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Green-Button-hover_220x64
-    x: 663
-    y: 585
+    x: 570
+    y: 578
     width: 220
     height: 64
     borderLeft: 0
@@ -238,8 +238,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Green-Button-normal_220x64
-    x: 221
-    y: 520
+    x: 350
+    y: 642
     width: 220
     height: 64
     borderLeft: 0
@@ -251,8 +251,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Green-Button-pressed_220x64
-    x: 442
-    y: 585
+    x: 618
+    y: 715
     width: 220
     height: 64
     borderLeft: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Hard
-    x: 221
-    y: 154
+    x: 838
+    y: 720
     width: 101
     height: 123
     borderLeft: 0
@@ -277,8 +277,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Invite-Friends
-    x: 673
-    y: 884
+    x: 220
+    y: 566
     width: 130
     height: 140
     borderLeft: 0
@@ -290,8 +290,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Mana
-    x: 323
-    y: 179
+    x: 220
+    y: 248
     width: 102
     height: 98
     borderLeft: 0
@@ -303,8 +303,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Minus button
-    x: 221
-    y: 9
+    x: 220
+    y: 18
     width: 70
     height: 71
     borderLeft: 0
@@ -316,8 +316,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 2
   - name: Move-Building
-    x: 253
-    y: 887
+    x: 0
+    y: 118
     width: 139
     height: 137
     borderLeft: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Niche220px
     x: 0
-    y: 646
+    y: 647
     width: 220
     height: 196
     borderLeft: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Options
-    x: 0
-    y: 3
+    x: 252
+    y: 845
     width: 121
     height: 120
     borderLeft: 0
@@ -367,9 +367,22 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 0
     paddingBottom: 0
+  - name: progress_bar
+    x: 252
+    y: 965
+    width: 504
+    height: 59
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Red-Button-hover_220x64
-    x: 221
-    y: 650
+    x: 570
+    y: 642
     width: 220
     height: 64
     borderLeft: 0
@@ -381,8 +394,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Red-Button-normal_220x64
-    x: 221
-    y: 455
+    x: 790
+    y: 642
     width: 220
     height: 64
     borderLeft: 0
@@ -394,8 +407,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Red-Button-pressed_220x64
-    x: 221
-    y: 390
+    x: 350
+    y: 578
     width: 220
     height: 64
     borderLeft: 0
@@ -408,7 +421,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Shop-car
     x: 0
-    y: 451
+    y: 453
     width: 207
     height: 194
     borderLeft: 0
@@ -420,8 +433,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Short-Bar_165
-    x: 351
-    y: 740
+    x: 373
+    y: 864
     width: 165
     height: 37
     borderLeft: 0
@@ -433,8 +446,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Short-Bar_165_fill
-    x: 572
-    y: 742
+    x: 0
+    y: 19
     width: 163
     height: 35
     borderLeft: 0
@@ -446,8 +459,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: Square-UI-Bg-Left
-    x: 0
-    y: 124
+    x: 359
+    y: 716
     width: 130
     height: 127
     borderLeft: 0
@@ -459,8 +472,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Square-UI-Bg-Right
-    x: 221
-    y: 715
+    x: 489
+    y: 716
     width: 129
     height: 127
     borderLeft: 0
@@ -472,8 +485,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Upgrade-Building
-    x: 393
-    y: 887
+    x: 220
+    y: 706
     width: 139
     height: 137
     borderLeft: 0
@@ -485,8 +498,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: XP
-    x: 335
-    y: 280
+    x: 220
+    y: 457
     width: 105
     height: 109
     borderLeft: 0
@@ -498,8 +511,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Yellow-Button-hover_220x64
-    x: 351
-    y: 778
+    x: 790
+    y: 578
     width: 220
     height: 64
     borderLeft: 0
@@ -511,8 +524,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Yellow-Button-normal_220x64
-    x: 572
-    y: 778
+    x: 350
+    y: 514
     width: 220
     height: 64
     borderLeft: 0
@@ -524,8 +537,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Yellow-Button-pressed_220x64
-    x: 793
-    y: 778
+    x: 570
+    y: 514
     width: 220
     height: 64
     borderLeft: 0
