@@ -19,7 +19,7 @@
 		<Time>0</Time><!--the time (in minutes) needed to create the building-->
 		<XpAward>650</XpAward><!--experience awarded for the completion of an object-->
 		<GoldBased>true</GoldBased><!--which resource is needed to complete this kind of building-->
-		<ResCost>10000</ResCost><!--amount of resource necessary to create the building-->
+		<ResCost>200</ResCost><!--amount of resource necessary to create the building-->
 		<StoreCategory>Buildings</StoreCategory><!--the category where the object is available on the store-->
 		
 		<ObjPrereq>0</ObjPrereq><!--the object that the player has to create before he can create this object-->		
@@ -48,7 +48,7 @@
 		<Lev3PopBonus>30</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
-    <TaskReward>250</TaskReward>
+    <TaskReward>100</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
@@ -101,7 +101,7 @@
 		<Lev3PopBonus>0</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
-    <TaskReward>110</TaskReward>
+    <TaskReward>150</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
@@ -228,7 +228,7 @@
     
 		<Time>0</Time>
 		<XpAward>60</XpAward>
-		<GoldBased>false</GoldBased>
+		<GoldBased>true</GoldBased>
 		<ResCost>250</ResCost>
 		<StoreCategory>Buildings</StoreCategory>
 		
@@ -386,7 +386,7 @@
     
 		<Time>0</Time>
 		<XpAward>45</XpAward>
-		<GoldBased>false</GoldBased>
+		<GoldBased>true</GoldBased>
 		<ResCost>500</ResCost>
 		<StoreCategory>Buildings</StoreCategory>
 		
@@ -495,7 +495,7 @@
     
 		<Time>0</Time>
 		<XpAward>300</XpAward>
-		<GoldBased>false</GoldBased>
+		<GoldBased>true</GoldBased>
 		<ResCost>600</ResCost>
 		<StoreCategory>Buildings</StoreCategory>
 		
@@ -558,7 +558,6 @@
 		<Cap3Prereq>0</Cap3Prereq>
 		<Cap4Prereq>0</Cap4Prereq>
 		<Cap5Prereq>0</Cap5Prereq>
-	
 		
 		<Up2LevelReq>8</Up2LevelReq>			
 		<Up2ObjReq>5.1</Up2ObjReq>		
