@@ -121,7 +121,6 @@ public class SaveLoad : MonoBehaviour
                                   buildingArray[j].transform.position.x + "," +
                                   buildingArray[j].transform.position.y
                                   );
-
             }
         }
 
@@ -171,8 +170,6 @@ public class SaveLoad : MonoBehaviour
 
         sWriter.WriteLine(String.Join(",", new List<int>(trainingTimes).ConvertAll(i => i.ToString()).ToArray()));
 
-
-
         //qIndex, objIndex, trainingIndex  
         //0  5  10 
         // 0 = first position in queue ; 5 = object index - the fifth button/unit type ; 10 = number of units under construction
@@ -210,9 +207,7 @@ public class SaveLoad : MonoBehaviour
                            );
 
         sWriter.WriteLine(System.DateTime.Now);
-
-       
-
+        
         sWriter.WriteLine("###EndofFile###");
 
         sWriter.Flush();
@@ -336,7 +331,6 @@ public class SaveLoad : MonoBehaviour
         currentLine = sReader.ReadLine();
         ((BuildingCreator)BuildingCreator.GetComponent("BuildingCreator")).buildingIndex = int.Parse(currentLine);
 
-
         //UNITS
         currentLine = sReader.ReadLine();//#Add verification for empty que
         UnitProc.SetActive(true);
@@ -381,7 +375,6 @@ public class SaveLoad : MonoBehaviour
             currentLine = sReader.ReadLine();
             if (currentLine != "###HomeExpansion###")
             {
-
                 string[] colliderStatusList = currentLine.Split(","[0]);
                 print("in the file " + colliderStatusList[0]);
                 for (int i = 0; i < menu.ColliderStatus.Length; i++)

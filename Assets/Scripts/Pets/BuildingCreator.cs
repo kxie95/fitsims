@@ -89,15 +89,20 @@ public class BuildingCreator : MonoBehaviour {
         return buildings[currentSelection];
     }
 
+    public Dictionary<string, string> GetBuildingDictionary(string s)
+    {
+        return buildings[s];
+    }
+
 	private void GetBuildingsXML()//reads buildings XML
 	{
-		XmlDocument xmlDoc = new XmlDocument(); 
+		XmlDocument xmlDoc = new XmlDocument();
 		xmlDoc.LoadXml(BuildingsXML.text); 
 		XmlNodeList buildingsList = xmlDoc.GetElementsByTagName("Building");
 
 		foreach (XmlNode buildingInfo in buildingsList)
 		{
-			XmlNodeList buildingsContent = buildingInfo.ChildNodes;	
+			XmlNodeList buildingsContent = buildingInfo.ChildNodes;
 			dictionary = new Dictionary<string, string>();
             string key = "";
 
