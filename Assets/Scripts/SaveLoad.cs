@@ -13,11 +13,11 @@ public class SaveLoad : MonoBehaviour
     private string fileName = "SOMSave";
     private string fileExt = ".txt";
 
-    private const int buildingTypesNo = 11;//the building tags
-    private string[] buildingTypes = new string[buildingTypesNo]{"Academy","Barrel","Chessboard","Classroom","Forge",
-        "Generator","Globe","Summon","Toolhouse","Vault","Workshop"};
+    //private const int buildingTypesNo = 11;//the building tags
+    //private string[] buildingTypes = new string[buildingTypesNo]{"Academy","Barrel","Chessboard","Classroom","Forge",
+    //    "Generator","Globe","Summon","Toolhouse","Vault","Workshop"};
 
-    public GameObject[] BuildingPrefabs = new GameObject[buildingTypesNo];
+    public GameObject[] BuildingPrefabs;
     private Dictionary<string, GameObject> BuildingPrefabsDict = new Dictionary<string, GameObject>();
 
     private const int grassTypesNo = 3;
@@ -109,6 +109,7 @@ public class SaveLoad : MonoBehaviour
         sWriter.WriteLine("###Buildings###");
         for (int i = 0; i < buildingList.Count; i++)
         {
+            print("Something in list");
             GameObject[] buildingArray = buildingList[i];
 
             for (int j = 0; j < buildingArray.Length; j++)
@@ -226,9 +227,9 @@ public class SaveLoad : MonoBehaviour
     {
         buildingList.Clear();
 
-        for (int i = 0; i < buildingTypes.Length; i++) //find all buildings
+        for (int i = 0; i < BuildingPrefabs.Length; i++) //find all buildings
         {
-            buildingList.Add(GameObject.FindGameObjectsWithTag(buildingTypes[i]));
+            buildingList.Add(GameObject.FindGameObjectsWithTag(BuildingPrefabs[i].name));
         }
 
         Grass = GameObject.FindGameObjectsWithTag("Grass");//finds all patches of grass from underneath the buildings
