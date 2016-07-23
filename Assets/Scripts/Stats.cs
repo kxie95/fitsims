@@ -33,8 +33,8 @@ public class Stats : MonoBehaviour {
 	public UILabel dobbitLb;
 	public UILabel xpLb;
 	public UILabel goldLb;
-	public UILabel manaLb;
-	public UILabel crystalsLb;
+	//public UILabel manaLb;
+	//public UILabel crystalsLb;
 
 	public UILabel UserMessages;
 	private bool displayUserMessages = false;
