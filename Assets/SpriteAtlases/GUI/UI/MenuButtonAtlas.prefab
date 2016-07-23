@@ -43,8 +43,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 97c7ebbc5ba831343a70322e970a6715, type: 2}
   mSprites:
   - name: arrow
-    x: 380
-    y: 215
+    x: 0
+    y: 92
     width: 41
     height: 41
     borderLeft: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
     paddingTop: 12
     paddingBottom: 11
   - name: button_close
-    x: 80
-    y: 16
+    x: 0
+    y: 213
     width: 80
     height: 80
     borderLeft: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_emerald
     x: 160
-    y: 192
+    y: 389
     width: 220
     height: 64
     borderLeft: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_emerald-hover
     x: 160
-    y: 128
+    y: 325
     width: 220
     height: 64
     borderLeft: 0
@@ -94,9 +94,35 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: button_ok
+  - name: button_exercise
+    x: 80
+    y: 213
+    width: 80
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_move
     x: 0
-    y: 16
+    y: 133
+    width: 80
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_ok
+    x: 80
+    y: 133
     width: 80
     height: 80
     borderLeft: 0
@@ -109,7 +135,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_orange
     x: 160
-    y: 64
+    y: 261
     width: 220
     height: 64
     borderLeft: 0
@@ -122,7 +148,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_orange-hover
     x: 160
-    y: 0
+    y: 197
     width: 220
     height: 64
     borderLeft: 0
@@ -135,9 +161,22 @@ MonoBehaviour:
     paddingBottom: 0
   - name: menu_button
     x: 0
-    y: 96
+    y: 293
     width: 160
     height: 160
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: progress_bar
+    x: 0
+    y: 453
+    width: 504
+    height: 59
     borderLeft: 0
     borderRight: 0
     borderTop: 0
