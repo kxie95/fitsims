@@ -43,8 +43,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: b4624c971fce70e40a176bce68031666, type: 2}
   mSprites:
   - name: button_tab
-    x: 0
-    y: 196
+    x: 501
+    y: 194
     width: 220
     height: 64
     borderLeft: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: center
-    x: 879
+    x: 880
     y: 960
     width: 64
     height: 64
@@ -69,7 +69,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: center_inner
-    x: 943
+    x: 945
     y: 960
     width: 64
     height: 64
@@ -82,8 +82,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: corner
-    x: 879
-    y: 896
+    x: 880
+    y: 895
     width: 64
     height: 64
     borderLeft: 0
@@ -95,10 +95,23 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: corner_inner
-    x: 943
-    y: 896
+    x: 945
+    y: 895
     width: 64
     height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: inner_back
+    x: 0
+    y: 12
+    width: 500
+    height: 500
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -121,8 +134,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: PixelFontAtlas
-    x: 0
-    y: 260
+    x: 501
+    y: 259
     width: 511
     height: 253
     borderLeft: 0
@@ -134,8 +147,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 0
   - name: side
-    x: 879
-    y: 832
+    x: 880
+    y: 830
     width: 64
     height: 64
     borderLeft: 0

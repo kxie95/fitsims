@@ -21,7 +21,7 @@ public class BuildingCreator : MonoBehaviour {
     //public GameObject[] BuildingPrefabs = new GameObject[noOfBuildings];
     public GameObject ConstructionPrefab;//the building "under construction" sand and materials prefab
 	public GameObject BuildingSelectedPanel; //menu that appears when you reselect a finished building - buttons: upgrade, move, ok, cancel
-
+    public GameObject BuyingSelectedPanel; //menu that appears when you first build a pet - buttons: cancel, ok
     public GameObject PlayerManager;
     
 	//public int[] existingBuildings = new int[noOfBuildings]; // necessary to keep track of each buiding type number and enforce conditions
@@ -186,8 +186,14 @@ public class BuildingCreator : MonoBehaviour {
 
 		//selectedBuilding = null;
 		MovingPad.SetActive(false);//deactivates the arrow building moving platform
-		BuildingSelectedPanel.SetActive (false);//deactivates the buttons move/upgrade/place/cancel, at the bottom of the screen
-		((Relay)gameManager.GetComponent("Relay")).pauseInput = false;//while the building is selected, pressing other buttons has no effect
+        if (isReselect)
+        {
+            BuildingSelectedPanel.SetActive(false);//deactivates the buttons move/upgrade/place/cancel, at the bottom of the screen
+        } else
+        {
+            BuyingSelectedPanel.SetActive(false);
+        }
+        ((Relay)gameManager.GetComponent("Relay")).pauseInput = false;//while the building is selected, pressing other buttons has no effect
         if(isReselect){isReselect = false; } //end the reselect state
 	
     }
@@ -315,8 +321,15 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
     
     private void SelectObject(string buildingTag) //after the grass/building prefabs are instantiated, they must be selected from the existing buildings on the map
 	{
-		BuildingSelectedPanel.SetActive (true);// the move/upgrade/place/cancel, at the bottom of the screen
-		selectedBuildingType = GameObject.FindGameObjectsWithTag(buildingTag);//finds all existing buildings with the apropriate string tag(ex “Forge”)	
+        if (isReselect)
+        {
+            BuildingSelectedPanel.SetActive(true);// the move/upgrade/place/cancel, at the bottom of the screen
+
+        } else
+        {
+            BuyingSelectedPanel.SetActive(true);
+        }
+        selectedBuildingType = GameObject.FindGameObjectsWithTag(buildingTag);//finds all existing buildings with the apropriate string tag(ex “Forge”)	
 		selectedGrassType = GameObject.FindGameObjectsWithTag("Grass");//finds all grass	
 			
 		//both the grass and buildings are instantiated with the isSelected bool variable as true; 
@@ -584,8 +597,14 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		}
 		//<--		
 		MovingPad.SetActive(false);
-		BuildingSelectedPanel.SetActive (false);
-		isReselect = false;
+        if (isReselect)
+        {
+            BuildingSelectedPanel.SetActive(false);
+        } else
+        {
+            BuyingSelectedPanel.SetActive(false);
+        }
+        isReselect = false;
 		//((UISprite)BkActive[currentSelection]).color = Color.white;	
 
 	}
