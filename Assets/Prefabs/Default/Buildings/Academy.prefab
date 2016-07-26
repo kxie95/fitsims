@@ -181,7 +181,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!23 &2300002
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -207,7 +207,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!23 &2300004
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -269,7 +269,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: eb3e745b57e0ebc4090bd8258155986e, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 2, y: 2, z: 1}
-  _spriteId: 14
+  _spriteId: 16
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -277,7 +277,7 @@ MonoBehaviour:
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
-  renderLayer: 0
+  renderLayer: 1
   _clipBottomLeft: {x: 0, y: 0.5}
   _clipTopRight: {x: 1, y: 1.5}
   _createBoxCollider: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: eb3e745b57e0ebc4090bd8258155986e, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 2, y: 2, z: 1}
-  _spriteId: 14
+  _spriteId: 16
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -303,7 +303,7 @@ MonoBehaviour:
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
-  renderLayer: 0
+  renderLayer: 1
   _clipBottomLeft: {x: 0, y: 0}
   _clipTopRight: {x: 1, y: 0.5}
   _createBoxCollider: 0
