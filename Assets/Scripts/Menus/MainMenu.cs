@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour {
 	public bool constructionGreenlit = true;
 	public GameObject BuildingCreatorOb;
 	public GameObject ConfirmationScreen;
-    
 
     //[HideInInspector]
 

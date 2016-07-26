@@ -43,8 +43,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 97c7ebbc5ba831343a70322e970a6715, type: 2}
   mSprites:
   - name: arrow
-    x: 80
-    y: 55
+    x: 81
+    y: 250
     width: 41
     height: 41
     borderLeft: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     paddingBottom: 11
   - name: button_close
     x: 0
-    y: 16
+    y: 130
     width: 80
     height: 80
     borderLeft: 0
@@ -69,8 +69,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_emerald
-    x: 160
-    y: 192
+    x: 161
+    y: 388
     width: 220
     height: 64
     borderLeft: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_emerald-hover
-    x: 160
-    y: 128
+    x: 161
+    y: 323
     width: 220
     height: 64
     borderLeft: 0
@@ -94,9 +94,48 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: button_exercise
+    x: 0
+    y: 49
+    width: 80
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_move
+    x: 161
+    y: 112
+    width: 80
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_ok
+    x: 161
+    y: 31
+    width: 80
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: button_orange
-    x: 160
-    y: 64
+    x: 161
+    y: 258
     width: 220
     height: 64
     borderLeft: 0
@@ -108,8 +147,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_orange-hover
-    x: 160
-    y: 0
+    x: 161
+    y: 193
     width: 220
     height: 64
     borderLeft: 0
@@ -120,11 +159,37 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: button_sell
+    x: 0
+    y: 211
+    width: 80
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: menu_button
     x: 0
-    y: 96
+    y: 292
     width: 160
     height: 160
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: progress_bar
+    x: 0
+    y: 453
+    width: 504
+    height: 59
     borderLeft: 0
     borderRight: 0
     borderTop: 0
