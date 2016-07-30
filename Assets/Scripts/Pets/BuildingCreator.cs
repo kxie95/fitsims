@@ -316,7 +316,6 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
         }
         pivotCorrection = true;
         SelectObject(currentSelection);
-              
     }
     
     private void SelectObject(string buildingTag) //after the grass/building prefabs are instantiated, they must be selected from the existing buildings on the map
