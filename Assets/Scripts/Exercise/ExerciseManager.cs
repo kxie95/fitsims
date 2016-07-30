@@ -11,14 +11,15 @@ public class ExerciseManager : MonoBehaviour {
     public Settings settings;
     public SoundFX soundFx;
     public float bonusReward;
-    public int bonusThreshold;
+    public int dailyBonusThreshold;
     public UILabel rewardLabel;
     public DateTime currentDate;
-    public int claimedBonus;
-    
+    public GameObject buildingCreator;
+    public int claimeDailydBonus;
+
     void Start () {
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
-        claimedBonus = 0;
+        claimeDailydBonus = 0;
         //fish out current date
     }
 	
@@ -27,28 +28,35 @@ public class ExerciseManager : MonoBehaviour {
         //reset the claimed bonus if the date changes
         if(currentDate.Date < DateTime.Now.Date)
         {
-            claimedBonus = 0;
+            claimeDailydBonus = 0;
             currentDate = DateTime.Now.Date;
         }
     }
-
+    
     public void PerformExercise()
     {
         Debug.Log("Exercise performed");
         settings.PlayExerciseMusic();
-        //Get the current selected object
-        //Call method from object to get data on what sort of exercise/how much of that exercise
-        //Start the measurement (possibly by calling and external method)
-        //SceneManager.LoadScene("ChallengeScene");
-        //TODO: Think about how to properly link components up.
-        // mainMenu.OnDoingExercise();
+        //Use the selectedBuilding in BuildingCreator to determine it
         StepCounter s = (StepCounter)gameObject.GetComponent("StepCounter");
+
+        //Enable the component?
         s.StartCounting();
-        //Need some sort of callback
-        //Figure out currency works (just return some currency for now)
-        //Get a new UI pane up (possibly) for when the service is done
-        //Maybe just try to give the player cash for now 
+        TryStartBonus();
         mainMenu.onDoingExercise();
+    }
+
+    private void TryStartBonus()
+    {
+        BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
+        if (Convert.ToBoolean(creator.GetCurrentBuildingDictionary()["HasBonus"]))
+        {
+            GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
+            //Check if this works                
+            BonusManager bonus = (BonusManager)exManager.GetComponent("BonusManager");
+            bonus.StartCounting();
+            //Call the startCounting on the bonus manager
+        }
     }
 
     /// <summary>
@@ -69,19 +77,30 @@ public class ExerciseManager : MonoBehaviour {
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
 
-        if (claimedBonus < bonusThreshold)
+        BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
+        GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
+        //Check if this works
+        BonusManager bonus = (BonusManager)exManager.GetComponent("BonusManager");
+
+        if (Convert.ToBoolean(creator.GetCurrentBuildingDictionary()["HasBonus"]))
         {
-            print("BONUS CLAIMED "+claimedBonus);
-            actualReward = (int)(actualReward * bonusReward);
-            stats.gold = stats.gold + actualReward;
-            stats.update = true;
-            claimedBonus++;
+            if (bonus.GetResult())
+            {
+                print("CLAIMED BBBB");
+                float taskBonus = float.Parse(creator.GetCurrentBuildingDictionary()["BonusAmount"]);
+                actualReward = (int)(actualReward * taskBonus);
+            }
         }
 
-        else {
-            stats.gold = stats.gold + actualReward;
-            stats.update = true;
+        if (claimeDailydBonus < dailyBonusThreshold)
+        {
+            print("BONUS CLAIMED " + claimeDailydBonus);
+            actualReward = (int)(actualReward * bonusReward);
+            claimeDailydBonus++;
         }
+        
+        stats.gold = stats.gold + actualReward;
+        stats.update = true;
         saveLoad.SaveGame();
 
         // Show the exercise done dialog.

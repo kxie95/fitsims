@@ -48,11 +48,17 @@
 		<Lev3PopBonus>30</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
+    <HasTask>True</HasTask>
     <TaskReward>100</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+    <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>	
 	
 	<Building>
@@ -101,11 +107,17 @@
 		<Lev3PopBonus>0</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
+    <HasTask>True</HasTask>
     <TaskReward>150</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+ 
+    <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 	
 	<Building>
@@ -159,6 +171,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+
+    <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 	
 	<Building>
@@ -213,6 +230,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
   
 	<Building>
@@ -267,6 +289,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 		
 	<Building>
@@ -321,6 +348,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 	<Building>
 		<ID>5</ID>
@@ -374,6 +406,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 	
 	<Building>
@@ -428,6 +465,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 	
 	<Building>
@@ -482,6 +524,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 	
 	
@@ -539,6 +586,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>
 	
 	<Building>
@@ -592,6 +644,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+  <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+  <BonusThreshold>20</BonusThreshold>
 	</Building>	
 
 	<Building>
@@ -645,6 +702,11 @@
     <TaskType>Walking</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
+  
+    <HasBonus>True</HasBonus>
+    <BonusType>TimeLimit</BonusType>
+    <BonusAmount>1.5</BonusAmount>
+    <BonusThreshold>20</BonusThreshold>
 	</Building>
 
 	

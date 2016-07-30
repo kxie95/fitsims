@@ -21,6 +21,7 @@ TagManager:
   - OutofMap
   - RewardLabel
   - BDra
+  - TimeLimit
   layers:
   - Default
   - TransparentFX
