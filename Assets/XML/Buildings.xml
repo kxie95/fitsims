@@ -560,7 +560,6 @@
 		<Cap3Prereq>24</Cap3Prereq>
 		<Cap4Prereq>0</Cap4Prereq>
 		<Cap5Prereq>0</Cap5Prereq>	
-	
 		
 		<Up2LevelReq>0</Up2LevelReq>			
 		<Up2ObjReq>5.5</Up2ObjReq>		
@@ -699,7 +698,7 @@
     <!--Description of the task given by this structure-->
     <TaskReward>200</TaskReward>
     <GoldReward>true</GoldReward>
-    <TaskType>Walking</TaskType>
+    <TaskType>Running</TaskType>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -708,7 +707,6 @@
     <BonusAmount>1.5</BonusAmount>
     <BonusThreshold>300</BonusThreshold>
 	</Building>
-
 	
 </Buildings>
 

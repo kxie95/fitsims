@@ -9,7 +9,7 @@ using System;
 /// <summary>
 /// Class which tracks the number of steps taken using accelerometer readings.
 /// </summary>
-public class StepCounterRunning : MonoBehaviour
+public class StepCounterRunning : MonoBehaviour , ExerciseCounter
 {
 
     public float thresholdLeft = 0.96f; // The weighted moving average is compared against this threshold to detect a step.
@@ -104,7 +104,7 @@ public class StepCounterRunning : MonoBehaviour
                             // If goal reached, move to victory screen.
                             if (stepCount == stepGoal)
                             {
-                                FinishQuest();
+                                FinishTask();
                             }
 
                             if (coinSoundClip != null && coinSfx != null)
@@ -137,14 +137,14 @@ public class StepCounterRunning : MonoBehaviour
         cosineOfAngleData.Add(item);
     }
 
-    public void FinishQuest()
+    public void FinishTask()
     {
         inQuest = false;
         //Clean up the bars; make the 0 and stuff
         mainMenu.onCloseDoingExercise();
         //Make call to the finish screen
 
-        exManager.FinishExercise(stepCount, stepGoal, rewardTotal);
+        exManager.CalculateReward(stepCount, stepGoal, rewardTotal);
 
         ((UISlider)exerciseBar.GetComponent("UISlider")).value = 0;
         exerciseLabel.text = "0";

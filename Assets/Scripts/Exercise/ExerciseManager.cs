@@ -15,11 +15,13 @@ public class ExerciseManager : MonoBehaviour {
     public UILabel rewardLabel;
     public DateTime currentDate;
     public GameObject buildingCreator;
-    public int claimeDailydBonus;
+    public int claimeDailyBonus;
+
+    private GameObject currentCounter;
 
     void Start () {
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
-        claimeDailydBonus = 0;
+        claimeDailyBonus = 0;
         //fish out current date
     }
 	
@@ -28,7 +30,7 @@ public class ExerciseManager : MonoBehaviour {
         //reset the claimed bonus if the date changes
         if(currentDate.Date < DateTime.Now.Date)
         {
-            claimeDailydBonus = 0;
+            claimeDailyBonus = 0;
             currentDate = DateTime.Now.Date;
         }
     }
@@ -37,11 +39,12 @@ public class ExerciseManager : MonoBehaviour {
     {
         Debug.Log("Exercise performed");
         settings.PlayExerciseMusic();
-        //Use the selectedBuilding in BuildingCreator to determine it
-        StepCounterRunning s = (StepCounterRunning)gameObject.GetComponent("StepCounterRunning");
 
-        //Enable the component?
-        s.StartCounting();
+        BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
+        currentCounter = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["TaskType"]);
+        ExerciseCounter exCount = (ExerciseCounter)currentCounter.GetComponent("ExerciseCounter");
+
+        exCount.StartCounting();
         TryStartBonus();
         mainMenu.onDoingExercise();
     }
@@ -65,7 +68,7 @@ public class ExerciseManager : MonoBehaviour {
     /// <param name="completedValue">Amount of exercise done by the player.</param>
     /// <param name="targetDistance">Target amount of exercise for the challenge.</param>
     /// <param name="rewardValue">Total value of the reward associated with the challenge.</param>
-    public void FinishExercise(int completedValue, int targetValue, int rewardValue)
+    public void CalculateReward(int completedValue, int targetValue, int rewardValue)
     {
         settings.PlayMainMusic();
         soundFx.Victory();
@@ -90,11 +93,11 @@ public class ExerciseManager : MonoBehaviour {
             }
         }
 
-        if (claimeDailydBonus < dailyBonusThreshold)
+        if (claimeDailyBonus < dailyBonusThreshold)
         {
-            print("BONUS CLAIMED " + claimeDailydBonus);
+            print("BONUS CLAIMED " + claimeDailyBonus);
             actualReward = (int)(actualReward * bonusReward);
-            claimeDailydBonus++;
+            claimeDailyBonus++;
         }
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
@@ -106,4 +109,11 @@ public class ExerciseManager : MonoBehaviour {
         // Show the exercise done dialog.
         mainMenu.OnExerciseDone();
     }
+
+    public void CompleteExercise()
+    {
+        ExerciseCounter exCount = (ExerciseCounter)currentCounter.GetComponent("ExerciseCounter");
+        exCount.FinishTask();
+    }
+
 }
