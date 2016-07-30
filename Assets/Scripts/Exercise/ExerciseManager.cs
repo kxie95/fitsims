@@ -6,22 +6,33 @@ using System;
 public class ExerciseManager : MonoBehaviour {
 
     private MainMenu mainMenu;
+    private BuildingCreator creator;
+
     public Stats stats;
     public SaveLoad saveLoad;
     public Settings settings;
     public SoundFX soundFx;
+
     public float bonusReward;
     public int dailyBonusThreshold;
-    public UILabel rewardLabel;
+
+    // UI components
+    public UILabel rewardLabel; // Reward label in ExerciseDone screen.
+    public UISprite instructionImage; // Instruction image in Upgrade screen.
+    public UILabel instructionText; // Instruction text in Upgrade screen.
+    public UISprite doingInstructionImage; // Image in the ExerciseDoing screen.
+    public UILabel doingInstructionText; // Image in the ExerciseDoing screen.
+
     public DateTime currentDate;
     public GameObject buildingCreator;
-    public int claimeDailyBonus;
+    public int claimedDailyBonus;
 
     private GameObject currentCounter;
 
     void Start () {
+        creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
-        claimeDailyBonus = 0;
+        claimedDailyBonus = 0;
         //fish out current date
     }
 	
@@ -30,14 +41,13 @@ public class ExerciseManager : MonoBehaviour {
         //reset the claimed bonus if the date changes
         if(currentDate.Date < DateTime.Now.Date)
         {
-            claimeDailyBonus = 0;
+            claimedDailyBonus = 0;
             currentDate = DateTime.Now.Date;
         }
     }
     
     public void PerformExercise()
     {
-        Debug.Log("Exercise performed");
         settings.PlayExerciseMusic();
 
         BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
@@ -51,7 +61,6 @@ public class ExerciseManager : MonoBehaviour {
 
     private void TryStartBonus()
     {
-        BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         if (Convert.ToBoolean(creator.GetCurrentBuildingDictionary()["HasBonus"]))
         {
             GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
@@ -78,7 +87,6 @@ public class ExerciseManager : MonoBehaviour {
         // Multiply by the associated reward.
         int actualReward = (int)Math.Round(percentCompleted * rewardValue);
 
-        BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
         //Check if this works
         BonusManager bonus = (BonusManager)exManager.GetComponent("BonusManager");
@@ -93,11 +101,11 @@ public class ExerciseManager : MonoBehaviour {
             }
         }
 
-        if (claimeDailyBonus < dailyBonusThreshold)
+        if (claimedDailyBonus < dailyBonusThreshold)
         {
-            print("BONUS CLAIMED " + claimeDailyBonus);
+            print("BONUS CLAIMED " + claimedDailyBonus);
             actualReward = (int)(actualReward * bonusReward);
-            claimeDailyBonus++;
+            claimedDailyBonus++;
         }
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
@@ -109,11 +117,25 @@ public class ExerciseManager : MonoBehaviour {
         // Show the exercise done dialog.
         mainMenu.OnExerciseDone();
     }
-
+    
     public void CompleteExercise()
     {
         ExerciseCounter exCount = (ExerciseCounter)currentCounter.GetComponent("ExerciseCounter");
         exCount.FinishTask();
     }
+    
+    /// <summary>
+    /// Called when the player clicks on a pet to exercise with them.
+    /// Loads in the correct instructions for the UI.
+    /// </summary>
+    public void LoadInstruction(UISprite sprite, UILabel instructionLabel)
+    {
+        string taskType = creator.GetCurrentBuildingDictionary()["TaskType"].ToLower();
+        string taskInstruction = creator.GetCurrentBuildingDictionary()["TaskInstruction"];
+        string taskAmount = creator.GetCurrentBuildingDictionary()["TaskRequirement"];
+        string taskUnit = creator.GetCurrentBuildingDictionary()["TaskUnit"];
 
+        sprite.spriteName = taskType; // Set the image to the corresponding instruction.
+        instructionLabel.text = taskInstruction + "\nDo " + taskAmount + " " + taskUnit;
+    }
 }

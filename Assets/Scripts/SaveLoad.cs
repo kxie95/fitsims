@@ -214,7 +214,8 @@ public class SaveLoad : MonoBehaviour
         sWriter.Close();
         existingBuildings = new Dictionary<string, int>(); //reset for next save - remove if automatic
         ExerciseManager ex = (ExerciseManager)ExerciseManager.GetComponent("ExerciseManager");
-        PlayerPrefs.SetInt("claimedBonus", ex.claimeDailyBonus);
+
+        PlayerPrefs.SetInt("claimedBonus", ex.claimedDailyBonus);
         PlayerPrefs.SetString("lastSavedDate", DateTime.Today.ToLongDateString());
     }
 
@@ -431,7 +432,7 @@ public class SaveLoad : MonoBehaviour
         DateTime lastSave = DateTime.Parse(PlayerPrefs.GetString("lastSavedDate"));
         int claimed = PlayerPrefs.GetInt("claimedBonus");
         
-        ex.claimeDailyBonus = claimed;
+        ex.claimedDailyBonus = claimed;
         ex.currentDate = lastSave;
     }
 

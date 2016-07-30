@@ -52,13 +52,14 @@
     <TaskReward>100</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
 	</Building>	
 	
 	<Building>
@@ -111,6 +112,7 @@
     <TaskReward>150</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
  
@@ -169,6 +171,7 @@
     <TaskReward>200</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
 
@@ -228,6 +231,7 @@
     <TaskReward>10</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -287,6 +291,7 @@
     <TaskReward>130</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -346,6 +351,7 @@
     <TaskReward>150</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -404,6 +410,7 @@
     <TaskReward>175</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -463,6 +470,7 @@
     <TaskReward>80</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -522,6 +530,7 @@
     <TaskReward>125</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -583,6 +592,7 @@
     <TaskReward>155</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -641,6 +651,7 @@
     <TaskReward>215</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -699,6 +710,7 @@
     <TaskReward>200</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Running</TaskType>
+    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
@@ -707,7 +719,6 @@
     <BonusAmount>1.5</BonusAmount>
     <BonusThreshold>300</BonusThreshold>
 	</Building>
-	
 </Buildings>
 
 
