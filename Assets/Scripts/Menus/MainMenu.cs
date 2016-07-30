@@ -31,27 +31,16 @@ public class MainMenu : MonoBehaviour {
 	public void OnOptions(){OnActivateButton (1);}
 	public void OnCloseOptions(){OnDeactivateButton (1);}
 
-	public void OnCompetition(){OnActivateButton (2);}
-	public void OnCloseCompetition(){OnDeactivateButton (2);}
-
-	public void OnInvite(){OnActivateButton (3);}
-	public void OnCloseInvite(){OnDeactivateButton (3);}
-
-	public void OnPurchase(){OnActivateButton (4);}
-	public void OnClosePurchase(){OnDeactivateButton (4);}
-
-	public void OnUpgrade(){OnActivateButton (5);}
-	public void OnCloseUpgrade(){OnDeactivateButton (5);}
+	public void OnUpgrade(){OnActivateButton (2);}
+	public void OnCloseUpgrade(){OnDeactivateButton (2);}
 
     // For controlling exercise in progress frame.
-    public void onDoingExercise() { OnActivateButton(7); }
-    public void onCloseDoingExercise() { OnDeactivateButton(7); }
+    public void onDoingExercise() { OnActivateButton(3); }
+    public void onCloseDoingExercise() { OnDeactivateButton(3); }
 
     // For controlling exercise done frame.
-    public void OnExerciseDone() { OnActivateButton(6); }
-    public void OnCloseExerciseDone (){ OnDeactivateButton(6); }
-
-
+    public void OnExerciseDone() { OnActivateButton(4); }
+    public void OnCloseExerciseDone (){ OnDeactivateButton(4); }
 
 	public void OnConfirmationScreen()	
 	{ 
