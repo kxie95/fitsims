@@ -706,7 +706,7 @@
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
-    <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>300</BonusThreshold>
 	</Building>
 
 	

@@ -38,7 +38,7 @@ public class ExerciseManager : MonoBehaviour {
         Debug.Log("Exercise performed");
         settings.PlayExerciseMusic();
         //Use the selectedBuilding in BuildingCreator to determine it
-        StepCounter s = (StepCounter)gameObject.GetComponent("StepCounter");
+        StepCounterRunning s = (StepCounterRunning)gameObject.GetComponent("StepCounterRunning");
 
         //Enable the component?
         s.StartCounting();
@@ -74,8 +74,6 @@ public class ExerciseManager : MonoBehaviour {
         double percentCompleted = (double)completedValue / targetValue;
         // Multiply by the associated reward.
         int actualReward = (int)Math.Round(percentCompleted * rewardValue);
-        // Set the text.
-        rewardLabel.text = actualReward + " coins!";
 
         BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
@@ -86,9 +84,9 @@ public class ExerciseManager : MonoBehaviour {
         {
             if (bonus.GetResult())
             {
-                print("CLAIMED BBBB");
                 float taskBonus = float.Parse(creator.GetCurrentBuildingDictionary()["BonusAmount"]);
                 actualReward = (int)(actualReward * taskBonus);
+                print("CLAIMED TASKBONUS: " + taskBonus+ "REWARD: "+actualReward);
             }
         }
 
@@ -98,7 +96,9 @@ public class ExerciseManager : MonoBehaviour {
             actualReward = (int)(actualReward * bonusReward);
             claimeDailydBonus++;
         }
-        
+        // Set the text.
+        rewardLabel.text = actualReward + " coins!";
+
         stats.gold = stats.gold + actualReward;
         stats.update = true;
         saveLoad.SaveGame();
