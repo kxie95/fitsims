@@ -21,7 +21,9 @@ public class BuildingCreator : MonoBehaviour {
     //public GameObject[] BuildingPrefabs = new GameObject[noOfBuildings];
     public GameObject ConstructionPrefab;//the building "under construction" sand and materials prefab
 	public GameObject BuildingSelectedPanel; //menu that appears when you reselect a finished building - buttons: upgrade, move, ok, cancel
-
+    public GameObject BuyingSelectedPanel; //menu that appears when you first build a pet - buttons: cancel, ok
+    public GameObject PlayerManager;
+    
 	//public int[] existingBuildings = new int[noOfBuildings]; // necessary to keep track of each buiding type number and enforce conditions
     public Dictionary<string, int> existingBuildings = new Dictionary<string, int>();
 
@@ -42,7 +44,7 @@ public class BuildingCreator : MonoBehaviour {
 
 	public GameObject Grass2x,Grass3x,Grass4x;// the grass prefabs
 		
-	private GameObject selectedBuilding;//current selected building
+	public GameObject selectedBuilding;//current selected building
 	private GameObject selectedGrass;//current selected grass
 	private GameObject selectedConstruction;//current selected "under construction" prefab
 	
@@ -87,15 +89,20 @@ public class BuildingCreator : MonoBehaviour {
         return buildings[currentSelection];
     }
 
+    public Dictionary<string, string> GetBuildingDictionary(string s)
+    {
+        return buildings[s];
+    }
+
 	private void GetBuildingsXML()//reads buildings XML
 	{
-		XmlDocument xmlDoc = new XmlDocument(); 
+		XmlDocument xmlDoc = new XmlDocument();
 		xmlDoc.LoadXml(BuildingsXML.text); 
 		XmlNodeList buildingsList = xmlDoc.GetElementsByTagName("Building");
 
 		foreach (XmlNode buildingInfo in buildingsList)
 		{
-			XmlNodeList buildingsContent = buildingInfo.ChildNodes;	
+			XmlNodeList buildingsContent = buildingInfo.ChildNodes;
 			dictionary = new Dictionary<string, string>();
             string key = "";
 
@@ -134,6 +141,7 @@ public class BuildingCreator : MonoBehaviour {
 	void Update () {
 	
 	}
+
 	//receive a NGUI button message to build
     //the prefab names must be correct the whole way through
     public void OnBuild(GameObject newPet) {
@@ -166,27 +174,7 @@ public class BuildingCreator : MonoBehaviour {
 		}
 
 		else 
-		{   //TODO: Remove these later when stripping out functionality
-			if (currentSelection == "Barrel") //1=Barrel (mana)
-			{
-				DecreaseStorage(2);
-			}
-			else if (currentSelection == "Forge") //4=forge
-			{
-				((Stats)StatsCo).productionBuildings[0]--;
-				DecreaseStorage(1);
-			} 
-			else if (currentSelection == "Generator") //5=Generator (mana)
-			{
-				((Stats)StatsCo).productionBuildings[1]--;	
-				DecreaseStorage(2);
-			}
-
-			else if (currentSelection == "Vault") //9=Vault gold
-			{
-				DecreaseStorage(1);
-			}
-
+		{   
 			DeactivateStatsPad ();
         }
 
@@ -198,34 +186,41 @@ public class BuildingCreator : MonoBehaviour {
 
 		//selectedBuilding = null;
 		MovingPad.SetActive(false);//deactivates the arrow building moving platform
-		BuildingSelectedPanel.SetActive (false);//deactivates the buttons move/upgrade/place/cancel, at the bottom of the screen
-		((Relay)gameManager.GetComponent("Relay")).pauseInput = false;//while the building is selected, pressing other buttons has no effect
+        if (isReselect)
+        {
+            BuildingSelectedPanel.SetActive(false);//deactivates the buttons move/upgrade/place/cancel, at the bottom of the screen
+        } else
+        {
+            BuyingSelectedPanel.SetActive(false);
+        }
+        ((Relay)gameManager.GetComponent("Relay")).pauseInput = false;//while the building is selected, pressing other buttons has no effect
         if(isReselect){isReselect = false; } //end the reselect state
 	
     }
 
-	private void DecreaseStorage(int restype)//when a building is reselected and destroyed, the gold/mana storage capacity decrease; 
-	{
-		if(restype==1)//gold
-		{
-			((Stats)StatsCo).maxStorageGold -= int.Parse (buildings [currentSelection] ["StoreCap"]);//the destroyed building storage cap
-			if(((Stats)StatsCo).gold > ((Stats)StatsCo).maxStorageGold)//more gold than max storage?
-			{
-				((Stats)StatsCo).gold = ((Stats)StatsCo).maxStorageGold;//discards resources exceeding storage capacity
+    //DEPRECATED
+	//private void DecreaseStorage(int restype)//when a building is reselected and destroyed, the gold/mana storage capacity decrease; 
+	//{
+	//	if(restype==1)//gold
+	//	{
+	//		((Stats)StatsCo).maxStorageGold -= int.Parse (buildings [currentSelection] ["StoreCap"]);//the destroyed building storage cap
+	//		if(((Stats)StatsCo).gold > ((Stats)StatsCo).maxStorageGold)//more gold than max storage?
+	//		{
+	//			((Stats)StatsCo).gold = ((Stats)StatsCo).maxStorageGold;//discards resources exceeding storage capacity
 
-			}
-		}
-		else if (restype==2) //mana
-		{
-			((Stats)StatsCo).maxStorageMana -= int.Parse (buildings [currentSelection] ["StoreCap"]);
-			if(((Stats)StatsCo).mana > ((Stats)StatsCo).maxStorageMana)
-			{
-				((Stats)StatsCo).mana = ((Stats)StatsCo).maxStorageMana;
+	//		}
+	//	}
+	//	else if (restype==2) //mana
+	//	{
+	//		((Stats)StatsCo).maxStorageMana -= int.Parse (buildings [currentSelection] ["StoreCap"]);
+	//		if(((Stats)StatsCo).mana > ((Stats)StatsCo).maxStorageMana)
+	//		{
+	//			((Stats)StatsCo).mana = ((Stats)StatsCo).maxStorageMana;
 
-			}
-		}
-		((Stats)StatsCo).update = true;//updates the interface numbers
-	}
+	//		}
+	//	}
+	//	((Stats)StatsCo).update = true;//updates the interface numbers
+	//}
 
 	//  verifies if the building can be constructed:
 	//  exceeds max number of buildings / enough gold/mana/free dobbits to build?
@@ -321,13 +316,19 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
         }
         pivotCorrection = true;
         SelectObject(currentSelection);
-              
     }
     
     private void SelectObject(string buildingTag) //after the grass/building prefabs are instantiated, they must be selected from the existing buildings on the map
 	{
-		BuildingSelectedPanel.SetActive (true);// the move/upgrade/place/cancel, at the bottom of the screen
-		selectedBuildingType = GameObject.FindGameObjectsWithTag(buildingTag);//finds all existing buildings with the apropriate string tag(ex “Forge”)	
+        if (isReselect)
+        {
+            BuildingSelectedPanel.SetActive(true);// the move/upgrade/place/cancel, at the bottom of the screen
+
+        } else
+        {
+            BuyingSelectedPanel.SetActive(true);
+        }
+        selectedBuildingType = GameObject.FindGameObjectsWithTag(buildingTag);//finds all existing buildings with the apropriate string tag(ex “Forge”)	
 		selectedGrassType = GameObject.FindGameObjectsWithTag("Grass");//finds all grass	
 			
 		//both the grass and buildings are instantiated with the isSelected bool variable as true; 
@@ -407,9 +408,17 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		StatsPad.SetActive (true);
 
 		StatsName.text = buildings [currentSelection] ["Name"];
-		StatsDescription.text = buildings [currentSelection] ["Description"];
+        //Set the description here
+        //StatsDescription.text = buildings [currentSelection] ["Description"];
+        StatsDescription.text = "";
+        //Task type
+        StatsDescription.text = StatsDescription.text + "Task type: "+ buildings[currentSelection]["TaskType"]+"\n\n";
+        //Task requirement
+        StatsDescription.text = StatsDescription.text + "Task requirement: " + buildings[currentSelection]["TaskRequirement"] +" "+ buildings[currentSelection]["TaskUnit"] + "\n\n";
+        //Task reward
+        StatsDescription.text = StatsDescription.text + "Task reward: " + buildings[currentSelection]["TaskReward"] +" Coins" +"\n\n";
 
-		ProductionLabel.SetActive (false);
+        ProductionLabel.SetActive (false);
 		StatsCoin.SetActive (false);
 		StatsMana.SetActive (false);
 
@@ -456,18 +465,21 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		{
 		if(((BuildingSelector)building.GetComponent("BuildingSelector")).isSelected)				
 			{
-				//print ("object found");
+			//	print ("object found");
+                print("selected "+building.name);
 
-				selectedBuilding = building;
-
+                selectedBuilding = building;
+                
 				MovingPad.transform.position = 
 					new Vector3(building.transform.position.x,
 						building.transform.position.y, padZ);
 					
 				//MovingPad.SetActive(true);					
 				//selectedBuilding.transform.parent = MovingPad.transform;
-				((Relay)gameManager.GetComponent("Relay")).pauseInput = true;		
-				break;
+				((Relay)gameManager.GetComponent("Relay")).pauseInput = true;
+                PlayerManager manager = (PlayerManager)PlayerManager.GetComponent("PlayerManager");
+                manager.MovePlayerToSelected();
+                break;
 			}
 		}
 		
@@ -529,8 +541,6 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		default:
 		break;
 		}	
-		
-		
 	}
 	
 	public void PlaceObject()
@@ -540,7 +550,6 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 			buildingIndex++;//unique number for pairing the buildings and the grass patches underneath
 			((BuildingSelector)selectedBuilding.GetComponent("BuildingSelector")).buildingIndex = buildingIndex;
 			((GrassSelector)selectedGrass.GetComponent("GrassSelector")).grassIndex = buildingIndex;
-
 
 			//instantiates the construction prefab and pass the relevant info;
 			GameObject Construction = (GameObject)Instantiate(ConstructionPrefab, selectedBuilding.transform.position, Quaternion.identity);
@@ -559,7 +568,7 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		((GrassSelector)selectedGrass.GetComponent("GrassSelector")).isSelected = false;
 		
 		((GrassCollider)selectedGrass.GetComponentInChildren<GrassCollider>()).isMoving = false;		
-		selectedGrass.GetComponentInChildren<GrassCollider>().enabled = false;		
+		selectedGrass.GetComponentInChildren<GrassCollider>().enabled = false;
 				
 		//-->
 		if(!isReselect)
@@ -587,22 +596,17 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		}
 		//<--		
 		MovingPad.SetActive(false);
-		BuildingSelectedPanel.SetActive (false);
-		isReselect = false;
+        if (isReselect)
+        {
+            BuildingSelectedPanel.SetActive(false);
+        } else
+        {
+            BuyingSelectedPanel.SetActive(false);
+        }
+        isReselect = false;
 		//((UISprite)BkActive[currentSelection]).color = Color.white;	
 
 	}
 
-    //TODO:Remove this?
-    public void CollectTaskReward()
-    {
-        if (buildings[currentSelection]["GoldReward"] == "true")
-        {
-            ((Stats)StatsCo).gold += int.Parse(buildings[currentSelection]["TaskReward"]);
-        }
-        else
-        {
-            ((Stats)StatsCo).mana += int.Parse(buildings[currentSelection]["TaskReward"]);
-        }
-    }
+
 }

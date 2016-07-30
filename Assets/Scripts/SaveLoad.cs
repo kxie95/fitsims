@@ -13,11 +13,11 @@ public class SaveLoad : MonoBehaviour
     private string fileName = "SOMSave";
     private string fileExt = ".txt";
 
-    private const int buildingTypesNo = 11;//the building tags
-    private string[] buildingTypes = new string[buildingTypesNo]{"Academy","Barrel","Chessboard","Classroom","Forge",
-        "Generator","Globe","Summon","Toolhouse","Vault","Workshop"};
+    //private const int buildingTypesNo = 11;//the building tags
+    //private string[] buildingTypes = new string[buildingTypesNo]{"Academy","Barrel","Chessboard","Classroom","Forge",
+    //    "Generator","Globe","Summon","Toolhouse","Vault","Workshop"};
 
-    public GameObject[] BuildingPrefabs = new GameObject[buildingTypesNo];
+    public GameObject[] BuildingPrefabs;
     private Dictionary<string, GameObject> BuildingPrefabsDict = new Dictionary<string, GameObject>();
 
     private const int grassTypesNo = 3;
@@ -36,12 +36,13 @@ public class SaveLoad : MonoBehaviour
     public GameObject MenuUnit;//the object that holds the MenuUnit script
     public GameObject BuildingsGroup;//object used to parent the buildings, once they are instantiated
     public GameObject BuildingCreator;//the object that holds the BuildingCreator.cs script
+    public GameObject ExerciseManager;
     public GameObject Stats;//object that holds the HUD data - Heads Up Display
+    public GameObject HomeExpansionMenu;
     private Component statsSc;//script for the above
     private Component menuUnitSc;//script
     private const int noOfBuildings = 11;
-    public Dictionary<string, int> existingBuildings = new Dictionary<string, int>();//the entire array is transfered to BuildingCreator.cs; 
-                                                                                     //records how many buildings of each type, when they are built/game is loaded
+    public Dictionary<string, int> existingBuildings = new Dictionary<string, int>();//the entire array is transfered to BuildingCreator.cs;                                                                                  //records how many buildings of each type, when they are built/game is loaded
 
     //lists for these elements - unknown number of elements
     private List<GameObject> LoadedBuildings = new List<GameObject>();
@@ -108,6 +109,7 @@ public class SaveLoad : MonoBehaviour
         sWriter.WriteLine("###Buildings###");
         for (int i = 0; i < buildingList.Count; i++)
         {
+            print("Something in list");
             GameObject[] buildingArray = buildingList[i];
 
             for (int j = 0; j < buildingArray.Length; j++)
@@ -119,7 +121,6 @@ public class SaveLoad : MonoBehaviour
                                   buildingArray[j].transform.position.x + "," +
                                   buildingArray[j].transform.position.y
                                   );
-
             }
         }
 
@@ -182,6 +183,15 @@ public class SaveLoad : MonoBehaviour
         }
 
         sWriter.WriteLine("###Stats###");
+        
+        HomeExpansionMenu menu = (HomeExpansionMenu)HomeExpansionMenu.GetComponent("HomeExpansionMenu");
+        BoolToKey[] cStatus = menu.ColliderStatus;
+        for (int i = 0; i < cStatus.Length; i++)
+        {
+            print("saving line: " + cStatus[i].name + "," + cStatus[i].status);
+            sWriter.WriteLine(cStatus[i].name + "," + cStatus[i].status);
+        }
+        sWriter.WriteLine("###HomeExpansion###");
 
         sWriter.WriteLine(((Stats)statsSc).experience + "," +
                            ((Stats)statsSc).dobbitNo + "," +
@@ -197,21 +207,24 @@ public class SaveLoad : MonoBehaviour
                            );
 
         sWriter.WriteLine(System.DateTime.Now);
-
+        
         sWriter.WriteLine("###EndofFile###");
 
         sWriter.Flush();
         sWriter.Close();
-        existingBuildings = new Dictionary<string, int>(); //reset for next save - remove if automatic	
+        existingBuildings = new Dictionary<string, int>(); //reset for next save - remove if automatic
+        ExerciseManager ex = (ExerciseManager)ExerciseManager.GetComponent("ExerciseManager");
+        PlayerPrefs.SetInt("claimedBonus", ex.claimedDailyBonus);
+        PlayerPrefs.SetString("lastSavedDate", DateTime.Today.ToLongDateString());
     }
 
     private void ReadObjects()//reads all buildings/grass/under construction
     {
         buildingList.Clear();
 
-        for (int i = 0; i < buildingTypes.Length; i++) //find all buildings
+        for (int i = 0; i < BuildingPrefabs.Length; i++) //find all buildings
         {
-            buildingList.Add(GameObject.FindGameObjectsWithTag(buildingTypes[i]));
+            buildingList.Add(GameObject.FindGameObjectsWithTag(BuildingPrefabs[i].name));
         }
 
         Grass = GameObject.FindGameObjectsWithTag("Grass");//finds all patches of grass from underneath the buildings
@@ -318,7 +331,6 @@ public class SaveLoad : MonoBehaviour
         currentLine = sReader.ReadLine();
         ((BuildingCreator)BuildingCreator.GetComponent("BuildingCreator")).buildingIndex = int.Parse(currentLine);
 
-
         //UNITS
         currentLine = sReader.ReadLine();//#Add verification for empty que
         UnitProc.SetActive(true);
@@ -354,6 +366,32 @@ public class SaveLoad : MonoBehaviour
                 }
             }
         }
+
+        HomeExpansionMenu menu = (HomeExpansionMenu)HomeExpansionMenu.GetComponent("HomeExpansionMenu");
+
+        while (currentLine != "###HomeExpansion###")
+        {
+            print(currentLine);
+            currentLine = sReader.ReadLine();
+            if (currentLine != "###HomeExpansion###")
+            {
+                string[] colliderStatusList = currentLine.Split(","[0]);
+                print("in the file " + colliderStatusList[0]);
+                for (int i = 0; i < menu.ColliderStatus.Length; i++)
+                {
+                    if (menu.ColliderStatus[i].name.Equals(colliderStatusList[0]))
+                    {
+                        menu.ColliderStatus[i].status = Convert.ToBoolean(colliderStatusList[1]);
+                        if (!Convert.ToBoolean(colliderStatusList[1]))
+                        {
+                            //Delete the collider
+                            Destroy(GameObject.Find(colliderStatusList[0]));
+                        }
+                    }
+                }
+            }
+        }
+
         ((MenuUnitProc)unitProcSc).start = true;
         ((MenuUnit)menuUnitSc).unitProcScript = unitProcSc;
         ((MenuUnit)menuUnitSc).GetUnitsXML();
@@ -388,6 +426,13 @@ public class SaveLoad : MonoBehaviour
         print("saved time " + saveDateTime.ToString());
 
         sReader.Close();
+
+        ExerciseManager ex = (ExerciseManager)ExerciseManager.GetComponent("ExerciseManager");
+        DateTime lastSave = DateTime.Parse(PlayerPrefs.GetString("lastSavedDate"));
+        int claimed = PlayerPrefs.GetInt("claimedBonus");
+        
+        ex.claimedDailyBonus = claimed;
+        ex.currentDate = lastSave;
     }
 
 

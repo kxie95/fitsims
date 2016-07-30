@@ -10,3 +10,16 @@ public struct NamedPriceLabels
     public UILabel label;
 }
 
+[Serializable]
+public struct PriceToKey
+{
+    public string name;
+    public int price;
+}
+
+[Serializable]
+public struct BoolToKey
+{
+    public string name;
+    public bool status;
+}
