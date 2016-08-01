@@ -22,6 +22,8 @@ TagManager:
   - RewardLabel
   - BDra
   - TimeLimit
+  - Walking
+  - Running
   layers:
   - Default
   - TransparentFX
