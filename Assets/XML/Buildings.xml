@@ -422,7 +422,7 @@
 	
 	<Building>
 		<ID>3</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Cato</Name>	
     <Key>Summon</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Generation</Type>
@@ -469,15 +469,15 @@
     <!--Description of the task given by this structure-->
     <TaskReward>80</TaskReward>
     <GoldReward>true</GoldReward>
-    <TaskType>Walking</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
-    <TaskUnit>Steps</TaskUnit>
-  
-  <HasBonus>True</HasBonus>
-    <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.5</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <TaskType>Situp</TaskType>
+    <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
+    <TaskRequirement>40</TaskRequirement>
+    <TaskUnit>situps</TaskUnit>
+
+    <HasBonus>True</HasBonus>
+      <BonusType>TimeLimit</BonusType>
+      <BonusAmount>1.5</BonusAmount>
+    <BonusThreshold>20</BonusThreshold>
 	</Building>
 	
 	<Building>

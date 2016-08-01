@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour, BonusManager{
         if (counting && timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
-            print(timeRemaining);
+            //print(timeRemaining);
             if (timeRemaining <= 0)
             {
                 result = false;

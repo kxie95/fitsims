@@ -13,5 +13,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ChallengeScene.unity
   - enabled: 0
     path: Assets/Scenes/RewardScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SitupTest.unity
+  - enabled: 1
+    path: Assets/Scenes/HomeUIRevamped.unity

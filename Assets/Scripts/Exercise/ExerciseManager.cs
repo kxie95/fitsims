@@ -52,6 +52,7 @@ public class ExerciseManager : MonoBehaviour {
 
         BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         currentCounter = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["TaskType"]);
+        Debug.Log("TASKTYPE: " + creator.GetCurrentBuildingDictionary()["TaskType"]);
         ExerciseCounter exCount = (ExerciseCounter)currentCounter.GetComponent("ExerciseCounter");
 
         exCount.StartCounting();
