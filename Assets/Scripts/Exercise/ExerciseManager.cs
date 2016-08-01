@@ -27,6 +27,8 @@ public class ExerciseManager : MonoBehaviour {
     public GameObject buildingCreator;
     public int claimedDailyBonus;
 
+    private GameObject currentCounter;
+
     void Start () {
         creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
@@ -47,11 +49,12 @@ public class ExerciseManager : MonoBehaviour {
     public void PerformExercise()
     {
         settings.PlayExerciseMusic();
-        //Use the selectedBuilding in BuildingCreator to determine it
-        StepCounter s = (StepCounter)gameObject.GetComponent("StepCounter");
 
-        //Enable the component?
-        s.StartCounting();
+        BuildingCreator creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
+        currentCounter = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["TaskType"]);
+        ExerciseCounter exCount = (ExerciseCounter)currentCounter.GetComponent("ExerciseCounter");
+
+        exCount.StartCounting();
         TryStartBonus();
         mainMenu.onDoingExercise();
     }
@@ -74,7 +77,7 @@ public class ExerciseManager : MonoBehaviour {
     /// <param name="completedValue">Amount of exercise done by the player.</param>
     /// <param name="targetDistance">Target amount of exercise for the challenge.</param>
     /// <param name="rewardValue">Total value of the reward associated with the challenge.</param>
-    public void FinishExercise(int completedValue, int targetValue, int rewardValue)
+    public void CalculateReward(int completedValue, int targetValue, int rewardValue)
     {
         settings.PlayMainMusic();
         soundFx.Victory();
@@ -83,8 +86,6 @@ public class ExerciseManager : MonoBehaviour {
         double percentCompleted = (double)completedValue / targetValue;
         // Multiply by the associated reward.
         int actualReward = (int)Math.Round(percentCompleted * rewardValue);
-        // Set the text.
-        rewardLabel.text = actualReward + " coins!";
 
         GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
         //Check if this works
@@ -94,9 +95,9 @@ public class ExerciseManager : MonoBehaviour {
         {
             if (bonus.GetResult())
             {
-                print("CLAIMED BBBB");
                 float taskBonus = float.Parse(creator.GetCurrentBuildingDictionary()["BonusAmount"]);
                 actualReward = (int)(actualReward * taskBonus);
+                print("CLAIMED TASKBONUS: " + taskBonus+ "REWARD: "+actualReward);
             }
         }
 
@@ -106,7 +107,9 @@ public class ExerciseManager : MonoBehaviour {
             actualReward = (int)(actualReward * bonusReward);
             claimedDailyBonus++;
         }
-        
+        // Set the text.
+        rewardLabel.text = actualReward + " coins!";
+
         stats.gold = stats.gold + actualReward;
         stats.update = true;
         saveLoad.SaveGame();
@@ -114,7 +117,13 @@ public class ExerciseManager : MonoBehaviour {
         // Show the exercise done dialog.
         mainMenu.OnExerciseDone();
     }
-
+    
+    public void CompleteExercise()
+    {
+        ExerciseCounter exCount = (ExerciseCounter)currentCounter.GetComponent("ExerciseCounter");
+        exCount.FinishTask();
+    }
+    
     /// <summary>
     /// Called when the player clicks on a pet to exercise with them.
     /// Loads in the correct instructions for the UI.
