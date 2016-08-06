@@ -56,8 +56,21 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_close
+    x: 108
+    y: 323
+    width: 69
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_exercise
     x: 0
-    y: 12
+    y: 154
     width: 69
     height: 71
     borderLeft: 0
@@ -82,6 +95,19 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_load
+    x: 108
+    y: 252
+    width: 69
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_move
     x: 0
     y: 83
     width: 69
@@ -96,7 +122,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_music
     x: 108
-    y: 323
+    y: 181
     width: 69
     height: 71
     borderLeft: 0
@@ -109,7 +135,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_music_disabled
     x: 108
-    y: 252
+    y: 110
     width: 69
     height: 71
     borderLeft: 0
@@ -122,7 +148,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_ok
     x: 108
-    y: 181
+    y: 39
     width: 69
     height: 71
     borderLeft: 0
@@ -134,8 +160,21 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_save
+    x: 177
+    y: 323
+    width: 69
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_sell
     x: 0
-    y: 154
+    y: 12
     width: 69
     height: 71
     borderLeft: 0
@@ -160,8 +199,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_sfx
-    x: 108
-    y: 110
+    x: 246
+    y: 323
     width: 69
     height: 71
     borderLeft: 0
@@ -173,8 +212,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: button_sfx_disabled
-    x: 108
-    y: 39
+    x: 315
+    y: 323
     width: 69
     height: 71
     borderLeft: 0
