@@ -122,7 +122,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: ui_back
     x: 0
-    y: 1429
+    y: 1191
     width: 635
     height: 381
     borderLeft: 0
@@ -134,6 +134,19 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ui_ribbon
+    x: 0
+    y: 1572
+    width: 1190
+    height: 238
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ui_ribbon_sub
     x: 0
     y: 1810
     width: 1190
