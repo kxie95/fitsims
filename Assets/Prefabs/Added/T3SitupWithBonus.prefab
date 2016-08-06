@@ -320,7 +320,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: T3Situp
+  buildingType: T3SitupWithBonus
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
