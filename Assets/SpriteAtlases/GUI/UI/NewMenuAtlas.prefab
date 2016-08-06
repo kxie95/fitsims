@@ -42,6 +42,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 6af667513d8c12145b1cb535fdae6c45, type: 2}
   mSprites:
+  - name: pets_back
+    x: 1610
+    y: 1955
+    width: 82
+    height: 93
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: tab_back
     x: 1190
     y: 1978
