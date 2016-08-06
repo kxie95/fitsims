@@ -42,6 +42,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 6af667513d8c12145b1cb535fdae6c45, type: 2}
   mSprites:
+  - name: exercise_bar_base
+    x: 1190
+    y: 1789
+    width: 652
+    height: 21
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: exercise_bar_fill
+    x: 1692
+    y: 2033
+    width: 353
+    height: 15
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: exercise_flag
+    x: 1610
+    y: 1906
+    width: 34
+    height: 49
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: pets_back
     x: 1610
     y: 1955
@@ -135,7 +174,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: ui_ribbon
     x: 0
-    y: 1572
+    y: 1810
     width: 1190
     height: 238
     borderLeft: 0
@@ -148,7 +187,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: ui_ribbon_sub
     x: 0
-    y: 1810
+    y: 1572
     width: 1190
     height: 238
     borderLeft: 0
