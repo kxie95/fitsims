@@ -4,18 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Academy
-  - Barrel
-  - Chessboard
-  - Classroom
+  - T1Bird
+  - T1Dino
+  - T1Fish
+  - T1Cat
   - Construction
-  - Forge
-  - Generator
-  - Globe
-  - Summon
-  - Toolhouse
-  - Vault
-  - Workshop
+  - T2Walk
+  - T2Run
+  - T3Situp
+  - T3Run
+  - T1Gold
   - Grass
   - Grasspatch
   - OutofMap
@@ -24,7 +22,10 @@ TagManager:
   - TimeLimit
   - Walking
   - Running
-  - Situp
+  - T3Walk
+  - T3Run
+  - T3Situp
+  - T3SitupWithBonus
   layers:
   - Default
   - TransparentFX
