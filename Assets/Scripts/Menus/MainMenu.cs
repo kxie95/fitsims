@@ -42,7 +42,11 @@ public class MainMenu : MonoBehaviour {
     public void OnExerciseDone() { OnActivateButton(4); }
     public void OnCloseExerciseDone (){ OnDeactivateButton(4); }
 
-	public void OnConfirmationScreen()	
+    // For help screen.
+    public void OnHelp() { OnActivateButton(5); }
+    public void OnCloseHelp() { OnDeactivateButton(5); }
+
+    public void OnConfirmationScreen()	
 	{ 
 		ConfirmationScreen.SetActive (true); 
 	}
@@ -96,7 +100,7 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        OnHelp();
     }
 	
 	// Update is called once per frame
