@@ -93,8 +93,10 @@ public class MainMenu : MonoBehaviour {
 	{
 		for (int i = 0; i < InterfaceElements.Length; i++) 
 		{
-			//if(i!=9)//to disable navigation buttons
-			InterfaceElements[i].SetActive(true);
+            if (i != 6)
+            {//to disable navigation buttons
+                InterfaceElements[i].SetActive(true);
+            }
 		}
 	}
 

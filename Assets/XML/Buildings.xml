@@ -49,12 +49,12 @@
 
     <!--Description of the task given by this structure-->
     <HasTask>True</HasTask>
-    <TaskReward>200</TaskReward>
+    <TaskReward>150</TaskReward>
     <GoldReward>true</GoldReward>
-    <TaskType>Walking</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
-    <TaskUnit>Steps</TaskUnit>
+    <TaskType>Situp</TaskType>
+    <TaskInstruction>Place phone as shown and do situps.</TaskInstruction>
+    <TaskRequirement>30</TaskRequirement>
+    <TaskUnit>Situps</TaskUnit>
   
     <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
@@ -172,8 +172,8 @@
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
-    <TaskUnit>Steps</TaskUnit>
+    <TaskRequirement>200</TaskRequirement>
+    <TaskUnit>Situps</TaskUnit>
 
     <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
@@ -232,7 +232,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
+    <TaskRequirement>200</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
   <HasBonus>True</HasBonus>
