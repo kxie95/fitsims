@@ -43,8 +43,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: ecf087bfeb2dcf64387b14015bd73692, type: 2}
   mSprites:
   - name: 01Wizard
-    x: 130
-    y: 1
+    x: 708
+    y: 351
     width: 110
     height: 124
     borderLeft: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: 01WizardFull
     x: 0
-    y: 600
+    y: 599
     width: 130
     height: 209
     borderLeft: 0
@@ -69,8 +69,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 02RobotChicken
-    x: 401
-    y: 768
+    x: 708
+    y: 767
     width: 130
     height: 130
     borderLeft: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 03ClockworkTreeFull
-    x: 250
-    y: 290
+    x: 252
+    y: 286
     width: 130
     height: 153
     borderLeft: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 03SentientMine
-    x: 863
-    y: 629
+    x: 601
+    y: 345
     width: 106
     height: 130
     borderLeft: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 04ClockworkTree
-    x: 531
-    y: 768
+    x: 774
+    y: 627
     width: 130
     height: 130
     borderLeft: 0
@@ -134,8 +134,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 04SentientMineFull
-    x: 250
-    y: 599
+    x: 252
+    y: 597
     width: 130
     height: 160
     borderLeft: 0
@@ -147,8 +147,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 05Gargoyle
-    x: 380
-    y: 629
+    x: 643
+    y: 627
     width: 130
     height: 130
     borderLeft: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: 05GargoyleFull
     x: 0
-    y: 411
+    y: 409
     width: 130
     height: 189
     borderLeft: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 06StonefireColossus
-    x: 791
-    y: 768
+    x: 252
+    y: 6
     width: 130
     height: 130
     borderLeft: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: 06StonefireColossusFull
     x: 0
-    y: 231
+    y: 228
     width: 130
     height: 180
     borderLeft: 0
@@ -199,8 +199,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 1
   - name: 07Porcupiner
-    x: 750
-    y: 629
+    x: 855
+    y: 477
     width: 113
     height: 130
     borderLeft: 0
@@ -212,8 +212,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 07PorcupinerFull
-    x: 250
-    y: 2
+    x: 512
+    y: 617
     width: 130
     height: 140
     borderLeft: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 08BlueJelly
-    x: 694
+    x: 699
     y: 910
     width: 130
     height: 114
@@ -239,7 +239,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: 08BlueJellyFull
     x: 0
-    y: 60
+    y: 56
     width: 130
     height: 171
     borderLeft: 0
@@ -251,8 +251,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 09Wisp
-    x: 661
-    y: 768
+    x: 839
+    y: 767
     width: 130
     height: 130
     borderLeft: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 09WispFull
-    x: 250
-    y: 142
+    x: 252
+    y: 137
     width: 130
     height: 148
     borderLeft: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 10PoenixWarrior
-    x: 304
+    x: 306
     y: 901
     width: 130
     height: 123
@@ -290,8 +290,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 0
   - name: 10PoenixWarriorFull
-    x: 608
-    y: 525
+    x: 819
+    y: 371
     width: 130
     height: 104
     borderLeft: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 11CloudDragon
-    x: 824
+    x: 830
     y: 915
     width: 130
     height: 109
@@ -316,8 +316,8 @@ MonoBehaviour:
     paddingTop: 21
     paddingBottom: 0
   - name: 11CloudDragonFull
-    x: 488
-    y: 416
+    x: 787
+    y: 166
     width: 130
     height: 82
     borderLeft: 0
@@ -329,8 +329,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 12JuggernautTurtle
-    x: 380
-    y: 223
+    x: 601
+    y: 230
     width: 104
     height: 114
     borderLeft: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
     paddingTop: 16
     paddingBottom: 0
   - name: 12JuggernautTurtleFull
-    x: 250
-    y: 443
+    x: 252
+    y: 440
     width: 130
     height: 156
     borderLeft: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 13MonsterPit
-    x: 434
+    x: 437
     y: 904
     width: 130
     height: 120
@@ -368,7 +368,7 @@ MonoBehaviour:
     paddingTop: 10
     paddingBottom: 0
   - name: 13MonsterPitFull
-    x: 564
+    x: 568
     y: 909
     width: 130
     height: 115
@@ -381,8 +381,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: academy
-    x: 130
-    y: 564
+    x: 131
+    y: 562
     width: 120
     height: 158
     borderLeft: 0
@@ -394,8 +394,34 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: BadBird
-    x: 380
-    y: 481
+    x: 905
+    y: 609
+    width: 108
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 27
+    paddingTop: 2
+    paddingBottom: 0
+  - name: BadBird1
+    x: 383
+    y: 459
+    width: 108
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 27
+    paddingTop: 2
+    paddingBottom: 0
+  - name: BadBird2
+    x: 383
+    y: 310
     width: 108
     height: 148
     borderLeft: 0
@@ -407,8 +433,34 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 0
   - name: BadCat
-    x: 380
-    y: 337
+    x: 492
+    y: 331
+    width: 108
+    height: 144
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 27
+    paddingTop: 2
+    paddingBottom: 4
+  - name: BadCat1
+    x: 383
+    y: 165
+    width: 108
+    height: 144
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 27
+    paddingTop: 2
+    paddingBottom: 4
+  - name: BadCat2
+    x: 383
+    y: 20
     width: 108
     height: 144
     borderLeft: 0
@@ -420,8 +472,34 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 4
   - name: BadDino
-    x: 380
-    y: 75
+    x: 706
+    y: 47
+    width: 80
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 37
+    paddingRight: 36
+    paddingTop: 2
+    paddingBottom: 0
+  - name: BadDino1
+    x: 601
+    y: 81
+    width: 80
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 37
+    paddingRight: 36
+    paddingTop: 2
+    paddingBottom: 0
+  - name: BadDino2
+    x: 706
+    y: 196
     width: 80
     height: 148
     borderLeft: 0
@@ -433,8 +511,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 0
   - name: BadFish
-    x: 250
-    y: 759
+    x: 556
+    y: 758
     width: 151
     height: 139
     borderLeft: 0
@@ -445,9 +523,48 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 6
     paddingBottom: 5
+  - name: BadFish1
+    x: 252
+    y: 758
+    width: 151
+    height: 139
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 6
+    paddingBottom: 5
+  - name: BadFish2
+    x: 404
+    y: 758
+    width: 151
+    height: 139
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 6
+    paddingBottom: 5
+  - name: BadFortuneCatpng
+    x: 492
+    y: 33
+    width: 94
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 29
+    paddingRight: 30
+    paddingTop: 2
+    paddingBottom: 0
   - name: barrel
-    x: 488
-    y: 498
+    x: 492
+    y: 476
     width: 120
     height: 131
     borderLeft: 0
@@ -459,8 +576,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: chessboard
-    x: 858
-    y: 534
+    x: 787
+    y: 249
     width: 120
     height: 95
     borderLeft: 0
@@ -472,8 +589,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: classroom
-    x: 510
-    y: 630
+    x: 613
+    y: 478
     width: 120
     height: 129
     borderLeft: 0
@@ -483,10 +600,23 @@ MonoBehaviour:
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
+    paddingBottom: 0
+  - name: DivineDeer
+    x: 383
+    y: 608
+    width: 128
+    height: 149
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 17
+    paddingRight: 8
+    paddingTop: 1
     paddingBottom: 0
   - name: forge
-    x: 630
-    y: 630
+    x: 734
+    y: 478
     width: 120
     height: 129
     borderLeft: 0
@@ -497,9 +627,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: FortuneCat2
+    x: 492
+    y: 182
+    width: 94
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 29
+    paddingRight: 30
+    paddingTop: 2
+    paddingBottom: 0
   - name: generator
-    x: 130
-    y: 413
+    x: 131
+    y: 410
     width: 120
     height: 151
     borderLeft: 0
@@ -511,8 +654,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: globe
-    x: 130
-    y: 722
+    x: 131
+    y: 721
     width: 120
     height: 176
     borderLeft: 0
@@ -524,7 +667,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: summon
-    x: 130
+    x: 131
     y: 898
     width: 174
     height: 126
@@ -537,8 +680,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: toolhouse
-    x: 738
-    y: 520
+    x: 131
+    y: 10
     width: 120
     height: 109
     borderLeft: 0
@@ -550,8 +693,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: vault
-    x: 130
-    y: 268
+    x: 131
+    y: 264
     width: 120
     height: 145
     borderLeft: 0
@@ -563,8 +706,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: workshop
-    x: 130
-    y: 125
+    x: 131
+    y: 120
     width: 120
     height: 143
     borderLeft: 0
