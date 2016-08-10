@@ -79,11 +79,11 @@ public class SaveLoad : MonoBehaviour
         loadDateTime = System.DateTime.Now;//current time
 
         //TODO: Add back in for full build.
-        FileInfo file = new FileInfo(filePath + fileName + fileExt);
-        if (file.Exists && file.Length != 0)
-        {
-            LoadGame();
-        }
+        //FileInfo file = new FileInfo(filePath + fileName + fileExt);
+        //if (file.Exists && file.Length != 0)
+        //{
+        //    LoadGame();
+        //}
     }
 
     // Update is called once per frame
