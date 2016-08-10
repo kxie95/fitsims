@@ -18,14 +18,16 @@ TagManager:
   - Grasspatch
   - OutofMap
   - RewardLabel
-  - BDra
-  - TimeLimit
+  - T2Situp
   - Walking
   - Running
   - T3Walk
   - T3Run
   - T3Situp
   - T3SitupWithBonus
+  - Situp
+  - Globe
+  - BDra
   layers:
   - Default
   - TransparentFX

@@ -925,6 +925,17 @@ MonoBehaviour:
     - BadDino
     - BadFish
     - BadCat
+    - BadFortuneCatpng
+    - DivineDeer
+    - BadBird1
+    - FortuneCat2
+    - BadDino2
+    - BadBird2
+    - BadCat1
+    - BadCat2
+    - BadDino1
+    - BadFish1
+    - BadFish2
     spriteTextureGUIDs:
     - 3dddb9ae7abe27e4eba3da3600a07b76
     - 86dd6d5f45edb4a4195d77a43989d544
@@ -945,6 +956,17 @@ MonoBehaviour:
     - 86b43c4aa3c968c49ac3ad5149c4a153
     - fac7582cb2cb2ab47b3aafce0a0a7ef6
     - 7a9e662dd7bc62d4aa29b04c69a22f99
+    - 04f841d446ea82443a51a87c9fdba64b
+    - d918df1eac659c346b2930e530f82329
+    - e5d1e750bb37fe645a259edab23e8c68
+    - c1b619f060f0e7f44b867ca8a523c364
+    - 753545932ab0d1a49a2f5330af027fca
+    - fb3a0fa35c378ab499385eb67db5f483
+    - c7512ec384ca08f48aca2c551d3ca086
+    - 0a6204264cebe8542adbe1bfe39bd5ef
+    - ba2afea6c5b39a94a9ea822c3e3dd310
+    - 589a6dc73b3face41980c093d56f8279
+    - 8e12c9df0f8b8664c978a2ccec38a7ef
     spriteTextureTimeStamps:
     - 1466770422.64183
     - 1466770422.65085
@@ -965,6 +987,17 @@ MonoBehaviour:
     - 1469620138.99213
     - 1469620139.25378
     - 1469620138.85849
+    - 1470695800.66748
+    - 1470703086.71874
+    - 1470867412.09323
+    - 1470867308.9092
+    - 1470867394.20767
+    - 1470867428.01807
+    - 1470867325.67553
+    - 1470867340.61256
+    - 1470867378.86795
+    - 1470867352.55753
+    - 1470867364.79937
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

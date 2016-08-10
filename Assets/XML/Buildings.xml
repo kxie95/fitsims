@@ -170,7 +170,7 @@
     <!--Description of the task given by this structure-->
     <TaskReward>200</TaskReward>
     <GoldReward>true</GoldReward>
-    <TaskType>Walking</TaskType>
+    <TaskType>Running</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>200</TaskRequirement>
     <TaskUnit>Situps</TaskUnit>
@@ -230,7 +230,7 @@
     <!--Description of the task given by this structure-->
     <TaskReward>550</TaskReward>
     <GoldReward>true</GoldReward>
-    <TaskType>Walking</TaskType>
+    <TaskType>Situp</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
     <TaskRequirement>200</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
@@ -658,7 +658,7 @@
 	<Building>
 		<ID>12</ID>
 		<Name>Black Dragon</Name>	
-    <Key>BDra</Key>
+    <Key>T2Situp</Key>
 		<Description>The previous owner hyped it up to be a black dragon; in truth it was just a dog</Description>
 		<Type>General</Type>
 		
