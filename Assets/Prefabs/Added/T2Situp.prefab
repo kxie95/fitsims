@@ -44,8 +44,8 @@ GameObject:
   - 114: {fileID: 11485086}
   - 114: {fileID: 11429922}
   m_Layer: 0
-  m_Name: BDra
-  m_TagString: BDra
+  m_Name: T2Situp
+  m_TagString: T2Situp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: eb3e745b57e0ebc4090bd8258155986e, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 2, y: 2, z: 1}
-  _spriteId: 15
+  _spriteId: 18
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -341,7 +341,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: eb3e745b57e0ebc4090bd8258155986e, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 2, y: 2, z: 1}
-  _spriteId: 15
+  _spriteId: 18
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -390,7 +390,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: BDra
+  buildingType: T2Situp
 --- !u!114 &11495024
 MonoBehaviour:
   m_ObjectHideFlags: 1

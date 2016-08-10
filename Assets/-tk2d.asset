@@ -925,6 +925,8 @@ MonoBehaviour:
     - BadDino
     - BadFish
     - BadCat
+    - BadFortuneCatpng
+    - DivineDeer
     spriteTextureGUIDs:
     - 3dddb9ae7abe27e4eba3da3600a07b76
     - 86dd6d5f45edb4a4195d77a43989d544
@@ -945,6 +947,8 @@ MonoBehaviour:
     - 86b43c4aa3c968c49ac3ad5149c4a153
     - fac7582cb2cb2ab47b3aafce0a0a7ef6
     - 7a9e662dd7bc62d4aa29b04c69a22f99
+    - 04f841d446ea82443a51a87c9fdba64b
+    - d918df1eac659c346b2930e530f82329
     spriteTextureTimeStamps:
     - 1466770422.64183
     - 1466770422.65085
@@ -965,6 +969,8 @@ MonoBehaviour:
     - 1469620138.99213
     - 1469620139.25378
     - 1469620138.85849
+    - 1470695800.66748
+    - 1470703086.71874
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
