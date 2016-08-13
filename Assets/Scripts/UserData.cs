@@ -5,7 +5,7 @@ public class UserData : MonoBehaviour {
 
     //Task stats
     public int TasksFinished;
-    public int TimeInTasks;
+    public float TimeInTasks;
 
     //Coins
     public int GoldEarned;
@@ -14,6 +14,7 @@ public class UserData : MonoBehaviour {
     //Pets
     public int PetsBought;
 
+    public bool InTask;
 	// Use this for initialization
 	void Start () {
 	    
@@ -21,7 +22,10 @@ public class UserData : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (InTask)
+        {
+            TimeInTasks += Time.deltaTime;
+        }
 	}
 
     

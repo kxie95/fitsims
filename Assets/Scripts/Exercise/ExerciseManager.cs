@@ -58,6 +58,7 @@ public class ExerciseManager : MonoBehaviour {
 
         exCount.StartCounting();
         TryStartBonus();
+        userData.InTask = true;
         mainMenu.onDoingExercise();
     }
 
@@ -116,6 +117,7 @@ public class ExerciseManager : MonoBehaviour {
         stats.update = true;
         userData.GoldEarned += actualReward;
         userData.TasksFinished ++;
+        userData.InTask = false;
         saveLoad.SaveGame();
 
         // Show the exercise done dialog.

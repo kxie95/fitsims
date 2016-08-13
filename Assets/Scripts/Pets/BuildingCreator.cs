@@ -295,10 +295,6 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 
     private void LoadBuilding(GameObject newBuilding)//instantiates the building and grass prefabs
     {   
-        //Increment PetsBought
-        UserData usr = (UserData)UserData.GetComponent("UserData");
-        usr.PetsBought++;
-        usr.GoldSpent += int.Parse(buildings[currentSelection]["ResCost"]);
 
         ((Stats)StatsCo).occupiedDobbitNo++;//get one dobbit
 
@@ -567,7 +563,12 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 				int.Parse (buildings [currentSelection] ["StoreCap"]);
 			((ConstructionSelector)selectedConstruction.GetComponent("ConstructionSelector")).buildingType=
 				((BuildingSelector)selectedBuilding.GetComponent("BuildingSelector")).buildingType;
-		}
+
+
+            UserData usr = (UserData)UserData.GetComponent("UserData");
+            usr.GoldSpent = int.Parse(buildings[currentSelection]["ResCost"]);
+            usr.PetsBought++;
+        }
 		
 		((Relay)gameManager.GetComponent("Relay")).pauseInput = false;
 		((BuildingSelector)selectedBuilding.GetComponent("BuildingSelector")).isSelected = false;
