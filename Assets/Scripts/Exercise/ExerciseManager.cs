@@ -18,10 +18,10 @@ public class ExerciseManager : MonoBehaviour {
 
     // UI components
     public UILabel rewardLabel; // Reward label in ExerciseDone screen.
-    public UISprite instructionImage; // Instruction image in Upgrade screen.
-    public UILabel instructionText; // Instruction text in Upgrade screen.
-    public UISprite doingInstructionImage; // Image in the ExerciseDoing screen.
-    public UILabel doingInstructionText; // Image in the ExerciseDoing screen.
+    //public UISprite instructionImage; // Instruction image in Upgrade screen.
+    //public UILabel instructionText; // Instruction text in Upgrade screen.
+    //public UISprite doingInstructionImage; // Image in the ExerciseDoing screen.
+    //public UILabel doingInstructionText; // Image in the ExerciseDoing screen.
 
     public DateTime currentDate;
     public GameObject buildingCreator;
@@ -136,7 +136,15 @@ public class ExerciseManager : MonoBehaviour {
         string taskAmount = creator.GetCurrentBuildingDictionary()["TaskRequirement"];
         string taskUnit = creator.GetCurrentBuildingDictionary()["TaskUnit"];
 
-        sprite.spriteName = taskType; // Set the image to the corresponding instruction.
-        instructionLabel.text = taskInstruction + "\nDo " + taskAmount + " " + taskUnit;
+        if (sprite != null)
+        {
+            sprite.spriteName = taskType; // Set the image to the corresponding instruction.
+
+        }
+
+        if (instructionLabel != null)
+        {
+            instructionLabel.text = taskInstruction + "\nDo " + taskAmount + " " + taskUnit;
+        }
     }
 }
