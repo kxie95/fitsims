@@ -9,6 +9,7 @@ public class ExerciseManager : MonoBehaviour {
     private BuildingCreator creator;
 
     public Stats stats;
+    public UserData userData;
     public SaveLoad saveLoad;
     public Settings settings;
     public SoundFX soundFx;
@@ -113,6 +114,8 @@ public class ExerciseManager : MonoBehaviour {
 
         stats.gold = stats.gold + actualReward;
         stats.update = true;
+        userData.GoldEarned += actualReward;
+        userData.TasksFinished ++;
         saveLoad.SaveGame();
 
         // Show the exercise done dialog.
