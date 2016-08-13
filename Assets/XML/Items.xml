@@ -1,0 +1,25 @@
+<Items>
+  <Food>
+    <ID>1</ID>
+    <Name>Berry</Name>
+    <Key>Berry</Key>
+    <Description>Food for your pet. Increases fullness bar by 5.</Description>
+    <Health>5</Health>
+  </Food>
+
+  <Food>
+    <ID>2</ID>
+    <Name>SuperBerry</Name>
+    <Key>SuperBerry</Key>
+    <Description>Food for your pet. Increases fullness bar by 10.</Description>
+    <Health>10</Health>
+  </Food>
+
+  <Food>
+    <ID>3</ID>
+    <Name>MegaBerry</Name>
+    <Key>MegaBerry</Key>
+    <Description>Food for your pet. Increases fullness bar by 20.</Description>
+    <Health>20</Health>
+  </Food>
+</Items>

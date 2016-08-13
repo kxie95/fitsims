@@ -115,4 +115,10 @@ public class ProximityCounter : MonoBehaviour, ExerciseCounter {
         exerciseLabel.text = "0";
         counter = 0;
     }
+
+    public bool HasCompletedAtLeast(float proportion)
+    {
+        int amountToCompare = (int)(goal * proportion);
+        return counter >= amountToCompare;
+    }
 }

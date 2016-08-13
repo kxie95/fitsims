@@ -174,5 +174,10 @@ public class StepCounterRunning : MonoBehaviour , ExerciseCounter
         inQuest = true;
     }
 
+    public bool HasCompletedAtLeast(float proportion)
+    {
+        int amountToCompare = (int)(stepGoal * proportion);
+        return stepCount >= amountToCompare;
+    }
 }
 
