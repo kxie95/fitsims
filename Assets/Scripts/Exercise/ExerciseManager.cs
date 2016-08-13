@@ -18,10 +18,6 @@ public class ExerciseManager : MonoBehaviour {
 
     // UI components
     public UILabel rewardLabel; // Reward label in ExerciseDone screen.
-    //public UISprite instructionImage; // Instruction image in Upgrade screen.
-    //public UILabel instructionText; // Instruction text in Upgrade screen.
-    //public UISprite doingInstructionImage; // Image in the ExerciseDoing screen.
-    //public UILabel doingInstructionText; // Image in the ExerciseDoing screen.
 
     public DateTime currentDate;
     public GameObject buildingCreator;
@@ -44,6 +40,7 @@ public class ExerciseManager : MonoBehaviour {
             claimedDailyBonus = 0;
             currentDate = DateTime.Now.Date;
         }
+
     }
     
     public void PerformExercise()
@@ -145,6 +142,6 @@ public class ExerciseManager : MonoBehaviour {
         if (instructionLabel != null)
         {
             instructionLabel.text = taskInstruction + "\nDo " + taskAmount + " " + taskUnit;
-        }
+        }    
     }
 }
