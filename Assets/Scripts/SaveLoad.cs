@@ -466,9 +466,8 @@ public class SaveLoad : MonoBehaviour
         ExerciseManager ex = (ExerciseManager)ExerciseManager.GetComponent("ExerciseManager");
         DateTime lastSave = DateTime.Parse(PlayerPrefs.GetString("lastSavedDate"));
         int claimed = PlayerPrefs.GetInt("claimedBonus");
-        
-        ex.claimedDailyBonus = claimed;
-        ex.currentDate = lastSave;
+
+        ex.SetClaimedBonus(claimed, lastSave);
     }
 
 
