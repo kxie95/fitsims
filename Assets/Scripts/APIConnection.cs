@@ -13,7 +13,6 @@ public class APIConnection : MonoBehaviour {
     // Use this for initialization
     void Start () {
         filePath = Application.persistentDataPath + "/";
-        PostData();
     }
 	
 	// Update is called once per frame
