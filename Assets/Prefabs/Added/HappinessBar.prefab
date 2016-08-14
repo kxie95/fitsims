@@ -379,8 +379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thumb: {fileID: 0}
-  mBG: {fileID: 0}
-  mFG: {fileID: 0}
+  mBG: {fileID: 11451640}
+  mFG: {fileID: 11422532}
   mValue: 1
   mFill: 0
   numberOfSteps: 0
