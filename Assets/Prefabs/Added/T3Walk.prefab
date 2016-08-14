@@ -200,7 +200,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: 543357616c6b
+  buildingType: T3Walk
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,7 +243,7 @@ MonoBehaviour:
   buttonUpSound: {fileID: 0}
   buttonPressedSound: {fileID: 0}
   targetObject: {fileID: 100000}
-  messageName: 526553656c656374
+  messageName: ReSelect
   targetScale: 1.1
   scaleTime: 0.05
   pressedWaitTime: 0.3

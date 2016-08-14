@@ -372,7 +372,7 @@ MonoBehaviour:
   buttonUpSound: {fileID: 0}
   buttonPressedSound: {fileID: 0}
   targetObject: {fileID: 168000}
-  messageName: 526553656c656374
+  messageName: ReSelect
   targetScale: 1.1
   scaleTime: 0.05
   pressedWaitTime: 0.3
@@ -390,7 +390,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: 54325369747570
+  buildingType: T2Situp
 --- !u!114 &11495024
 MonoBehaviour:
   m_ObjectHideFlags: 1
