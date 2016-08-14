@@ -32,6 +32,7 @@ public class BuildingCreator : MonoBehaviour {
 	public GameObject DummyObj;// a crosshair that follows the middle of the screen, for placing a new building; position is adjusted to exact grid middle point
 	public GameObject BuildingsGroup;// to keep all buildings in one place in the ierarchy, they are parented to this empty object
 	public GameObject MovingPad;// the arrow pad - when created/selected+move, the buildings are parented to this object that can move
+    public GameObject UserData;
 
 	public GameObject StatsPad;//displays relevant info when a building is reselected
 	public UILabel StatsName;//label with the building name(type)
@@ -293,7 +294,8 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 	}
 
     private void LoadBuilding(GameObject newBuilding)//instantiates the building and grass prefabs
-    {
+    {   
+
         ((Stats)StatsCo).occupiedDobbitNo++;//get one dobbit
 
         ((Relay)gameManager.GetComponent("Relay")).pauseInput = true;//pause all other input - the user starts moving the building
@@ -561,7 +563,12 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 				int.Parse (buildings [currentSelection] ["StoreCap"]);
 			((ConstructionSelector)selectedConstruction.GetComponent("ConstructionSelector")).buildingType=
 				((BuildingSelector)selectedBuilding.GetComponent("BuildingSelector")).buildingType;
-		}
+
+
+            UserData usr = (UserData)UserData.GetComponent("UserData");
+            usr.GoldSpent = int.Parse(buildings[currentSelection]["ResCost"]);
+            usr.PetsBought++;
+        }
 		
 		((Relay)gameManager.GetComponent("Relay")).pauseInput = false;
 		((BuildingSelector)selectedBuilding.GetComponent("BuildingSelector")).isSelected = false;
