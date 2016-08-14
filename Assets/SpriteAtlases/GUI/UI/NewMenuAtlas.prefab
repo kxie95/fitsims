@@ -44,9 +44,22 @@ MonoBehaviour:
   mSprites:
   - name: coin
     x: 1915
-    y: 1887
+    y: 1669
     width: 62
     height: 68
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: daily_bonus_icon
+    x: 1915
+    y: 1939
+    width: 108
+    height: 109
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -83,7 +96,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: exercise_flag
     x: 1997
-    y: 1999
+    y: 1781
     width: 34
     height: 49
     borderLeft: 0
@@ -94,9 +107,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: happy
+    x: 1915
+    y: 1830
+    width: 108
+    height: 109
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: pets_back
     x: 1915
-    y: 1955
+    y: 1737
     width: 82
     height: 93
     borderLeft: 0
@@ -121,8 +147,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: progress_fill
-    x: 1915
-    y: 1856
+    x: 1907
+    y: 1636
     width: 120
     height: 31
     borderLeft: 0
@@ -138,6 +164,19 @@ MonoBehaviour:
     y: 952
     width: 1280
     height: 1096
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: star
+    x: 1280
+    y: 1384
+    width: 88
+    height: 84
     borderLeft: 0
     borderRight: 0
     borderTop: 0
