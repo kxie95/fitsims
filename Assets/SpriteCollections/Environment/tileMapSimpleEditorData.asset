@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Name: tileMapSimpleEditorData
   m_EditorClassIdentifier: 
   editMode: 0
-  brushColor: {r: 1, g: 1, b: 1, a: 1}
+  brushColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   brushRadius: 1
   blendStrength: 1
   blendMode: 0

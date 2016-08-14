@@ -320,7 +320,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: T1Cat
+  buildingType: 5431436174
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,14 +356,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewCamera: {fileID: 0}
-  buttonDownSprite: pad
-  buttonUpSprite: pad
-  buttonPressedSprite: pad
+  buttonDownSprite: 706164
+  buttonUpSprite: 706164
+  buttonPressedSprite: 706164
   buttonDownSound: {fileID: 0}
   buttonUpSound: {fileID: 0}
   buttonPressedSound: {fileID: 0}
   targetObject: {fileID: 100000}
-  messageName: ReSelect
+  messageName: 526553656c656374
   targetScale: 1.1
   scaleTime: 0.05
   pressedWaitTime: 0.3
