@@ -147,7 +147,7 @@ MonoBehaviour:
     floatVal: 0
     enablePrefabOffset: 0
   tileMapLayers:
-  - name: Layer 0
+  - name: 4c617965722030
     hash: 1892887448
     useColor: 1
     generateCollider: 1

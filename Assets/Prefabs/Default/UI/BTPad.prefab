@@ -113,14 +113,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewCamera: {fileID: 0}
-  buttonDownSprite: button_down
-  buttonUpSprite: button_up
-  buttonPressedSprite: button_up
+  buttonDownSprite: 627574746f6e5f646f776e
+  buttonUpSprite: 627574746f6e5f7570
+  buttonPressedSprite: 627574746f6e5f7570
   buttonDownSound: {fileID: 0}
   buttonUpSound: {fileID: 0}
   buttonPressedSound: {fileID: 0}
   targetObject: {fileID: 0}
-  messageName: MoveNE
+  messageName: 4d6f76654e45
   targetScale: 1.1
   scaleTime: 0.05
   pressedWaitTime: 0.3

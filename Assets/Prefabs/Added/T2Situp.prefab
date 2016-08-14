@@ -365,9 +365,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewCamera: {fileID: 0}
-  buttonDownSprite: pad
-  buttonUpSprite: pad
-  buttonPressedSprite: pad
+  buttonDownSprite: 706164
+  buttonUpSprite: 706164
+  buttonPressedSprite: 706164
   buttonDownSound: {fileID: 0}
   buttonUpSound: {fileID: 0}
   buttonPressedSound: {fileID: 0}

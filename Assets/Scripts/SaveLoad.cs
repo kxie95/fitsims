@@ -39,6 +39,7 @@ public class SaveLoad : MonoBehaviour
     public GameObject ExerciseManager;
     public GameObject Stats;//object that holds the HUD data - Heads Up Display
     public GameObject HomeExpansionMenu;
+    public GameObject UserData;
     private Component statsSc;//script for the above
     private Component menuUnitSc;//script
     private const int noOfBuildings = 11;
@@ -183,7 +184,7 @@ public class SaveLoad : MonoBehaviour
         }
 
         sWriter.WriteLine("###Stats###");
-        
+
         HomeExpansionMenu menu = (HomeExpansionMenu)HomeExpansionMenu.GetComponent("HomeExpansionMenu");
         BoolToKey[] cStatus = menu.ColliderStatus;
         for (int i = 0; i < cStatus.Length; i++)
@@ -192,6 +193,16 @@ public class SaveLoad : MonoBehaviour
             sWriter.WriteLine(cStatus[i].name + "," + cStatus[i].status);
         }
         sWriter.WriteLine("###HomeExpansion###");
+
+        UserData usr = (UserData)UserData.GetComponent("UserData");
+
+        sWriter.WriteLine("Tasks Finished," + usr.TasksFinished);
+        sWriter.WriteLine("Time in Tasks," + usr.TimeInTasks);
+        sWriter.WriteLine("Gold Earned," + usr.GoldEarned);
+        sWriter.WriteLine("Gold Spent," + usr.GoldSpent);
+        sWriter.WriteLine("Pets Bought," + usr.PetsBought);
+
+        sWriter.WriteLine("###UserData###");
 
         sWriter.WriteLine(((Stats)statsSc).experience + "," +
                            ((Stats)statsSc).dobbitNo + "," +
@@ -367,6 +378,7 @@ public class SaveLoad : MonoBehaviour
                 }
             }
         }
+        
 
         HomeExpansionMenu menu = (HomeExpansionMenu)HomeExpansionMenu.GetComponent("HomeExpansionMenu");
 
@@ -392,6 +404,29 @@ public class SaveLoad : MonoBehaviour
                 }
             }
         }
+
+        UserData usr = (UserData)UserData.GetComponent("UserData");
+        //while (currentLine != "###UserData###")
+        //{
+        //    currentLine = sReader.ReadLine();
+        //    if (currentLine != "###UserData###")
+        //    {
+
+        //    }
+        //}
+        String[] s = sReader.ReadLine().Split(',');
+        usr.TasksFinished = Int32.Parse(s[1]);
+        s = sReader.ReadLine().Split(',');
+        usr.TimeInTasks = float.Parse(s[1]);
+        s = sReader.ReadLine().Split(',');
+        usr.GoldEarned = Int32.Parse(s[1]);
+        s = sReader.ReadLine().Split(',');
+        usr.GoldSpent = Int32.Parse(s[1]);
+        s = sReader.ReadLine().Split(',');
+        usr.PetsBought = Int32.Parse(s[1]);
+
+        currentLine = sReader.ReadLine();
+
 
         ((MenuUnitProc)unitProcSc).start = true;
         ((MenuUnit)menuUnitSc).unitProcScript = unitProcSc;
