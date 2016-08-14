@@ -44,7 +44,7 @@ MonoBehaviour:
   mSprites:
   - name: coin
     x: 1915
-    y: 1669
+    y: 1667
     width: 62
     height: 68
     borderLeft: 0
@@ -69,8 +69,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: exercise_bar_base
-    x: 1280
-    y: 1576
+    x: 0
+    y: 455
     width: 652
     height: 21
     borderLeft: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: exercise_bar_fill
-    x: 1491
-    y: 1498
+    x: 1508
+    y: 1582
     width: 353
     height: 15
     borderLeft: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: exercise_flag
-    x: 1997
-    y: 1781
+    x: 1977
+    y: 1686
     width: 34
     height: 49
     borderLeft: 0
@@ -109,9 +109,9 @@ MonoBehaviour:
     paddingBottom: 0
   - name: happy
     x: 1915
-    y: 1830
-    width: 108
-    height: 109
+    y: 1837
+    width: 101
+    height: 102
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: pets_back
-    x: 1915
-    y: 1737
+    x: 1280
+    y: 1005
     width: 82
     height: 93
     borderLeft: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: progress_base
     x: 1280
-    y: 1468
+    y: 1098
     width: 211
     height: 45
     borderLeft: 0
@@ -147,10 +147,36 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: progress_fill
-    x: 1907
-    y: 1636
+    x: 1362
+    y: 983
     width: 120
     height: 31
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: sad
+    x: 1915
+    y: 1735
+    width: 101
+    height: 102
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: speech_bubble
+    x: 1280
+    y: 1395
+    width: 228
+    height: 272
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -173,8 +199,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: star
-    x: 1280
-    y: 1384
+    x: 1362
+    y: 1014
     width: 88
     height: 84
     borderLeft: 0
@@ -186,7 +212,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_back
-    x: 1280
+    x: 1508
     y: 1597
     width: 420
     height: 70
@@ -199,8 +225,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_left_disabled
-    x: 1700
-    y: 1604
+    x: 1280
+    y: 1332
     width: 207
     height: 63
     borderLeft: 0
@@ -213,7 +239,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: tab_left_enabled
     x: 1280
-    y: 1513
+    y: 1269
     width: 207
     height: 63
     borderLeft: 0
@@ -225,8 +251,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_right_disabled
-    x: 1487
-    y: 1513
+    x: 1280
+    y: 1206
     width: 207
     height: 63
     borderLeft: 0
@@ -238,8 +264,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_right_enabled
-    x: 1694
-    y: 1513
+    x: 1280
+    y: 1143
     width: 207
     height: 63
     borderLeft: 0
