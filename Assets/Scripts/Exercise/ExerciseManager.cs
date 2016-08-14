@@ -109,6 +109,7 @@ public class ExerciseManager : MonoBehaviour {
             claimedDailyBonus++;
             UpdateDailyBonusUi(claimedDailyBonus);
         }
+
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
 
