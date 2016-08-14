@@ -43,8 +43,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 6af667513d8c12145b1cb535fdae6c45, type: 2}
   mSprites:
   - name: coin
-    x: 1610
-    y: 1842
+    x: 1915
+    y: 1887
     width: 62
     height: 68
     borderLeft: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: exercise_bar_base
-    x: 1190
-    y: 1789
+    x: 1280
+    y: 1576
     width: 652
     height: 21
     borderLeft: 0
@@ -69,8 +69,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: exercise_bar_fill
-    x: 1190
-    y: 1774
+    x: 1491
+    y: 1498
     width: 353
     height: 15
     borderLeft: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: exercise_flag
-    x: 1692
-    y: 1954
+    x: 1997
+    y: 1999
     width: 34
     height: 49
     borderLeft: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: pets_back
-    x: 1610
-    y: 1910
+    x: 1915
+    y: 1955
     width: 82
     height: 93
     borderLeft: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: progress_base
-    x: 1610
-    y: 2003
+    x: 1280
+    y: 1468
     width: 211
     height: 45
     borderLeft: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: progress_fill
-    x: 1190
-    y: 1821
+    x: 1915
+    y: 1856
     width: 120
     height: 31
     borderLeft: 0
@@ -133,9 +133,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: speech-bubble-156056_1280
+    x: 0
+    y: 952
+    width: 1280
+    height: 1096
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: tab_back
-    x: 1190
-    y: 1978
+    x: 1280
+    y: 1597
     width: 420
     height: 70
     borderLeft: 0
@@ -147,8 +160,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_left_disabled
-    x: 1190
-    y: 1915
+    x: 1700
+    y: 1604
     width: 207
     height: 63
     borderLeft: 0
@@ -160,8 +173,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_left_enabled
-    x: 1190
-    y: 1852
+    x: 1280
+    y: 1513
     width: 207
     height: 63
     borderLeft: 0
@@ -173,8 +186,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_right_disabled
-    x: 1397
-    y: 1915
+    x: 1487
+    y: 1513
     width: 207
     height: 63
     borderLeft: 0
@@ -186,8 +199,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tab_right_enabled
-    x: 1397
-    y: 1852
+    x: 1694
+    y: 1513
     width: 207
     height: 63
     borderLeft: 0
@@ -199,8 +212,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ui_back
-    x: 0
-    y: 1191
+    x: 1280
+    y: 1667
     width: 635
     height: 381
     borderLeft: 0
@@ -213,7 +226,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: ui_ribbon
     x: 0
-    y: 1810
+    y: 714
     width: 1190
     height: 238
     borderLeft: 0
@@ -226,7 +239,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: ui_ribbon_sub
     x: 0
-    y: 1572
+    y: 476
     width: 1190
     height: 238
     borderLeft: 0

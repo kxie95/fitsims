@@ -5,9 +5,11 @@ public class SoundFX : MonoBehaviour {
 
 	public AudioClip buildingFinished, move, click, close, victory;//sounds
 
+    private AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
-	
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -21,13 +23,13 @@ public class SoundFX : MonoBehaviour {
 		GetComponent<AudioSource>().PlayOneShot(buildingFinished);
 	}
 
-	public void Move() { GetComponent<AudioSource>().PlayOneShot(move); }
+	public void Move() { audioSource.PlayOneShot(move); }
 
-	public void Click()	{ GetComponent<AudioSource>().PlayOneShot(click);	}
+	public void Click()	{ audioSource.PlayOneShot(click);	}
 
-	public void Close()	{ GetComponent<AudioSource>().PlayOneShot(close);	}
+	public void Close()	{ audioSource.PlayOneShot(close);	}
 
-    public void Victory() { GetComponent<AudioSource>().PlayOneShot(victory); }
+    public void Victory() { audioSource.PlayOneShot(victory); }
 
 	public void SoundOn() 
 	{ 

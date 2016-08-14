@@ -9,8 +9,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DreamerApps
-  productName: TheGame
+  companyName: Karfra
+  productName: FitCrits
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -89,15 +89,15 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.DreamerApps.SchoolOfMagic
-  bundleVersion: 1.0
+  bundleIdentifier: com.karfra.fitcrits
+  bundleVersion: 2.1
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: d1647a8f4ed51584bb8f6388750831b8
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 3
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -160,7 +160,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
+  AndroidKeystoreName: E:/Downloads/user.keystore
   AndroidKeyaliasName: 
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
