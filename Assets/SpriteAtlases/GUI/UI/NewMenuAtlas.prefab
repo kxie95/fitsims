@@ -57,7 +57,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: daily_bonus_icon
     x: 1915
-    y: 1830
+    y: 1939
     width: 108
     height: 109
     borderLeft: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: happy
     x: 1915
-    y: 1939
+    y: 1830
     width: 108
     height: 109
     borderLeft: 0
