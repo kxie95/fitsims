@@ -29,7 +29,6 @@ TagManager:
   - Globe
   - BDra
   - TimeLimit
-  - BonusObject
   layers:
   - Default
   - TransparentFX

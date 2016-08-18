@@ -15,21 +15,21 @@ public class ExerciseManager : MonoBehaviour {
     public SoundFX soundFx;
 
     public float bonusReward;
-    public int dailyBonusThreshold;
+    public int dailyBonusThreshold = 3;
+    public UISprite[] bonusStars;
 
     // UI components
     public UILabel rewardLabel; // Reward label in ExerciseDone screen.
 
     public DateTime currentDate;
     public GameObject buildingCreator;
-    public int claimedDailyBonus;
+    public int claimedDailyBonus = 0;
 
     private GameObject currentCounter;
 
     void Start () {
         creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
-        claimedDailyBonus = 0;
         //fish out current date
     }
 	
@@ -40,6 +40,7 @@ public class ExerciseManager : MonoBehaviour {
         {
             claimedDailyBonus = 0;
             currentDate = DateTime.Now.Date;
+            UpdateDailyBonusUi(claimedDailyBonus);
         }
 
     }
@@ -106,7 +107,9 @@ public class ExerciseManager : MonoBehaviour {
             print("BONUS CLAIMED " + claimedDailyBonus);
             actualReward = (int)(actualReward * bonusReward);
             claimedDailyBonus++;
+            UpdateDailyBonusUi(claimedDailyBonus);
         }
+
         // Set the text.
         rewardLabel.text = actualReward + " coins!";
 
@@ -148,5 +151,30 @@ public class ExerciseManager : MonoBehaviour {
         {
             instructionLabel.text = taskInstruction + "\nDo " + taskAmount + " " + taskUnit;
         }    
+    }
+
+    public void SetClaimedBonus(int claimed, DateTime lastSaveDate)
+    {
+        claimedDailyBonus = claimed;
+        currentDate = lastSaveDate;
+        UpdateDailyBonusUi(claimedDailyBonus);
+    }
+
+    private void UpdateDailyBonusUi(int bonusUsed)
+    {
+        hideStars();
+        int bonusesLeft = dailyBonusThreshold - bonusUsed;
+        for (int i = 0; i < bonusesLeft; i++)
+        {
+            bonusStars[i].enabled = true;
+        }
+    }
+
+    private void hideStars()
+    {
+        for (int i = 0; i < bonusStars.Length; i++)
+        {
+            bonusStars[i].enabled = false;
+        }
     }
 }

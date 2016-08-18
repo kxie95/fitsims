@@ -24,9 +24,11 @@ public class MainMenu : MonoBehaviour {
 		if (constructionGreenlit) 
 		{
 			Screens [0].SetActive (false);
-			ActivateInterface ();
-		}
-	}
+            // Activate Buy and don't buy buttons.
+            InterfaceElements[0].SetActive(true);
+            InterfaceElements[1].SetActive(true);
+        }
+    }
 
 	public void OnOptions(){OnActivateButton (1);}
 	public void OnCloseOptions(){OnDeactivateButton (1);}
@@ -74,10 +76,7 @@ public class MainMenu : MonoBehaviour {
 		{
 			Screens [scrno].SetActive (true);
 			((Relay)gameManager.GetComponent ("Relay")).pauseInput = true;
-			for (int i = 0; i < InterfaceElements.Length; i++) 
-			{
-				InterfaceElements [i].SetActive (false);
-			}
+            DeactivateInterface();
 		} 
 
 	}
@@ -89,7 +88,7 @@ public class MainMenu : MonoBehaviour {
 		ActivateInterface();
 	}
 
-	private void ActivateInterface()
+	public void ActivateInterface()
 	{
 		for (int i = 0; i < InterfaceElements.Length; i++) 
 		{
@@ -97,6 +96,14 @@ public class MainMenu : MonoBehaviour {
 			InterfaceElements[i].SetActive(true);
 		}
 	}
+
+    public void DeactivateInterface()
+    {
+        for (int i = 0; i < InterfaceElements.Length; i++)
+        {
+            InterfaceElements[i].SetActive(false);
+        }
+    }
 
 	// Use this for initialization
 	void Start () {

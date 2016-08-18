@@ -21,6 +21,7 @@ public class TimeManager : MonoBehaviour, BonusManager{
     {   
         //No longer counting
         counting = false;
+        bonusObject.SetActive(false);
         return result;
     }
 

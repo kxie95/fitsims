@@ -164,23 +164,24 @@ public class BuildingCreator : MonoBehaviour {
 		if (!isReselect) 
 		{
 			((Stats)StatsCo).occupiedDobbitNo--;//frees the dobbit
-			if (buildings [currentSelection] ["GoldBased"] == "true")//refunds the gold/mana 
-			{
-				((Stats)StatsCo).gold += int.Parse (buildings [currentSelection] ["ResCost"]);				
-			} 
-			else 
-			{
-				((Stats)StatsCo).mana += int.Parse (buildings [currentSelection] ["ResCost"]);				
-			}
-			((Stats)StatsCo).update = true;//update stats interface
+            if (buildings[currentSelection]["GoldBased"] == "true")//refunds the gold/mana 
+            {
+                ((Stats)StatsCo).gold += int.Parse(buildings[currentSelection]["ResCost"]);
+            }
+            else
+            {
+                ((Stats)StatsCo).mana += int.Parse(buildings[currentSelection]["ResCost"]);
+            }
 		}
 
 		else 
-		{   
-			DeactivateStatsPad ();
+		{
+            int halfCost = int.Parse(buildings[currentSelection]["ResCost"])/2;
+            ((Stats)StatsCo).gold += halfCost;
+            DeactivateStatsPad ();
         }
-
-		((Stats)StatsCo).experience -= int.Parse (buildings [currentSelection] ["XpAward"]);
+        ((Stats)StatsCo).update = true;//update stats interface
+        ((Stats)StatsCo).experience -= int.Parse (buildings [currentSelection] ["XpAward"]);
 
 		Destroy(selectedBuilding);
 		existingBuildings [currentSelection]--;//decreases the array which counts how many buildings of each type you have 
