@@ -7,7 +7,8 @@ using System;
 public struct NamedPriceLabels
 {
     public string name;
-    public UILabel label;
+    public UILabel priceLabel;
+    public UILabel nameLabel;
 }
 
 [Serializable]

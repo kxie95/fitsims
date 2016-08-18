@@ -21,6 +21,7 @@ public class HomeExpansionMenu : MonoBehaviour {
     //Use this for initialization
     void Start () {
         UpdatePriceLabels();
+        //UpdateNameLabels();
     }
 	
 	// Update is called once per frame
@@ -28,12 +29,19 @@ public class HomeExpansionMenu : MonoBehaviour {
 	    
 	}
 
-    //TODO: (F) Complete this
     private void UpdatePriceLabels()
     {
         for (int i = 0; i < PriceLabels.Length; i++)
         {
-            PriceLabels[i].label.text = getPrice(PriceLabels[i].name).price.ToString();
+            PriceLabels[i].priceLabel.text = getPrice(PriceLabels[i].name).price.ToString();
+        }
+    }
+
+    private void UpdateNameLabels()
+    {
+        for (int i = 0; i < PriceLabels.Length; i++)
+        {
+            PriceLabels[i].priceLabel.text = getPrice(PriceLabels[i].name).price.ToString();
         }
     }
 
