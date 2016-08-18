@@ -134,7 +134,8 @@ public class BuildingCreator : MonoBehaviour {
 		//}
         foreach (NamedPriceLabels n in BuildingPriceLabels)
         {
-            n.label.text = buildings[n.name]["ResCost"];
+            n.priceLabel.text = buildings[n.name]["ResCost"];
+            n.nameLabel.text = buildings[n.name]["Name"];
         }
     }
 
