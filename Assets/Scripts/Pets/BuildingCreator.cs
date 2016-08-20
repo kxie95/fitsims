@@ -75,7 +75,7 @@ public class BuildingCreator : MonoBehaviour {
 	private Component soundFXSc;
 
     public SaveLoad saveLoad;
-
+    public bool isBuildingsInitialised = false;
 	// Use this for initialization
 	void Start () {
 		GetBuildingsXML();//reads Buildings.xml
@@ -124,6 +124,7 @@ public class BuildingCreator : MonoBehaviour {
             }
             buildings.Add(key, dictionary);
 		}
+        isBuildingsInitialised = true;
 	}
 
 	private void UpdatePrices()//updates price labels on building buttons
