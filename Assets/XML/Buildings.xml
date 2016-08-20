@@ -4,7 +4,7 @@
 	
 	<Building>
 		<ID>1</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Birdo</Name>	
     <Key>T1Bird</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Generation</Type>
@@ -68,7 +68,7 @@
 	
 	<Building>
 		<ID>10</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Dino</Name>	
     <Key>T1Dino</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Resource Extra Storage</Type>
@@ -123,12 +123,16 @@
     <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.0</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+  
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>
 	
 	<Building>
 		<ID>13</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Fisho</Name>	
     <Key>T1Fish</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Competition</Type>
@@ -192,7 +196,7 @@
 	
 	<Building>
 		<ID>11</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Cato</Name>	
     <Key>T1Cat</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>General</Type>
@@ -257,7 +261,7 @@
   
 	<Building>
 		<ID>7</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Blue Dino</Name>	
     <Key>T2Walk</Key>
     <Description>*Placeholder description*</Description>
 		<Type>Resource Generation</Type>
@@ -321,7 +325,7 @@
 		
 	<Building>
 		<ID>8</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Yellow Fisho</Name>	
     <Key>T2Run</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Resource Generation</Type>
@@ -386,7 +390,7 @@
   
 	<Building>
 		<ID>5</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Green Cato</Name>	
     <Key>T3Situp</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Research</Type>
@@ -449,7 +453,7 @@
 	
 	<Building>
 		<ID>3</ID>
-    <Name>Cato</Name>
+    <Name>Purple Birdo</Name>
     <Key>T3Walk</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Generation</Type>
@@ -512,7 +516,7 @@
 	
 	<Building>
 		<ID>12</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Purple Fisho</Name>	
     <Key>T3Run</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>General</Type>
@@ -575,7 +579,7 @@
 	
 	<Building>
 		<ID>9</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Red Cato</Name>	
     <Key>T3SitupWithBonus</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Resource Extra Storage</Type>
@@ -638,7 +642,7 @@
 	
 	<Building>
 		<ID>2</ID>
-		<Name>*Placeholder name*</Name>	
+		<Name>Fortune Cat</Name>	
     <Key>T1Gold</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Generation</Type>
@@ -701,7 +705,7 @@
 
 	<Building>
 		<ID>12</ID>
-		<Name>Black Dragon</Name>	
+		<Name>Pink Fortune Cat</Name>	
     <Key>T2Situp</Key>
 		<Description>The previous owner hyped it up to be a black dragon; in truth it was just a dog</Description>
 		<Type>General</Type>
