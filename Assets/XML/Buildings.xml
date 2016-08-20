@@ -60,6 +60,10 @@
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.0</BonusAmount>
     <BonusThreshold>35</BonusThreshold>
+    
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>	
 	
 	<Building>
@@ -119,7 +123,11 @@
     <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.0</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+  
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>
 	
 	<Building>
@@ -178,7 +186,12 @@
     <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.0</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
+    
 	</Building>
 	
 	<Building>
@@ -235,10 +248,15 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-  <HasBonus>True</HasBonus>
+    <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
+    
 	</Building>
   
 	<Building>
@@ -294,10 +312,15 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-  <HasBonus>False</HasBonus>
+    <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.0</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
+    
 	</Building>
 		
 	<Building>
@@ -354,10 +377,15 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-  <HasBonus>False</HasBonus>
+    <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.0</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
+    
 	</Building>
   
 	<Building>
@@ -413,10 +441,14 @@
     <TaskRequirement>80</TaskRequirement>
     <TaskUnit>situps</TaskUnit>
   
-  <HasBonus>True</HasBonus>
+    <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>
 	
 	<Building>
@@ -472,10 +504,14 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-  <HasBonus>False</HasBonus>
+    <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.0</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>
 	
 	<Building>
@@ -531,10 +567,14 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-  <HasBonus>False</HasBonus>
+    <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>
 	
 	<Building>
@@ -590,10 +630,14 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-  <HasBonus>True</HasBonus>
+    <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>
 	
 	<Building>
@@ -649,10 +693,14 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-  <HasBonus>False</HasBonus>
+    <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
-  <BonusThreshold>20</BonusThreshold>
+    <BonusThreshold>20</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>	
 
 	<Building>
@@ -712,6 +760,10 @@
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.5</BonusAmount>
     <BonusThreshold>300</BonusThreshold>
+
+    <!-- Pet happiness stats-->
+    <HappinessDecrease>10</HappinessDecrease>
+    <MaxHp>480</MaxHp>
 	</Building>
 </Buildings>
 
