@@ -92,45 +92,45 @@ public class CameraController : MonoBehaviour {
 	
 	void Update()
 	{
-			
 			zoom = ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor;
 		
-			if (Input.touchCount > 1 && Input.GetTouch(0).phase == TouchPhase.Moved//chech for 2 fingers on screen
-				&& Input.GetTouch(1).phase == TouchPhase.Moved) {
+			if (Input.touchCount > 1 && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(1).phase == TouchPhase.Moved) {
             	
-			Vector2 touchPosition0 = Input.GetTouch(0).position;//positions for both fingers for pinch zoom in/out
-			Vector2 touchPosition1 = Input.GetTouch(1).position;
+			    Vector2 touchPosition0 = Input.GetTouch(0).position;//positions for both fingers for pinch zoom in/out
+			    Vector2 touchPosition1 = Input.GetTouch(1).position;
 				
-			currentFingerDistance = Vector2.Distance(touchPosition0,touchPosition1);//distance between fingers
+			    currentFingerDistance = Vector2.Distance(touchPosition0,touchPosition1);//distance between fingers
 				
-			if (currentFingerDistance>previousFingerDistance && zoom<zoomMax)
-				{
-				((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor += 0.05f;//0.02f;
-				}
-			else if(zoom>zoomMin)
-				{
-				((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor -= 0.05f;//0.02f;
-				}
+			    if (currentFingerDistance>previousFingerDistance && zoom<zoomMax)
+				    {
+				        ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor += 0.03f;//0.02f;
+				    }
+			    else if(zoom>zoomMin)
+				    {
+				        ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor -= 0.03f;//0.02f;
+				    }
 				
-			previousFingerDistance = currentFingerDistance;
+			    previousFingerDistance = currentFingerDistance;
 		
 			}
 			
 			//else, if one finger on screen - scroll
 			else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
             Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-                  		
-			
-			if(touchDeltaPosition.x < 0)
+
+            float panSpeed = speed / ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor;
+
+
+            if (touchDeltaPosition.x < 0)
 			{
 				if( transform.position.x < 5000)
 				{
-						transform.Translate(-touchDeltaPosition.x*speed, 0, 0);	
+						transform.Translate(-touchDeltaPosition.x* panSpeed, 0, 0);	
 				}
 			}
 			else if( transform.position.x > -5000)
 				{
-						transform.Translate(-touchDeltaPosition.x*speed, 0, 0);	
+						transform.Translate(-touchDeltaPosition.x* panSpeed, 0, 0);	
 				}
 			
 			
@@ -138,13 +138,13 @@ public class CameraController : MonoBehaviour {
 			{
 				if( transform.position.y < 4000)
 				{
-						transform.Translate(0, -touchDeltaPosition.y*speed, 0);	
+						transform.Translate(0, -touchDeltaPosition.y* panSpeed, 0);	
 				}
 			}
 			
 			else if( transform.position.y > -4000)
 				{
-						transform.Translate(0, -touchDeltaPosition.y*speed, 0);	
+						transform.Translate(0, -touchDeltaPosition.y* panSpeed, 0);	
 				}
 		
 		}
