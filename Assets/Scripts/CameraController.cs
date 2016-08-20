@@ -120,7 +120,6 @@ public class CameraController : MonoBehaviour {
 
             float panSpeed = speed / ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor;
 
-
             if (touchDeltaPosition.x < 0)
 			{
 				if( transform.position.x < 5000)
