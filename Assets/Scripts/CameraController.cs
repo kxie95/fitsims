@@ -17,10 +17,12 @@ public class CameraController : MonoBehaviour {
 	private float currentFingerDistance;
 	private float previousFingerDistance;
 
+    public bool touchActive;
+
 	// Use this for initialization
 	void Start () 
 	{
-		
+        touchActive = true;
 	}
 	
 	private IEnumerator Reset()
@@ -68,7 +70,7 @@ public class CameraController : MonoBehaviour {
 	
 	// conditions keep the camera from going off-map, leaving a margin for zoom-in/out
 	void FixedUpdate ()
-	{			
+	{
 		if(MoveNb 			
 			&& transform.position.y < 4200){transform.position+=new Vector3(0,10,0);}
 			//&& transform.position.x > -5200
@@ -92,60 +94,65 @@ public class CameraController : MonoBehaviour {
 	
 	void Update()
 	{
-			zoom = ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor;
-		
-			if (Input.touchCount > 1 && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(1).phase == TouchPhase.Moved) {
-            	
-			    Vector2 touchPosition0 = Input.GetTouch(0).position;//positions for both fingers for pinch zoom in/out
-			    Vector2 touchPosition1 = Input.GetTouch(1).position;
-				
-			    currentFingerDistance = Vector2.Distance(touchPosition0,touchPosition1);//distance between fingers
-				
-			    if (currentFingerDistance>previousFingerDistance && zoom<zoomMax)
-				    {
-				        ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor += 0.03f;//0.02f;
-				    }
-			    else if(zoom>zoomMin)
-				    {
-				        ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor -= 0.03f;//0.02f;
-				    }
-				
-			    previousFingerDistance = currentFingerDistance;
-		
-			}
-			
-			//else, if one finger on screen - scroll
-			else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
-            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+        if (touchActive)
+        {
+            zoom = ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor;
 
-            float panSpeed = speed / ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor;
+            if (Input.touchCount > 1 && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(1).phase == TouchPhase.Moved)
+            {
 
-            if (touchDeltaPosition.x < 0)
-			{
-				if( transform.position.x < 5000)
-				{
-						transform.Translate(-touchDeltaPosition.x* panSpeed, 0, 0);	
-				}
-			}
-			else if( transform.position.x > -5000)
-				{
-						transform.Translate(-touchDeltaPosition.x* panSpeed, 0, 0);	
-				}
-			
-			
-			if(touchDeltaPosition.y < 0)
-			{
-				if( transform.position.y < 4000)
-				{
-						transform.Translate(0, -touchDeltaPosition.y* panSpeed, 0);	
-				}
-			}
-			
-			else if( transform.position.y > -4000)
-				{
-						transform.Translate(0, -touchDeltaPosition.y* panSpeed, 0);	
-				}
-		
-		}
+                Vector2 touchPosition0 = Input.GetTouch(0).position;//positions for both fingers for pinch zoom in/out
+                Vector2 touchPosition1 = Input.GetTouch(1).position;
+
+                currentFingerDistance = Vector2.Distance(touchPosition0, touchPosition1);//distance between fingers
+
+                if (currentFingerDistance > previousFingerDistance && zoom < zoomMax)
+                {
+                    ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor += 0.03f;//0.02f;
+                }
+                else if (zoom > zoomMin)
+                {
+                    ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor -= 0.03f;//0.02f;
+                }
+
+                previousFingerDistance = currentFingerDistance;
+
+            }
+
+            //else, if one finger on screen - scroll
+            else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+
+                float panSpeed = speed / ((tk2dCamera)this.GetComponent("tk2dCamera")).ZoomFactor;
+
+                if (touchDeltaPosition.x < 0)
+                {
+                    if (transform.position.x < 5000)
+                    {
+                        transform.Translate(-touchDeltaPosition.x * panSpeed, 0, 0);
+                    }
+                }
+                else if (transform.position.x > -5000)
+                {
+                    transform.Translate(-touchDeltaPosition.x * panSpeed, 0, 0);
+                }
+
+
+                if (touchDeltaPosition.y < 0)
+                {
+                    if (transform.position.y < 4000)
+                    {
+                        transform.Translate(0, -touchDeltaPosition.y * panSpeed, 0);
+                    }
+                }
+
+                else if (transform.position.y > -4000)
+                {
+                    transform.Translate(0, -touchDeltaPosition.y * panSpeed, 0);
+                }
+
+            }
+        }
 	}
 }
