@@ -8,7 +8,9 @@ using System.Collections.Generic;
 /// </summary>
 public class Happiness : MonoBehaviour {
 
+	private SaveLoad saveLoad;
 	private BuildingCreator creator;
+
 	public GameObject pet;
 	public UISlider happinessBar;
 	public UISprite happinessIndicator;
@@ -20,7 +22,7 @@ public class Happiness : MonoBehaviour {
     
 	// Pet happiness stats.
 	private int maxHp;
-	private int hp;
+	public int hp = -1;
 	private int decreaseAmount; // amount that happiness decreases by every decreaseTimeMins.
 
     private bool initialised = false;
@@ -29,29 +31,18 @@ public class Happiness : MonoBehaviour {
 	void Start () 
 	{
         creator = (BuildingCreator)GameObject.Find("BuildingCreator").GetComponent("BuildingCreator");
-        // Get pet stats.
-        Debug.Log(pet.tag);
-        Debug.Log("Current time" + DateTime.Now.ToString());
-
-        if (creator.isBuildingsInitialised)
-        {
-            Initialise();
-        }
+		saveLoad = (SaveLoad)GameObject.Find ("SaveLoad").GetComponent ("SaveLoad");
+		Initialise ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-        if (!initialised)
-        {
-            if (creator.isBuildingsInitialised)
-            {
-                Initialise();
-            } else
-            {
-                return;
-            }
-        } 
+		if (!initialised) {
+			Initialise ();
+		} else {
+			return;
+		}
 
 		DateTime now = DateTime.Now;
 
@@ -69,19 +60,15 @@ public class Happiness : MonoBehaviour {
                 happinessBar.value = 0;
 			}
 
-			// Change happiness indicator to sad if below 50%.
-			if (!IsHappy()) 
-			{
-				happinessIndicator.spriteName = "sad";
-			}
-
 			previousTime = now;
 			previousTimePlus = previousTime.AddMinutes (decreaseTimeMins);
 		}
 			
-		if (IsHappy())
-		{
+		// Update happiness indicator.
+		if (IsHappy ()) {
 			happinessIndicator.spriteName = "happy";
+		} else {
+			happinessIndicator.spriteName = "sad";
 		}
 	}
 
@@ -89,37 +76,25 @@ public class Happiness : MonoBehaviour {
     {
         if (isGamePause)
         {
-            PlayerPrefs.SetString("HappinessTimePrevious", previousTime.ToString());
+			PlayerPrefs.SetString("HappinessTimePrevious", previousTime.ToString());
+			saveLoad.SaveGame ();
         }
     }
 
     void OnApplicationFocus(bool isGameFocus)
     {
-        if (isGameFocus)
-        {
-            if (!PlayerPrefs.HasKey("HappinessTimePrevious"))
-            {
-                return;
-            }
-            DateTime savedTime = DateTime.Parse(PlayerPrefs.GetString("HappinessTimePrevious"));
-            double minutesPassed = (DateTime.Now - savedTime).TotalMinutes;
-            if ((int)minutesPassed == 0)
-            {
-                return;
-            }
-            int numDecreaseTimeMinsPassed = (int)(minutesPassed / decreaseTimeMins);
-
-            hp -= decreaseAmount * numDecreaseTimeMinsPassed;
-            previousTime = previousTime.AddMinutes(decreaseTimeMins * numDecreaseTimeMinsPassed);
-            previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
-        }
+		if (isGameFocus) {
+			saveLoad.LoadGame ();
+			Initialise ();
+		}
     }
 
     void OnApplicationExit(bool isGameExit)
     {
         if (isGameExit)
         {
-            PlayerPrefs.SetString("HappinessTimePrevious", previousTime.ToString());
+			PlayerPrefs.SetString("HappinessTimePrevious", previousTime.ToString());
+			saveLoad.SaveGame ();
         }
     }
 
@@ -130,15 +105,38 @@ public class Happiness : MonoBehaviour {
 
     private void Initialise()
     {
-        Dictionary<string, string> petAttributes = creator.GetBuildingDictionary(pet.tag);
-        decreaseAmount = Int32.Parse(petAttributes["HappinessDecrease"]);
-        maxHp = Int32.Parse(petAttributes["MaxHp"]);
-        hp = maxHp;
+		if (creator.isBuildingsInitialised)
+		{
+			Dictionary<string, string> petAttributes = creator.GetBuildingDictionary(pet.tag);
+			decreaseAmount = Int32.Parse(petAttributes["HappinessDecrease"]);
+			maxHp = Int32.Parse(petAttributes["MaxHp"]);
 
-        // Initialise timer.
-        previousTime = DateTime.Now;
-        previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
-
-        initialised = true;
+			previousTime = DateTime.Now;
+			previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+			if (hp == -1) {
+				hp = maxHp;
+			}
+			initialised = true;
+		}
     }
+
+	/// <summary>
+	/// Called by SaveLoad if the pet has been initialised before.
+	/// </summary>
+	public void ReInitialise() 
+	{
+		if (!PlayerPrefs.HasKey("HappinessTimePrevious"))
+		{
+			return;
+		}
+
+		DateTime savedTime = DateTime.Parse(PlayerPrefs.GetString("HappinessTimePrevious"));
+		double minutesPassed = (DateTime.Now - savedTime).TotalMinutes;
+		int numDecreaseTimeMinsPassed = (int)(minutesPassed / decreaseTimeMins);
+
+		hp -= decreaseAmount * numDecreaseTimeMinsPassed;
+
+		previousTime = previousTime.AddMinutes(decreaseTimeMins * numDecreaseTimeMinsPassed);
+		previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+	}
 }
