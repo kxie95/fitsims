@@ -40,13 +40,10 @@ public class Happiness : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-        //Debug.Log("Init? " + initialised);
-        //Debug.Log("ReInit? " + needsReinit);
-
-        if (!initialised) {
-			Initialise ();
-		} else {
-			return;
+        if (!initialised)
+        {
+			Initialise (); // May still not initialise if pet dictionary not initialised.
+            return;
 		}
 
         if (needsReinit)
@@ -59,6 +56,7 @@ public class Happiness : MonoBehaviour {
 		// Check if decreaseTimeMins has passed. Decreases HP. Updates new time.
 		if (DateTime.Compare(previousTimePlus, now) <= 0) 
 		{
+            Debug.Log("1 min passed");
 			// Decrease the slider by the amount obtained from attributes.
 			if (hp - decreaseAmount >= 0) 
 			{
@@ -153,11 +151,10 @@ public class Happiness : MonoBehaviour {
     void OnApplicationFocus(bool isGameFocus)
     {
 		if (isGameFocus) {
-            saveLoad = (SaveLoad)GameObject.Find("SaveLoad").GetComponent("SaveLoad");
-            if (saveLoad != null)
-            {
-                saveLoad.LoadGame();
-            }
+            //if (saveLoad != null)
+            //{
+            //    saveLoad.LoadGame();
+            //}
         }
     }
 
