@@ -760,7 +760,11 @@ MonoBehaviour:
   pet: {fileID: 168000}
   happinessBar: {fileID: 11487662}
   happinessIndicator: {fileID: 11414976}
+  hpGained: 80
   decreaseTimeMins: 30
+  maxHp: 0
+  hp: 0
+  decreaseAmount: 0
 --- !u!114 &11470790
 MonoBehaviour:
   m_ObjectHideFlags: 1

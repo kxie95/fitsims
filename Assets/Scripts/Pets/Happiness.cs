@@ -9,19 +9,21 @@ using System.Collections.Generic;
 public class Happiness : MonoBehaviour {
 
 	private BuildingCreator creator;
+    private ExerciseManager exManager;
 	public GameObject pet;
 	public UISlider happinessBar;
 	public UISprite happinessIndicator;
 
-    public int decreaseTimeMins = 30;
+    public int hpGained = 80;
+    public int decreaseTimeMins = 1;
 
 	private DateTime previousTime;
 	private DateTime previousTimePlus;
     
 	// Pet happiness stats.
-	private int maxHp;
-	private int hp;
-	private int decreaseAmount; // amount that happiness decreases by every decreaseTimeMins.
+	public int maxHp;
+	public int hp;
+	public int decreaseAmount; // amount that happiness decreases by every decreaseTimeMins.
 
     private bool initialised = false;
 
@@ -29,6 +31,8 @@ public class Happiness : MonoBehaviour {
 	void Start () 
 	{
         creator = (BuildingCreator)GameObject.Find("BuildingCreator").GetComponent("BuildingCreator");
+        exManager = (ExerciseManager)GameObject.Find("ExerciseManager").GetComponent("ExerciseManager");
+
         // Get pet stats.
         Debug.Log(pet.tag);
         Debug.Log("Current time" + DateTime.Now.ToString());
@@ -58,22 +62,43 @@ public class Happiness : MonoBehaviour {
 		// Check if decreaseTimeMins has passed.
 		if (now >= previousTimePlus) 
 		{
-			// Decrease the slider by the amount obtained from attributes.
-			if (hp - decreaseAmount >= 0) 
-			{
-                hp -= decreaseAmount;
-				happinessBar.value = (float)(hp) / (float)maxHp;
-			} else 
-			{
-                hp = 0;
-                happinessBar.value = 0;
-			}
+            //Starts happy
+            if (IsHappy())
+            {
+                // Decrease the slider by the amount obtained from attributes.
+                if (hp - decreaseAmount >= 0)
+                {
+                    hp -= decreaseAmount;
+                    happinessBar.value = (float)(hp) / (float)maxHp;
+                }
+                else
+                {
+                    hp = 0;
+                    happinessBar.value = 0;
+                }
 
-			// Change happiness indicator to sad if below 50%.
-			if (!IsHappy()) 
-			{
-				happinessIndicator.spriteName = "sad";
-			}
+                // Change happiness indicator to sad if below 50%.
+                if (!IsHappy())
+                {
+                    happinessIndicator.spriteName = "sad";
+                    exManager.numSadPets++;
+                }
+            }
+            //Starts sad
+            else
+            {
+                // Decrease the slider by the amount obtained from attributes.
+                if (hp - decreaseAmount >= 0)
+                {
+                    hp -= decreaseAmount;
+                    happinessBar.value = (float)(hp) / (float)maxHp;
+                }
+                else
+                {
+                    hp = 0;
+                    happinessBar.value = 0;
+                }
+            }
 
 			previousTime = now;
 			previousTimePlus = previousTime.AddMinutes (decreaseTimeMins);
@@ -121,6 +146,44 @@ public class Happiness : MonoBehaviour {
         {
             PlayerPrefs.SetString("HappinessTimePrevious", previousTime.ToString());
         }
+    }
+
+    public void IncreaseHP()
+    {
+        if (!IsHappy()) {
+       
+            //Check if higher than maximum
+            if (hp + hpGained > maxHp)
+            {
+                hp = maxHp;
+            }
+            else
+            {
+                hp = +hpGained;
+            }
+
+            happinessBar.value = (float)(hp) / (float)maxHp;
+
+            if (IsHappy())
+            {
+                exManager.DecrementNumSadPets();
+            }
+        }
+        else
+        {
+            //Check if higher than maximum
+            if (hp + hpGained > maxHp)
+            {
+                hp = maxHp;
+            }
+            else
+            {
+                hp = +hpGained;
+            }
+
+            happinessBar.value = (float)(hp) / (float)maxHp;
+        }
+        
     }
 
     private bool IsHappy()
