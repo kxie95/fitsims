@@ -30,6 +30,13 @@ public class ExerciseManager : MonoBehaviour {
 
     private GameObject currentCounter;
 
+    //Formatted strings for the reward screen
+    private string baseRewardStringFormatted = "Base Reward:                         ";
+    private string sadPetsPenatlyStringFormatted = "Sad Pets Penalty:                 -";
+    private string dailyBonusStringFormatted = "Daily Bonus:                             ";
+    private string treasureBonusStringFormatted = "Treasure Bonus:                     ";
+    private string totalStringFormatted = "Total:                                       ";
+
     void Start () {
         creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
@@ -88,15 +95,13 @@ public class ExerciseManager : MonoBehaviour {
 
         // Calculate the distance completed as a percentage.
         double percentCompleted = (double)completedValue / targetValue;
-        // Multiply by the associated reward.
-        double actualReward = Math.Round(percentCompleted * rewardValue)/2;
-        //double actualReward = 400 / 2;
-        double actualRewardUnchanged = actualReward;
+
+        double actualReward = Math.Round(percentCompleted * rewardValue);
+        double sadPetsPenalty = 0;
         double exerciseTaskBonus = 0;
         double dailyTaskBonus = 0;
 
         GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
-        //Check if this works
         BonusManager bonus = (BonusManager)exManager.GetComponent("BonusManager");
 
         //Set the task bonus gold
@@ -109,32 +114,41 @@ public class ExerciseManager : MonoBehaviour {
                 print("CLAIMED TASKBONUS: " + exerciseTaskBonus + "REWARD: "+actualReward + "BONUS AMOUNT: "+taskBonus);
             }
         }
+        
         //Set the daily bonus gold
         if (claimedDailyBonus < dailyBonusThreshold)
         {
             print("CLAIMED DAILYBONUS " + claimedDailyBonus);
             //actualReward = (int)(actualReward * bonusReward);
-            dailyTaskBonus = actualRewardUnchanged * bonusReward;
+            dailyTaskBonus = actualReward * bonusReward;
             claimedDailyBonus++;
             UpdateDailyBonusUi(claimedDailyBonus);
         }
+
+        //Calculate the sad pets penalty
         if (numSadPets <= maxSadPet)
         {
-            actualReward = actualReward * ((maxSadPet - numSadPets) / maxSadPet);
+            sadPetsPenalty = (actualReward / 10.0)*numSadPets;
         }
         else
         {
-            actualReward = 0;
+            sadPetsPenalty = (actualReward / 10.0) * maxSadPet;
         }
+
+        print("Sad pets penalty "+ sadPetsPenalty + " Actual Reward "+actualReward+" Daily bonus amount: "+ dailyTaskBonus + " Task bonus amount: "+ exerciseTaskBonus);
+
+        //Calculate total reward
+        int totalReward = (int)(actualReward + dailyTaskBonus + exerciseTaskBonus - sadPetsPenalty);
+
+        //Format the string for the reward screen
+        string formattedStringReward = "";
+        formattedStringReward = formattedStringReward + baseRewardStringFormatted + actualReward 
+            + "\n" + sadPetsPenatlyStringFormatted + sadPetsPenalty + "\n" + dailyBonusStringFormatted
+            + dailyTaskBonus + "\n" + treasureBonusStringFormatted + exerciseTaskBonus + "\n" +totalStringFormatted + totalReward;
         
-
-        print("Half nonminused: "+actualRewardUnchanged+" Half minused: "+actualReward+" Daily bonus amount: "+ dailyTaskBonus + " Task bonus amount: "+ exerciseTaskBonus);
-
-        int totalReward = (int)(actualRewardUnchanged + actualReward + dailyTaskBonus + exerciseTaskBonus);
-
         // Set the text.
-        //rewardLabel.text = totalReward + " coins!";
-        rewardLabel.text = "Murakami’s home is highly functional with a calm and polished atmosphere. It’s not only \n simple but also a product of ingenuity. This isn’t only accomplished for her workspace \n but also for her live-in partner, Amanosuke the cat. \nOur interview begins while also being considerate of Amanosuke’s wariness of our \n\n\n - Please tell us about your workspace.";
+        rewardLabel.text = formattedStringReward;
+ 
         stats.gold = stats.gold + totalReward;
         stats.update = true;
         ((Happiness)creator.selectedBuilding.GetComponent("Happiness")).IncreaseHP();
