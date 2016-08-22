@@ -10,20 +10,23 @@ public class Happiness : MonoBehaviour {
 
 	private SaveLoad saveLoad;
 	private BuildingCreator creator;
-
+    private ExerciseManager exManager;
+    
 	public GameObject pet;
 	public UISlider happinessBar;
 	public UISprite happinessIndicator;
 
-    public int decreaseTimeMins = 30;
+    public int hpGained = 80;
+    public int decreaseTimeMins = 1;
 
 	private DateTime previousTime;
 	private DateTime previousTimePlus;
     
 	// Pet happiness stats.
-	private int maxHp;
+
+	public int maxHp;
 	public int hp = -1;
-	private int decreaseAmount; // amount that happiness decreases by every decreaseTimeMins.
+	public int decreaseAmount; // amount that happiness decreases by every decreaseTimeMins.
 
     public bool initialised = false;
     public bool needsReinit = false;
@@ -33,6 +36,7 @@ public class Happiness : MonoBehaviour {
 	void Start () 
 	{
         creator = (BuildingCreator)GameObject.Find("BuildingCreator").GetComponent("BuildingCreator");
+        exManager = (ExerciseManager)GameObject.Find("ExerciseManager").GetComponent("ExerciseManager");
 		saveLoad = (SaveLoad)GameObject.Find ("SaveLoad").GetComponent ("SaveLoad");
 		Initialise ();
 	}
@@ -56,25 +60,48 @@ public class Happiness : MonoBehaviour {
 		// Check if decreaseTimeMins has passed. Decreases HP. Updates new time.
 		if (DateTime.Compare(previousTimePlus, now) <= 0) 
 		{
-            Debug.Log("1 min passed");
-			// Decrease the slider by the amount obtained from attributes.
-			if (hp - decreaseAmount >= 0) 
-			{
-                hp -= decreaseAmount;
-			} else 
-			{
-                hp = 0;
-                happinessBar.value = 0;
-			}
+            if (IsHappy())
+            {
+                Debug.Log("1 min passed");
+                // Decrease the slider by the amount obtained from attributes.
+                DecreaseHappiness();
 
-			previousTime = now;
-			previousTimePlus = previousTime.AddMinutes (decreaseTimeMins);
-            needsUiUpdate = true;
-		}
+                previousTime = now;
+                previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+                needsUiUpdate = true;
+
+                if (!IsHappy())
+                {
+                    exManager.numSadPets++;
+                }
+            }
+            else {
+                Debug.Log("1 min passed");
+                // Decrease the slider by the amount obtained from attributes.
+                DecreaseHappiness();
+                previousTime = now;
+                previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+                needsUiUpdate = true;
+            }
+        }
 
         if (needsUiUpdate)
         {
             UpdateUi();
+        }
+    }
+
+
+    private void DecreaseHappiness()
+    {
+        if (hp - decreaseAmount >= 0)
+        {
+            hp -= decreaseAmount;
+        }
+        else
+        {
+            hp = 0;
+            happinessBar.value = 0;
         }
     }
 
@@ -137,6 +164,44 @@ public class Happiness : MonoBehaviour {
         previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
 
         needsReinit = false;
+    }
+
+    public void IncreaseHP()
+    {
+        if (!IsHappy()) {
+       
+            //Check if higher than maximum
+            if (hp + hpGained > maxHp)
+            {
+                hp = maxHp;
+            }
+            else
+            {
+                hp = +hpGained;
+            }
+
+            happinessBar.value = (float)(hp) / (float)maxHp;
+
+            if (IsHappy())
+            {
+                exManager.DecrementNumSadPets();
+            }
+        }
+        else
+        {
+            //Check if higher than maximum
+            if (hp + hpGained > maxHp)
+            {
+                hp = maxHp;
+            }
+            else
+            {
+                hp = +hpGained;
+            }
+
+            happinessBar.value = (float)(hp) / (float)maxHp;
+        }
+        needsUiUpdate = true;
     }
 
     void OnApplicationPause(bool isGamePause)

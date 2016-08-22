@@ -13,7 +13,7 @@
 		<PopBonus>10</PopBonus><!--the number to be added to the max population-->
 		<ProdPerSec>0</ProdPerSec><!--the amount of the resource generated per second-->
 		<StoreCap>0</StoreCap><!--the total amount of resource storage added by that building-->
-		<MaxCap>1</MaxCap><!--max number of buildings allowed-->
+		<MaxCap>2000</MaxCap><!--max number of buildings allowed-->
     <GrassSize>2</GrassSize>
     
 		<Time>0</Time><!--the time (in minutes) needed to create the building-->
@@ -58,7 +58,7 @@
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.0</BonusAmount>
+    <BonusAmount>1.5</BonusAmount>
     <BonusThreshold>35</BonusThreshold>
     
     <!-- Pet happiness stats-->
@@ -77,7 +77,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
-		<MaxCap>3</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -120,9 +120,9 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
  
-    <HasBonus>False</HasBonus>
+    <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.0</BonusAmount>
+    <BonusAmount>1.5</BonusAmount>
     <BonusThreshold>20</BonusThreshold>
   
     <!-- Pet happiness stats-->
@@ -141,7 +141,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
-		<MaxCap>1</MaxCap>
+		<MaxCap>2000</MaxCap>
     <GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -205,7 +205,7 @@
 		<PopBonus>30</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
-		<MaxCap>4</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -270,7 +270,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0.2</ProdPerSec>
 		<StoreCap>1250</StoreCap>
-		<MaxCap>5</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -334,7 +334,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0.2</ProdPerSec>
 		<StoreCap>1250</StoreCap>
-		<MaxCap>5</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -399,7 +399,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
-		<MaxCap>1</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -462,7 +462,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
-		<MaxCap>3</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -525,7 +525,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
-		<MaxCap>1</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -588,7 +588,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>7500</StoreCap>
-		<MaxCap>3</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -651,7 +651,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>800</StoreCap>
-		<MaxCap>2</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>
@@ -714,7 +714,7 @@
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
 		<StoreCap>0</StoreCap>
-		<MaxCap>3</MaxCap>
+		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
 		<Time>0</Time>

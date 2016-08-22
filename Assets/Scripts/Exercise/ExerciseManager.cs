@@ -14,6 +14,7 @@ public class ExerciseManager : MonoBehaviour {
     public Settings settings;
     public SoundFX soundFx;
 
+    public float maxSadPet = 5;
     public float bonusReward;
     public int dailyBonusThreshold = 3;
     public UISprite[] bonusStars;
@@ -25,7 +26,16 @@ public class ExerciseManager : MonoBehaviour {
     public GameObject buildingCreator;
     public int claimedDailyBonus = 0;
 
+    public float numSadPets;
+
     private GameObject currentCounter;
+
+    //Formatted strings for the reward screen
+    private string baseRewardStringFormatted = "Base Reward:                         ";
+    private string sadPetsPenatlyStringFormatted = "Sad Pets Penalty:                 -";
+    private string dailyBonusStringFormatted = "Daily Bonus:                             ";
+    private string treasureBonusStringFormatted = "Treasure Bonus:                     ";
+    private string totalStringFormatted = "Total:                                       ";
 
     void Start () {
         creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
@@ -85,39 +95,69 @@ public class ExerciseManager : MonoBehaviour {
 
         // Calculate the distance completed as a percentage.
         double percentCompleted = (double)completedValue / targetValue;
-        // Multiply by the associated reward.
-        int actualReward = (int)Math.Round(percentCompleted * rewardValue);
+
+        double actualReward = Math.Round(percentCompleted * rewardValue);
+        double sadPetsPenalty = 0;
+        double exerciseTaskBonus = 0;
+        double dailyTaskBonus = 0;
 
         GameObject exManager = GameObject.FindGameObjectWithTag(creator.GetCurrentBuildingDictionary()["BonusType"]);
-        //Check if this works
         BonusManager bonus = (BonusManager)exManager.GetComponent("BonusManager");
 
+        //Set the task bonus gold
         if (Convert.ToBoolean(creator.GetCurrentBuildingDictionary()["HasBonus"]))
         {
             if (bonus.GetResult())
             {
-                float taskBonus = float.Parse(creator.GetCurrentBuildingDictionary()["BonusAmount"]);
-                actualReward = (int)(actualReward * taskBonus);
-                print("CLAIMED TASKBONUS: " + taskBonus+ "REWARD: "+actualReward);
+                double taskBonus = double.Parse(creator.GetCurrentBuildingDictionary()["BonusAmount"]) - 1.0;
+                exerciseTaskBonus = (actualReward * taskBonus);
+                print("CLAIMED TASKBONUS: " + exerciseTaskBonus + "REWARD: "+actualReward + "BONUS AMOUNT: "+taskBonus);
             }
         }
-
+        
+        //Set the daily bonus gold
         if (claimedDailyBonus < dailyBonusThreshold)
         {
-            print("BONUS CLAIMED " + claimedDailyBonus);
-            actualReward = (int)(actualReward * bonusReward);
+            print("CLAIMED DAILYBONUS " + claimedDailyBonus);
+            //actualReward = (int)(actualReward * bonusReward);
+            dailyTaskBonus = actualReward * bonusReward;
             claimedDailyBonus++;
             UpdateDailyBonusUi(claimedDailyBonus);
         }
 
-        // Set the text.
-        rewardLabel.text = actualReward + " coins!";
+        //Calculate the sad pets penalty
+        if (numSadPets <= maxSadPet)
+        {
+            sadPetsPenalty = (actualReward / 10.0)*numSadPets;
+        }
+        else
+        {
+            sadPetsPenalty = (actualReward / 10.0) * maxSadPet;
+        }
 
-        stats.gold = stats.gold + actualReward;
+        print("Sad pets penalty "+ sadPetsPenalty + " Actual Reward "+actualReward+" Daily bonus amount: "+ dailyTaskBonus + " Task bonus amount: "+ exerciseTaskBonus);
+
+        //Calculate total reward
+        int totalReward = (int)(actualReward + dailyTaskBonus + exerciseTaskBonus - sadPetsPenalty);
+
+        //Format the string for the reward screen
+        string formattedStringReward = "";
+        formattedStringReward = formattedStringReward + baseRewardStringFormatted + actualReward 
+            + "\n" + sadPetsPenatlyStringFormatted + sadPetsPenalty + "\n" + dailyBonusStringFormatted
+            + dailyTaskBonus + "\n" + treasureBonusStringFormatted + exerciseTaskBonus + "\n" +totalStringFormatted + totalReward;
+        
+        // Set the text.
+        rewardLabel.text = formattedStringReward;
+ 
+        stats.gold = stats.gold + totalReward;
         stats.update = true;
-        userData.GoldEarned += actualReward;
+        ((Happiness)creator.selectedBuilding.GetComponent("Happiness")).IncreaseHP();
+
+        //Update user data
+        userData.GoldEarned += totalReward;
         userData.TasksFinished ++;
         userData.InTask = false;
+
         saveLoad.SaveGame();
 
         // Show the exercise done dialog.
@@ -175,6 +215,15 @@ public class ExerciseManager : MonoBehaviour {
         for (int i = 0; i < bonusStars.Length; i++)
         {
             bonusStars[i].enabled = false;
+        }
+    }
+
+    public void DecrementNumSadPets()
+    {
+        numSadPets--;
+        if (numSadPets < 0)
+        {
+            numSadPets = 0;
         }
     }
 }
