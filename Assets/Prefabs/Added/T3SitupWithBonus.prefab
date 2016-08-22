@@ -632,10 +632,13 @@ MonoBehaviour:
   happinessBar: {fileID: 11443590}
   happinessIndicator: {fileID: 11433156}
   hpGained: 80
-  decreaseTimeMins: 30
+  decreaseTimeMins: 1
   maxHp: 0
-  hp: 0
+  hp: -1
   decreaseAmount: 0
+  initialised: 0
+  needsReinit: 0
+  needsUiUpdate: 0
 --- !u!114 &11443590
 MonoBehaviour:
   m_ObjectHideFlags: 1
