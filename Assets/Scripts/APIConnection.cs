@@ -20,7 +20,7 @@ public class APIConnection : MonoBehaviour {
 	
 	}
 
-    void PostData()
+    public void PostData()
     {
         WWWForm form = new WWWForm();
         StreamReader sReader = new StreamReader(filePath + fileName + fileExt);
