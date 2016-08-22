@@ -283,7 +283,9 @@ public class SaveLoad : MonoBehaviour
                 if (BuildingPrefabsDict.ContainsKey(buildingType))
                 {
                     GameObject Barrel = (GameObject)Instantiate(BuildingPrefabsDict[buildingType], new Vector3(posX, posY, buildingZ), Quaternion.identity);
-					((Happiness)Barrel.GetComponent ("Happiness")).hp = hp;
+                    Happiness petHappiness = (Happiness)Barrel.GetComponent("Happiness");
+                    petHappiness.hp = hp;
+                    petHappiness.needsReinit = true;
 					ProcessBuilding(buildingType, int.Parse(currentBuilding[1]));//tag + building index
                     existingBuildings.GetValueOrInitAndIncrement(buildingType);//a local array that holds how many buildings of each type
                 }

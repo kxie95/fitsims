@@ -25,7 +25,9 @@ public class Happiness : MonoBehaviour {
 	public int hp = -1;
 	private int decreaseAmount; // amount that happiness decreases by every decreaseTimeMins.
 
-    private bool initialised = false;
+    public bool initialised = false;
+    public bool needsReinit = false;
+    public bool needsUiUpdate = false;
 
 	// Use this for initialization
 	void Start () 
@@ -38,22 +40,29 @@ public class Happiness : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (!initialised) {
+        //Debug.Log("Init? " + initialised);
+        //Debug.Log("ReInit? " + needsReinit);
+
+        if (!initialised) {
 			Initialise ();
 		} else {
 			return;
 		}
 
+        if (needsReinit)
+        {
+            Reinitialise();
+        }
+
 		DateTime now = DateTime.Now;
 
-		// Check if decreaseTimeMins has passed.
-		if (now >= previousTimePlus) 
+		// Check if decreaseTimeMins has passed. Decreases HP. Updates new time.
+		if (DateTime.Compare(previousTimePlus, now) <= 0) 
 		{
 			// Decrease the slider by the amount obtained from attributes.
 			if (hp - decreaseAmount >= 0) 
 			{
                 hp -= decreaseAmount;
-				happinessBar.value = (float)(hp) / (float)maxHp;
 			} else 
 			{
                 hp = 0;
@@ -62,15 +71,75 @@ public class Happiness : MonoBehaviour {
 
 			previousTime = now;
 			previousTimePlus = previousTime.AddMinutes (decreaseTimeMins);
+            needsUiUpdate = true;
 		}
-			
-		// Update happiness indicator.
-		if (IsHappy ()) {
-			happinessIndicator.spriteName = "happy";
-		} else {
-			happinessIndicator.spriteName = "sad";
-		}
-	}
+
+        if (needsUiUpdate)
+        {
+            UpdateUi();
+        }
+    }
+
+    private void UpdateUi()
+    {
+        happinessBar.value = (float)(hp) / (float)maxHp;
+
+        if (IsHappy())
+        {
+            happinessIndicator.spriteName = "happy";
+        }
+        else
+        {
+            happinessIndicator.spriteName = "sad";
+        }
+        needsUiUpdate = false;
+    }
+
+    private bool IsHappy()
+    {
+        return (float)hp / (float)maxHp >= 0.5;
+    }
+
+    private void Initialise()
+    {
+        if (creator.isBuildingsInitialised)
+        {
+            Debug.Log("in init");
+            Dictionary<string, string> petAttributes = creator.GetBuildingDictionary(pet.tag);
+            decreaseAmount = Int32.Parse(petAttributes["HappinessDecrease"]);
+            maxHp = Int32.Parse(petAttributes["MaxHp"]);
+
+            previousTime = DateTime.Now;
+            previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+            if (hp == -1)
+            {
+                Debug.Log("setting hp as maxhp");
+                hp = maxHp;
+            }
+            initialised = true;
+        }
+    }
+
+    /// <summary>
+    /// Called by SaveLoad if the pet has been initialised before.
+    /// </summary>
+    public void Reinitialise()
+    {
+        if (!PlayerPrefs.HasKey("HappinessTimePrevious"))
+        {
+            return;
+        }
+
+        DateTime savedTime = DateTime.Parse(PlayerPrefs.GetString("HappinessTimePrevious"));
+        double minutesPassed = (DateTime.Now - savedTime).TotalMinutes;
+        int numDecreaseTimeMinsPassed = (int)(minutesPassed / decreaseTimeMins);
+
+        hp -= decreaseAmount * numDecreaseTimeMinsPassed;
+        previousTime = previousTime.AddMinutes(decreaseTimeMins * numDecreaseTimeMinsPassed);
+        previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+
+        needsReinit = false;
+    }
 
     void OnApplicationPause(bool isGamePause)
     {
@@ -84,9 +153,12 @@ public class Happiness : MonoBehaviour {
     void OnApplicationFocus(bool isGameFocus)
     {
 		if (isGameFocus) {
-			saveLoad.LoadGame ();
-			Initialise ();
-		}
+            saveLoad = (SaveLoad)GameObject.Find("SaveLoad").GetComponent("SaveLoad");
+            if (saveLoad != null)
+            {
+                saveLoad.LoadGame();
+            }
+        }
     }
 
     void OnApplicationExit(bool isGameExit)
@@ -98,45 +170,4 @@ public class Happiness : MonoBehaviour {
         }
     }
 
-    private bool IsHappy()
-    {
-        return (float)hp / (float)maxHp >= 0.5;
-    }
-
-    private void Initialise()
-    {
-		if (creator.isBuildingsInitialised)
-		{
-			Dictionary<string, string> petAttributes = creator.GetBuildingDictionary(pet.tag);
-			decreaseAmount = Int32.Parse(petAttributes["HappinessDecrease"]);
-			maxHp = Int32.Parse(petAttributes["MaxHp"]);
-
-			previousTime = DateTime.Now;
-			previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
-			if (hp == -1) {
-				hp = maxHp;
-			}
-			initialised = true;
-		}
-    }
-
-	/// <summary>
-	/// Called by SaveLoad if the pet has been initialised before.
-	/// </summary>
-	public void ReInitialise() 
-	{
-		if (!PlayerPrefs.HasKey("HappinessTimePrevious"))
-		{
-			return;
-		}
-
-		DateTime savedTime = DateTime.Parse(PlayerPrefs.GetString("HappinessTimePrevious"));
-		double minutesPassed = (DateTime.Now - savedTime).TotalMinutes;
-		int numDecreaseTimeMinsPassed = (int)(minutesPassed / decreaseTimeMins);
-
-		hp -= decreaseAmount * numDecreaseTimeMinsPassed;
-
-		previousTime = previousTime.AddMinutes(decreaseTimeMins * numDecreaseTimeMinsPassed);
-		previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
-	}
 }
