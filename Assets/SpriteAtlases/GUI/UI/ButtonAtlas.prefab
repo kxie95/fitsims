@@ -57,6 +57,19 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_close
     x: 108
+    y: 252
+    width: 69
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_data
+    x: 108
     y: 323
     width: 69
     height: 71
@@ -70,7 +83,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_exercise
     x: 108
-    y: 252
+    y: 181
     width: 69
     height: 71
     borderLeft: 0
@@ -96,7 +109,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_help
     x: 108
-    y: 181
+    y: 110
     width: 69
     height: 71
     borderLeft: 0
@@ -109,19 +122,6 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_load
     x: 108
-    y: 110
-    width: 69
-    height: 71
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: button_move
-    x: 108
     y: 39
     width: 69
     height: 71
@@ -133,7 +133,7 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: button_music
+  - name: button_move
     x: 177
     y: 323
     width: 69
@@ -146,7 +146,7 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: button_music_disabled
+  - name: button_music
     x: 246
     y: 323
     width: 69
@@ -159,7 +159,7 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: button_ok
+  - name: button_music_disabled
     x: 315
     y: 323
     width: 69
@@ -172,7 +172,7 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: button_save
+  - name: button_ok
     x: 384
     y: 323
     width: 69
@@ -185,9 +185,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: button_sell
+  - name: button_save
     x: 177
     y: 252
+    width: 69
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: button_sell
+    x: 177
+    y: 181
     width: 69
     height: 71
     borderLeft: 0
@@ -213,7 +226,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_sfx
     x: 177
-    y: 181
+    y: 110
     width: 69
     height: 71
     borderLeft: 0
@@ -226,7 +239,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: button_sfx_disabled
     x: 177
-    y: 110
+    y: 39
     width: 69
     height: 71
     borderLeft: 0
