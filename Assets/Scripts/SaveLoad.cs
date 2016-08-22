@@ -99,7 +99,7 @@ public class SaveLoad : MonoBehaviour
         StreamWriter sWriter = new StreamWriter(filePath + fileName + fileExt);
         ReadObjects();//reads all buildings/grass/under construction
                       //headers - the data structure in the file
-        sWriter.WriteLine("Buildings: buildingType, buildingIndex, position.x, position.y");
+        sWriter.WriteLine("Buildings: buildingType, buildingIndex, position.x, position.y, HP");
         sWriter.WriteLine("Grass: grassType, grassIndex, position.x, position.y");
         sWriter.WriteLine("Construction: buildingType, constructionIndex, buildingTime, remainingTime, storageIncrease, position.x, position.y");
         sWriter.WriteLine("Units: currentSlidVal, currentTrainingTime");
@@ -116,11 +116,13 @@ public class SaveLoad : MonoBehaviour
             for (int j = 0; j < buildingArray.Length; j++)
             {
                 Component BSel = buildingArray[j].GetComponent("BuildingSelector");
+				Happiness hap = (Happiness) buildingArray [j].GetComponent ("Happiness");
 
                 sWriter.WriteLine(((BuildingSelector)BSel).buildingType + "," +
                                   ((BuildingSelector)BSel).buildingIndex.ToString() + "," +
                                   buildingArray[j].transform.position.x + "," +
-                                  buildingArray[j].transform.position.y
+                                  buildingArray[j].transform.position.y + "," +
+								  hap.hp
                                   );
             }
         }
@@ -263,7 +265,7 @@ public class SaveLoad : MonoBehaviour
 
         while (currentLine != "###Grass###") //Buildings - read till next header is found 
         {
-            //Buildings: buildingType, buildingIndex, position.x, position.y
+            //Buildings: buildingType, buildingIndex, position.x, position.y, hp
             currentLine = sReader.ReadLine();
             if (currentLine != "###Grass###") //if next category reached, skip
             {
@@ -272,6 +274,8 @@ public class SaveLoad : MonoBehaviour
                 float posX = float.Parse(currentBuilding[2]);
                 float posY = float.Parse(currentBuilding[3]);
 
+				int hp = Int32.Parse (currentBuilding [4]);
+
                 // Name of the building
                 string buildingType = currentBuilding[0];
 
@@ -279,7 +283,10 @@ public class SaveLoad : MonoBehaviour
                 if (BuildingPrefabsDict.ContainsKey(buildingType))
                 {
                     GameObject Barrel = (GameObject)Instantiate(BuildingPrefabsDict[buildingType], new Vector3(posX, posY, buildingZ), Quaternion.identity);
-                    ProcessBuilding(buildingType, int.Parse(currentBuilding[1]));//tag + building index
+                    Happiness petHappiness = (Happiness)Barrel.GetComponent("Happiness");
+                    petHappiness.hp = hp;
+                    petHappiness.needsReinit = true;
+					ProcessBuilding(buildingType, int.Parse(currentBuilding[1]));//tag + building index
                     existingBuildings.GetValueOrInitAndIncrement(buildingType);//a local array that holds how many buildings of each type
                 }
             }
