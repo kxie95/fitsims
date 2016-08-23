@@ -36,17 +36,21 @@ public class MainMenu : MonoBehaviour {
 	public void OnUpgrade(){OnActivateButton (2);}
 	public void OnCloseUpgrade(){OnDeactivateButton (2);}
 
-    // For controlling exercise in progress frame.
+    // For controlling exercise in progress screen.
     public void onDoingExercise() { OnActivateButton(3); }
     public void onCloseDoingExercise() { OnDeactivateButton(3); }
 
-    // For controlling exercise done frame.
+    // For controlling exercise done screen.
     public void OnExerciseDone() { OnActivateButton(4); }
     public void OnCloseExerciseDone (){ OnDeactivateButton(4); }
 
     // For help screen.
     public void OnHelp() { OnActivateButton(5); }
     public void OnCloseHelp() { OnDeactivateButton(5); }
+
+    // For data logging screen.
+    public void OnDataLog() { OnActivateButton(6); }
+    public void OnCloseDataLog() { OnDeactivateButton(6); }
 
     public void OnConfirmationScreen()	
 	{ 
@@ -71,7 +75,7 @@ public class MainMenu : MonoBehaviour {
 		bool pauseInput = false;
 		
 		pauseInput = ((Relay)gameManager.GetComponent("Relay")).pauseInput;
-		
+        Debug.Log("pauseinput:" + pauseInput);
 		if (!pauseInput) 
 		{
 			Screens [scrno].SetActive (true);
