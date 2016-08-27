@@ -179,7 +179,7 @@
     <TaskReward>200</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Running</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
+    <TaskInstruction>Run with your phone on you.</TaskInstruction>
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
 
@@ -244,9 +244,9 @@
     <TaskReward>550</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
-    <TaskUnit>Steps</TaskUnit>
+    <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
+    <TaskRequirement>10</TaskRequirement>
+    <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
@@ -309,7 +309,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
+    <TaskRequirement>300</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>False</HasBonus>
@@ -372,9 +372,9 @@
     <!--Description of the task given by this structure-->
     <TaskReward>600</TaskReward>
     <GoldReward>true</GoldReward>
-    <TaskType>Walking</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
+    <TaskType>Running</TaskType>
+    <TaskInstruction>Run with your phone on you.</TaskInstruction>
+    <TaskRequirement>300</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>False</HasBonus>
@@ -438,7 +438,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
-    <TaskRequirement>80</TaskRequirement>
+    <TaskRequirement>20</TaskRequirement>
     <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
@@ -501,7 +501,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
+    <TaskRequirement>450</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>False</HasBonus>
@@ -563,8 +563,8 @@
     <TaskReward>1500</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Running</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
+    <TaskInstruction>Run with your phone on you.</TaskInstruction>
+    <TaskRequirement>450</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>False</HasBonus>
@@ -626,9 +626,9 @@
     <TaskReward>1500</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
-    <TaskUnit>Steps</TaskUnit>
+    <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
+    <TaskRequirement>20</TaskRequirement>
+    <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
@@ -707,7 +707,7 @@
 		<ID>12</ID>
 		<Name>Pink Fortune Cat</Name>	
     <Key>T2Situp</Key>
-		<Description>The previous owner hyped it up to be a black dragon; in truth it was just a dog</Description>
+		<Description>*Placeholder*</Description>
 		<Type>General</Type>
 		
 		<BuilderPop>0</BuilderPop>
@@ -751,10 +751,10 @@
     <!--Description of the task given by this structure-->
     <TaskReward>200</TaskReward>
     <GoldReward>true</GoldReward>
-    <TaskType>Running</TaskType>
-    <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
-    <TaskUnit>Steps</TaskUnit>
+    <TaskType>Situp</TaskType>
+    <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
+    <TaskRequirement>30</TaskRequirement>
+    <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
