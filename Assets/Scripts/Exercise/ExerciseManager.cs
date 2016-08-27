@@ -37,6 +37,11 @@ public class ExerciseManager : MonoBehaviour {
     private string treasureBonusStringFormatted = "Treasure Bonus:                     ";
     private string totalStringFormatted = "Total:                                       ";
 
+    void Awake()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
+
     void Start () {
         creator = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
