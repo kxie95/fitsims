@@ -501,7 +501,7 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 			}
 		}
 
-		ActivateStatsPad ();
+		//ActivateStatsPad ();
 
 	}
 	
