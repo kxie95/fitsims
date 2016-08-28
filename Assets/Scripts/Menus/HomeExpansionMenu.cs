@@ -53,14 +53,13 @@ public class HomeExpansionMenu : MonoBehaviour {
     //Bring up confirmation screen
     public void TryDestroyCollider(GameObject collider)
     {
-        if(collider!=null){
+        
             if (getStatus(collider.name).status)
             {
                 PurchaseBuffer = collider;
                 //show confirm dialog
                 ConfirmationDialog.SetActive(true);
             }
-        }
     }
 
     public void CloseConfirmationDialog()
@@ -70,11 +69,22 @@ public class HomeExpansionMenu : MonoBehaviour {
 
     public void ConfirmDestroyCollider()
     {
-        Destroy(PurchaseBuffer);
+
+        //enough gold?
         Stats statsComp = (Stats)Stats.GetComponent("Stats");
-        statsComp.gold -= getPrice(PurchaseBuffer.name).price;
-        statsComp.update = true;
-        setStatus(PurchaseBuffer.name, false);
+        if (statsComp.gold < getPrice(PurchaseBuffer.name).price)
+        {
+            statsComp.userMessagesTxt = "Not enough gold";//updates hint text
+            statsComp.initUserMessages = true;
+        }
+        else {
+            Destroy(PurchaseBuffer);
+
+            statsComp.gold -= getPrice(PurchaseBuffer.name).price;
+            statsComp.update = true;
+            setStatus(PurchaseBuffer.name, false);
+        }
+      
     }
 
     private void setStatus(string s, bool b)
