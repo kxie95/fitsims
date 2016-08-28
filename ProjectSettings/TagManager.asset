@@ -31,6 +31,12 @@ TagManager:
   - TimeLimit
   - BonusObject
   - OhDeer
+  - AutumnTree
+  - WinterTree
+  - SpringTree
+  - Cactus
+  - WeirdPlant
+  - SummerTree
   layers:
   - Default
   - TransparentFX
