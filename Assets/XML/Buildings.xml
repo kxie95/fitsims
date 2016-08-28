@@ -185,7 +185,7 @@
 
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.3</BonusAmount>
+    <BonusAmount>1.5</BonusAmount>
     <BonusThreshold>300</BonusThreshold>
 
     <!-- Pet happiness stats-->
@@ -309,7 +309,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>300</TaskRequirement>
+    <TaskRequirement>500</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>True</HasBonus>
@@ -374,7 +374,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Running</TaskType>
     <TaskInstruction>Run with your phone on you.</TaskInstruction>
-    <TaskRequirement>300</TaskRequirement>
+    <TaskRequirement>450</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>True</HasBonus>
@@ -501,7 +501,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
-    <TaskRequirement>450</TaskRequirement>
+    <TaskRequirement>750</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>True</HasBonus>
@@ -564,12 +564,12 @@
     <GoldReward>true</GoldReward>
     <TaskType>Running</TaskType>
     <TaskInstruction>Run with your phone on you.</TaskInstruction>
-    <TaskRequirement>450</TaskRequirement>
+    <TaskRequirement>750</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.5</BonusAmount>
+    <BonusAmount>2</BonusAmount>
     <BonusThreshold>600</BonusThreshold>
 
     <!-- Pet happiness stats-->
@@ -582,7 +582,7 @@
 		<Name>Red Cato</Name>	
     <Key>T3SitupWithBonus</Key>
 		<Description>*Placeholder description*</Description>
-		<Type>Resource Extra Storage</Type>
+		<Type>General</Type>
 		
 		<BuilderPop>0</BuilderPop>
 		<PopBonus>0</PopBonus>
@@ -627,12 +627,12 @@
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
-    <TaskRequirement>20</TaskRequirement>
+    <TaskRequirement>25</TaskRequirement>
     <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.5</BonusAmount>
+    <BonusAmount>2.5</BonusAmount>
     <BonusThreshold>500</BonusThreshold>
 
     <!-- Pet happiness stats-->
