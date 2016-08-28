@@ -48,8 +48,8 @@ GameObject:
   - 114: {fileID: 11406014}
   - 114: {fileID: 11411434}
   m_Layer: 9
-  m_Name: Grass
-  m_TagString: T1Bird
+  m_Name: GrassDeco
+  m_TagString: GrassDeco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2182617, y: 135.38147, z: 0}
+  m_LocalPosition: {x: 0.69348145, y: 192.68982, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -647.6867, y: -796.2951, z: -2043}
+  m_LocalPosition: {x: -1320, y: -1270, z: 1.9374999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9375, y: 131.62231, z: -1}
+  m_LocalPosition: {x: 3.8492432, y: 188.93054, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -171,8 +171,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 428, y: 350, z: 1}
-  m_Center: {x: 0, y: -70, z: 0}
+  m_Size: {x: 428, y: 223.5, z: 1}
+  m_Center: {x: 0, y: -112.25, z: 0}
 --- !u!114 &11406014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,7 +187,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: Grass
+  buildingType: GrassDeco
 --- !u!114 &11408360
 MonoBehaviour:
   m_ObjectHideFlags: 1
