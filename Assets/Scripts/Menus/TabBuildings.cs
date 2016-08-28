@@ -4,16 +4,17 @@ using System.Collections.Generic;
 
 public class TabBuildings : MonoBehaviour {//controls the pages and arrows for buildings menu
 		
-	private const int noPages = 3;
-	public GameObject[] Pages = new GameObject[noPages];
+	public int noPages = 3;
+    public GameObject[] Pages;
 	private int noPanel = 0;	
 	public GameObject ArrowLeft;
 	public GameObject ArrowRight;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+
+        //Pages = new GameObject[noPages];
+    }
 	
 	// Update is called once per frame
 	void Update () {
