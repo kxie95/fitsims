@@ -783,7 +783,7 @@
 		<Time>0</Time>
 		<XpAward>300</XpAward>
 		<GoldBased>true</GoldBased>
-		<ResCost>7000</ResCost>
+		<ResCost>10000</ResCost>
 		<StoreCategory>Buildings</StoreCategory>
 		
 		<ObjPrereq>0</ObjPrereq>		
@@ -816,7 +816,7 @@
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
-    <TaskRequirement>140</TaskRequirement>
+    <TaskRequirement>150</TaskRequirement>
     <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
