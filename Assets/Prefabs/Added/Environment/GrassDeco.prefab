@@ -48,8 +48,8 @@ GameObject:
   - 114: {fileID: 11406014}
   - 114: {fileID: 11411434}
   m_Layer: 9
-  m_Name: Grass
-  m_TagString: T1Bird
+  m_Name: GrassDeco
+  m_TagString: GrassDeco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: Grass
+  buildingType: GrassDeco
 --- !u!114 &11408360
 MonoBehaviour:
   m_ObjectHideFlags: 1
