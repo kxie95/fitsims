@@ -22,12 +22,11 @@ public class BuildingSelector : MonoBehaviour {//attached to each building as an
 	{
         //((Relay)gameManager.GetComponent("Relay")).buildingFloating
         print("reselect called");
-		GameObject gameManager = GameObject.Find("GameManager");
-		GameObject buildingCreator = GameObject.Find("BuildingCreator");
+        
+        GameObject gameManager = GameObject.Find("GameManager");
+        GameObject buildingCreator = GameObject.Find("BuildingCreator");
         GameObject uiAnchor = GameObject.Find("UIAnchor");
-
-        //MainMenu mainMenu = (MainMenu)uiAnchor.GetComponent("MainMenu");
-        //mainMenu.DeactivateInterface();
+        
         
         Component relayScript = (Relay)gameManager.GetComponent("Relay");
 		Component buildingCreatorScript = (BuildingCreator)buildingCreator.GetComponent("BuildingCreator");
@@ -35,7 +34,8 @@ public class BuildingSelector : MonoBehaviour {//attached to each building as an
 		if(!((BuildingCreator)buildingCreatorScript).isReselect &&
 			!((Relay)relayScript).pauseInput)
 		{
-			isSelected = true;				
+
+            isSelected = true;				
 			((BuildingCreator)buildingCreatorScript).isReselect = true;
 
             ((BuildingCreator)buildingCreatorScript).OnReselect(buildingType);
