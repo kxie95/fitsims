@@ -53,13 +53,20 @@ public class HomeExpansionMenu : MonoBehaviour {
     //Bring up confirmation screen
     public void TryDestroyCollider(GameObject collider)
     {
-        
+        if (collider != null)
+        {
             if (getStatus(collider.name).status)
             {
                 PurchaseBuffer = collider;
                 //show confirm dialog
                 ConfirmationDialog.SetActive(true);
             }
+        }
+        else {
+            Stats statsComp = (Stats)Stats.GetComponent("Stats");
+            statsComp.userMessagesTxt = "This has already been purchased";//updates hint text
+            statsComp.initUserMessages = true;
+        }
     }
 
     public void CloseConfirmationDialog()
