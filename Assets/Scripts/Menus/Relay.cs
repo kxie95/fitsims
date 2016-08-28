@@ -9,8 +9,6 @@ public class Relay : MonoBehaviour {//coordinates elements that are alternately 
 	//Relayed variables
 	public int currentTab = 1;
 	public bool pauseInput = false;	
-	//
-	
 	
 	public void ActivateMenuUnit()
 	{

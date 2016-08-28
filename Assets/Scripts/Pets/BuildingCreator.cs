@@ -197,7 +197,7 @@ public class BuildingCreator : MonoBehaviour {
         {
             BuyingSelectedPanel.SetActive(false);
         }
-        ((Relay)gameManager.GetComponent("Relay")).pauseInput = false;//while the building is selected, pressing other buttons has no effect
+        //((Relay)gameManager.GetComponent("Relay")).pauseInput = false;//while the building is selected, pressing other buttons has no effect
         if(isReselect){isReselect = false; } //end the reselect state
 	
     }
@@ -573,7 +573,7 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
             usr.PetsBought++;
         }
 		
-		((Relay)gameManager.GetComponent("Relay")).pauseInput = false;
+		//((Relay)gameManager.GetComponent("Relay"));
 		((BuildingSelector)selectedBuilding.GetComponent("BuildingSelector")).isSelected = false;
 		((GrassSelector)selectedGrass.GetComponent("GrassSelector")).isSelected = false;
 		
@@ -617,6 +617,5 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		//((UISprite)BkActive[currentSelection]).color = Color.white;	
 
 	}
-
-
+   
 }
