@@ -116,13 +116,18 @@ public class SaveLoad : MonoBehaviour
             for (int j = 0; j < buildingArray.Length; j++)
             {
                 Component BSel = buildingArray[j].GetComponent("BuildingSelector");
+
+				int hp = -1; // Need this so decorations don't break.
 				Happiness hap = (Happiness) buildingArray [j].GetComponent ("Happiness");
+				if (hap != null) {
+					hp = hap.hp;
+				}
 
                 sWriter.WriteLine(((BuildingSelector)BSel).buildingType + "," +
                                   ((BuildingSelector)BSel).buildingIndex.ToString() + "," +
                                   buildingArray[j].transform.position.x + "," +
                                   buildingArray[j].transform.position.y + "," +
-								  hap.hp
+								  hp
                                   );
             }
         }

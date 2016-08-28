@@ -47,7 +47,6 @@ GameObject:
   - 4: {fileID: 451102}
   - 114: {fileID: 11488636}
   - 114: {fileID: 11462018}
-  - 114: {fileID: 11428832}
   m_Layer: 9
   m_Name: Mushroom
   m_TagString: T1Bird
@@ -174,28 +173,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 170, y: 130, z: 1}
   m_Center: {x: -3, y: -36.5, z: 0}
---- !u!114 &11428832
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7294d04bebc3a624a94a376c6d55950b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pet: {fileID: 194944}
-  happinessBar: {fileID: 0}
-  happinessIndicator: {fileID: 0}
-  hpGained: 80
-  decreaseTimeMins: 1
-  maxHp: 0
-  hp: -1
-  decreaseAmount: 0
-  initialised: 0
-  needsReinit: 0
-  needsUiUpdate: 0
 --- !u!114 &11443592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,7 +285,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: T1Bird
+  buildingType: Mushroom
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

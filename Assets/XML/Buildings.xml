@@ -828,6 +828,284 @@
     <HappinessDecrease>10</HappinessDecrease>
     <MaxHp>480</MaxHp>
 	</Building>
+
+	<!--****************************** DECORATIONS ***********************************-->
+	<Building>
+		<ID>13</ID>
+		<Name>Autumn Tree</Name>	
+    	<Key>AutumnTree</Key>
+		<Description>*Placeholder*</Description>
+		<Type>General</Type>
+		
+		<BuilderPop>0</BuilderPop>
+		<PopBonus>0</PopBonus>
+		<ProdPerSec>0</ProdPerSec>
+		<StoreCap>0</StoreCap>
+		<MaxCap>500</MaxCap>
+		<GrassSize>2</GrassSize>
+    
+		<Time>0</Time>
+		<XpAward>300</XpAward>
+		<GoldBased>true</GoldBased>
+		<ResCost>100</ResCost>
+		<StoreCategory>Buildings</StoreCategory>
+		
+		<ObjPrereq>0</ObjPrereq>		
+		<Cap1Prereq>3</Cap1Prereq>
+		<Cap2Prereq>14</Cap2Prereq>
+		<Cap3Prereq>24</Cap3Prereq>
+		<Cap4Prereq>0</Cap4Prereq>
+		<Cap5Prereq>0</Cap5Prereq>	
+	
+		<Up2LevelReq>0</Up2LevelReq>			
+		<Up2ObjReq>5.5</Up2ObjReq>		
+		<Up2Cost>25000</Up2Cost>
+		<Up2Time>1440</Up2Time>	
+		<Up2XpAward>400</Up2XpAward>
+		<Lev2StoreCap>30000</Lev2StoreCap>
+		<Lev2Prod>0</Lev2Prod> 
+		<Lev2PopBonus>0</Lev2PopBonus>		
+		
+		<Up3LevReq>0</Up3LevReq>
+		<Up3ObjReq>5.12</Up3ObjReq>
+		<Up3Cost>200000</Up3Cost>
+		<Up3Time>600</Up3Time>		
+		<Up3XpAward>900</Up3XpAward>
+		<Lev3StoreCap>150000</Lev3StoreCap>
+		<Lev3Prod>0</Lev3Prod>
+		<Lev3PopBonus>0</Lev3PopBonus>
+	</Building>
+
+	<Building>
+		<ID>14</ID>
+		<Name>Winter Tree</Name>	
+    	<Key>WinterTree</Key>
+		<Description>*Placeholder*</Description>
+		<Type>General</Type>
+		
+		<BuilderPop>0</BuilderPop>
+		<PopBonus>0</PopBonus>
+		<ProdPerSec>0</ProdPerSec>
+		<StoreCap>0</StoreCap>
+		<MaxCap>500</MaxCap>
+		<GrassSize>2</GrassSize>
+    
+		<Time>0</Time>
+		<XpAward>300</XpAward>
+		<GoldBased>true</GoldBased>
+		<ResCost>100</ResCost>
+		<StoreCategory>Buildings</StoreCategory>
+		
+		<ObjPrereq>0</ObjPrereq>		
+		<Cap1Prereq>3</Cap1Prereq>
+		<Cap2Prereq>14</Cap2Prereq>
+		<Cap3Prereq>24</Cap3Prereq>
+		<Cap4Prereq>0</Cap4Prereq>
+		<Cap5Prereq>0</Cap5Prereq>	
+	
+		<Up2LevelReq>0</Up2LevelReq>			
+		<Up2ObjReq>5.5</Up2ObjReq>		
+		<Up2Cost>25000</Up2Cost>
+		<Up2Time>1440</Up2Time>	
+		<Up2XpAward>400</Up2XpAward>
+		<Lev2StoreCap>30000</Lev2StoreCap>
+		<Lev2Prod>0</Lev2Prod> 
+		<Lev2PopBonus>0</Lev2PopBonus>		
+		
+		<Up3LevReq>0</Up3LevReq>
+		<Up3ObjReq>5.12</Up3ObjReq>
+		<Up3Cost>200000</Up3Cost>
+		<Up3Time>600</Up3Time>		
+		<Up3XpAward>900</Up3XpAward>
+		<Lev3StoreCap>150000</Lev3StoreCap>
+		<Lev3Prod>0</Lev3Prod>
+		<Lev3PopBonus>0</Lev3PopBonus>
+	</Building>
+
+	<Building>
+		<ID>15</ID>
+		<Name>Spring Tree</Name>	
+    	<Key>SpringTree</Key>
+		<Description>*Placeholder*</Description>
+		<Type>General</Type>
+		
+		<BuilderPop>0</BuilderPop>
+		<PopBonus>0</PopBonus>
+		<ProdPerSec>0</ProdPerSec>
+		<StoreCap>0</StoreCap>
+		<MaxCap>500</MaxCap>
+		<GrassSize>2</GrassSize>
+    
+		<Time>0</Time>
+		<XpAward>300</XpAward>
+		<GoldBased>true</GoldBased>
+		<ResCost>100</ResCost>
+		<StoreCategory>Buildings</StoreCategory>
+		
+		<ObjPrereq>0</ObjPrereq>		
+		<Cap1Prereq>3</Cap1Prereq>
+		<Cap2Prereq>14</Cap2Prereq>
+		<Cap3Prereq>24</Cap3Prereq>
+		<Cap4Prereq>0</Cap4Prereq>
+		<Cap5Prereq>0</Cap5Prereq>	
+	
+		<Up2LevelReq>0</Up2LevelReq>			
+		<Up2ObjReq>5.5</Up2ObjReq>		
+		<Up2Cost>25000</Up2Cost>
+		<Up2Time>1440</Up2Time>	
+		<Up2XpAward>400</Up2XpAward>
+		<Lev2StoreCap>30000</Lev2StoreCap>
+		<Lev2Prod>0</Lev2Prod> 
+		<Lev2PopBonus>0</Lev2PopBonus>		
+		
+		<Up3LevReq>0</Up3LevReq>
+		<Up3ObjReq>5.12</Up3ObjReq>
+		<Up3Cost>200000</Up3Cost>
+		<Up3Time>600</Up3Time>		
+		<Up3XpAward>900</Up3XpAward>
+		<Lev3StoreCap>150000</Lev3StoreCap>
+		<Lev3Prod>0</Lev3Prod>
+		<Lev3PopBonus>0</Lev3PopBonus>
+	</Building>
+
+	<Building>
+		<ID>16</ID>
+		<Name>Summer Tree</Name>	
+    	<Key>SummerTree</Key>
+		<Description>*Placeholder*</Description>
+		<Type>General</Type>
+		
+		<BuilderPop>0</BuilderPop>
+		<PopBonus>0</PopBonus>
+		<ProdPerSec>0</ProdPerSec>
+		<StoreCap>0</StoreCap>
+		<MaxCap>500</MaxCap>
+		<GrassSize>2</GrassSize>
+    
+		<Time>0</Time>
+		<XpAward>300</XpAward>
+		<GoldBased>true</GoldBased>
+		<ResCost>100</ResCost>
+		<StoreCategory>Buildings</StoreCategory>
+		
+		<ObjPrereq>0</ObjPrereq>		
+		<Cap1Prereq>3</Cap1Prereq>
+		<Cap2Prereq>14</Cap2Prereq>
+		<Cap3Prereq>24</Cap3Prereq>
+		<Cap4Prereq>0</Cap4Prereq>
+		<Cap5Prereq>0</Cap5Prereq>	
+	
+		<Up2LevelReq>0</Up2LevelReq>			
+		<Up2ObjReq>5.5</Up2ObjReq>		
+		<Up2Cost>25000</Up2Cost>
+		<Up2Time>1440</Up2Time>	
+		<Up2XpAward>400</Up2XpAward>
+		<Lev2StoreCap>30000</Lev2StoreCap>
+		<Lev2Prod>0</Lev2Prod> 
+		<Lev2PopBonus>0</Lev2PopBonus>		
+		
+		<Up3LevReq>0</Up3LevReq>
+		<Up3ObjReq>5.12</Up3ObjReq>
+		<Up3Cost>200000</Up3Cost>
+		<Up3Time>600</Up3Time>		
+		<Up3XpAward>900</Up3XpAward>
+		<Lev3StoreCap>150000</Lev3StoreCap>
+		<Lev3Prod>0</Lev3Prod>
+		<Lev3PopBonus>0</Lev3PopBonus>
+	</Building>
+
+	<Building>
+		<ID>17</ID>
+		<Name>Cactus</Name>	
+    	<Key>Cactus</Key>
+		<Description>*Placeholder*</Description>
+		<Type>General</Type>
+		
+		<BuilderPop>0</BuilderPop>
+		<PopBonus>0</PopBonus>
+		<ProdPerSec>0</ProdPerSec>
+		<StoreCap>0</StoreCap>
+		<MaxCap>500</MaxCap>
+		<GrassSize>2</GrassSize>
+    
+		<Time>0</Time>
+		<XpAward>300</XpAward>
+		<GoldBased>true</GoldBased>
+		<ResCost>100</ResCost>
+		<StoreCategory>Buildings</StoreCategory>
+		
+		<ObjPrereq>0</ObjPrereq>		
+		<Cap1Prereq>3</Cap1Prereq>
+		<Cap2Prereq>14</Cap2Prereq>
+		<Cap3Prereq>24</Cap3Prereq>
+		<Cap4Prereq>0</Cap4Prereq>
+		<Cap5Prereq>0</Cap5Prereq>	
+	
+		<Up2LevelReq>0</Up2LevelReq>			
+		<Up2ObjReq>5.5</Up2ObjReq>		
+		<Up2Cost>25000</Up2Cost>
+		<Up2Time>1440</Up2Time>	
+		<Up2XpAward>400</Up2XpAward>
+		<Lev2StoreCap>30000</Lev2StoreCap>
+		<Lev2Prod>0</Lev2Prod> 
+		<Lev2PopBonus>0</Lev2PopBonus>		
+		
+		<Up3LevReq>0</Up3LevReq>
+		<Up3ObjReq>5.12</Up3ObjReq>
+		<Up3Cost>200000</Up3Cost>
+		<Up3Time>600</Up3Time>		
+		<Up3XpAward>900</Up3XpAward>
+		<Lev3StoreCap>150000</Lev3StoreCap>
+		<Lev3Prod>0</Lev3Prod>
+		<Lev3PopBonus>0</Lev3PopBonus>
+	</Building>
+
+	<Building>
+		<ID>18</ID>
+		<Name>Weird Plant</Name>	
+    	<Key>WeirdPlant</Key>
+		<Description>*Placeholder*</Description>
+		<Type>General</Type>
+		
+		<BuilderPop>0</BuilderPop>
+		<PopBonus>0</PopBonus>
+		<ProdPerSec>0</ProdPerSec>
+		<StoreCap>0</StoreCap>
+		<MaxCap>500</MaxCap>
+		<GrassSize>2</GrassSize>
+    
+		<Time>0</Time>
+		<XpAward>300</XpAward>
+		<GoldBased>true</GoldBased>
+		<ResCost>100</ResCost>
+		<StoreCategory>Buildings</StoreCategory>
+		
+		<ObjPrereq>0</ObjPrereq>		
+		<Cap1Prereq>3</Cap1Prereq>
+		<Cap2Prereq>14</Cap2Prereq>
+		<Cap3Prereq>24</Cap3Prereq>
+		<Cap4Prereq>0</Cap4Prereq>
+		<Cap5Prereq>0</Cap5Prereq>	
+	
+		<Up2LevelReq>0</Up2LevelReq>			
+		<Up2ObjReq>5.5</Up2ObjReq>		
+		<Up2Cost>25000</Up2Cost>
+		<Up2Time>1440</Up2Time>	
+		<Up2XpAward>400</Up2XpAward>
+		<Lev2StoreCap>30000</Lev2StoreCap>
+		<Lev2Prod>0</Lev2Prod> 
+		<Lev2PopBonus>0</Lev2PopBonus>		
+		
+		<Up3LevReq>0</Up3LevReq>
+		<Up3ObjReq>5.12</Up3ObjReq>
+		<Up3Cost>200000</Up3Cost>
+		<Up3Time>600</Up3Time>		
+		<Up3XpAward>900</Up3XpAward>
+		<Lev3StoreCap>150000</Lev3StoreCap>
+		<Lev3Prod>0</Lev3Prod>
+		<Lev3PopBonus>0</Lev3PopBonus>
+	</Building>
+
 </Buildings>
 
 

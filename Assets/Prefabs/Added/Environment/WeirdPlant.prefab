@@ -47,10 +47,9 @@ GameObject:
   - 4: {fileID: 462614}
   - 114: {fileID: 11496842}
   - 114: {fileID: 11489428}
-  - 114: {fileID: 11401622}
   m_Layer: 9
   m_Name: WeirdPlant
-  m_TagString: T1Bird
+  m_TagString: WeirdPlant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,28 +173,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 201.71155, y: 115, z: 1}
   m_Center: {x: 0, y: -57.5, z: 0}
---- !u!114 &11401622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7294d04bebc3a624a94a376c6d55950b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pet: {fileID: 156126}
-  happinessBar: {fileID: 0}
-  happinessIndicator: {fileID: 0}
-  hpGained: 80
-  decreaseTimeMins: 1
-  maxHp: 0
-  hp: -1
-  decreaseAmount: 0
-  initialised: 0
-  needsReinit: 0
-  needsUiUpdate: 0
 --- !u!114 &11409416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,7 +285,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: T1Bird
+  buildingType: WeirdPlant
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

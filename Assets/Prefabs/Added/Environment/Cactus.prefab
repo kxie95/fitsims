@@ -10,10 +10,9 @@ GameObject:
   - 4: {fileID: 424936}
   - 114: {fileID: 11481886}
   - 114: {fileID: 11483536}
-  - 114: {fileID: 11478754}
   m_Layer: 9
   m_Name: Cactus
-  m_TagString: T1Bird
+  m_TagString: Cactus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,28 +225,6 @@ MonoBehaviour:
   _clipBottomLeft: {x: 0, y: 0}
   _clipTopRight: {x: 1, y: 0.5}
   _createBoxCollider: 1
---- !u!114 &11478754
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7294d04bebc3a624a94a376c6d55950b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pet: {fileID: 136892}
-  happinessBar: {fileID: 0}
-  happinessIndicator: {fileID: 0}
-  hpGained: 80
-  decreaseTimeMins: 1
-  maxHp: 0
-  hp: -1
-  decreaseAmount: 0
-  initialised: 0
-  needsReinit: 0
-  needsUiUpdate: 0
 --- !u!114 &11481886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,7 +239,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: T1Bird
+  buildingType: Cactus
 --- !u!114 &11483536
 MonoBehaviour:
   m_ObjectHideFlags: 1

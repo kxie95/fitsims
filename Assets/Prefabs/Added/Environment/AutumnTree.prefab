@@ -10,10 +10,9 @@ GameObject:
   - 4: {fileID: 472298}
   - 114: {fileID: 11403112}
   - 114: {fileID: 11421858}
-  - 114: {fileID: 11440678}
   m_Layer: 9
   m_Name: AutumnTree
-  m_TagString: T1Bird
+  m_TagString: AutumnTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +46,7 @@ GameObject:
   - 33: {fileID: 3398358}
   - 23: {fileID: 2358008}
   - 114: {fileID: 11418578}
-  - 65: {fileID: 6563224}
+  - 65: {fileID: 6588012}
   m_Layer: 9
   m_Name: Academyb
   m_TagString: Untagged
@@ -62,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2182617, y: 135.38147, z: 0}
+  m_LocalPosition: {x: -90, y: 248, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -75,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9375, y: 131.62231, z: -1}
+  m_LocalPosition: {x: -87, y: 244, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -88,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -893.5324, y: -796.2951, z: -2043}
+  m_LocalPosition: {x: -244.90445, y: -828.1211, z: -2514.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -162,7 +161,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194282}
   m_Mesh: {fileID: 0}
---- !u!65 &6563224
+--- !u!65 &6588012
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -170,7 +169,7 @@ BoxCollider:
   m_GameObject: {fileID: 194282}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 550, y: 288.5, z: 1}
   m_Center: {x: 0, y: -144.75, z: 0}
@@ -188,7 +187,7 @@ MonoBehaviour:
   isSelected: 1
   inConstruction: 1
   buildingIndex: -1
-  buildingType: T1Bird
+  buildingType: AutumnTree
 --- !u!114 &11418578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,7 +206,7 @@ MonoBehaviour:
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
-  boxCollider: {fileID: 6563224}
+  boxCollider: {fileID: 6588012}
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
@@ -261,28 +260,6 @@ MonoBehaviour:
   mSortingOrder: 0
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
---- !u!114 &11440678
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7294d04bebc3a624a94a376c6d55950b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pet: {fileID: 100814}
-  happinessBar: {fileID: 0}
-  happinessIndicator: {fileID: 0}
-  hpGained: 80
-  decreaseTimeMins: 1
-  maxHp: 0
-  hp: -1
-  decreaseAmount: 0
-  initialised: 0
-  needsReinit: 0
-  needsUiUpdate: 0
 --- !u!114 &11441350
 MonoBehaviour:
   m_ObjectHideFlags: 1
