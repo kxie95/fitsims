@@ -29,6 +29,7 @@ GameObject:
   - 33: {fileID: 3338552}
   - 23: {fileID: 2337520}
   - 114: {fileID: 11454628}
+  - 65: {fileID: 6570424}
   m_Layer: 9
   m_Name: Academyb
   m_TagString: Untagged
@@ -74,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2508.103, y: -1010.92725, z: 1.9374999}
+  m_LocalPosition: {x: -791.09674, y: -881.6582, z: -2043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -161,6 +162,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124996}
   m_Mesh: {fileID: 0}
+--- !u!65 &6570424
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 170, y: 130, z: 1}
+  m_Center: {x: -3, y: -36.5, z: 0}
 --- !u!114 &11428832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,14 +240,14 @@ MonoBehaviour:
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
-  boxCollider: {fileID: 0}
+  boxCollider: {fileID: 6570424}
   meshCollider: {fileID: 0}
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
   renderLayer: 1
   _clipBottomLeft: {x: 0, y: 0}
   _clipTopRight: {x: 1, y: 0.5}
-  _createBoxCollider: 0
+  _createBoxCollider: 1
 --- !u!114 &11462018
 MonoBehaviour:
   m_ObjectHideFlags: 1
