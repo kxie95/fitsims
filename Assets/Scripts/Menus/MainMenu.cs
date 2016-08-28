@@ -52,26 +52,34 @@ public class MainMenu : MonoBehaviour {
     public void OnDataLog() { OnActivateButton(6); }
     public void OnCloseDataLog() { OnDeactivateButton(6); }
 
+    public float DelayTime = 0.3f;
+
     public void OnConfirmationScreen()	
-	{ 
-		ConfirmationScreen.SetActive (true); 
+	{
+        ((Relay)gameManager.GetComponent("Relay")).pauseInput = true;
+        ConfirmationScreen.SetActive (true); 
 	}
 
-	public void OnCloseConfirmationScreen() { ConfirmationScreen.SetActive (false); }
+	public void OnCloseConfirmationScreen() {
+        StartCoroutine(SetPauseInputFalse(DelayTime));
+        ConfirmationScreen.SetActive (false); }
 
 	public void OnDestBuilding()
 	{
-		((BuildingCreator)BuildingCreatorOb.GetComponent("BuildingCreator")).Cancel();
-		ConfirmationScreen.SetActive (false);
-	}
+        ConfirmationScreen.SetActive(false);
+        ((BuildingCreator)BuildingCreatorOb.GetComponent("BuildingCreator")).Cancel();
+        StartCoroutine(SetPauseInputFalse(DelayTime));
+    }
 	public void OnCancelDestBuilding()
 	{
-		((BuildingCreator)BuildingCreatorOb.GetComponent("BuildingCreator")).OK();
-		ConfirmationScreen.SetActive (false);
-	}
+        ConfirmationScreen.SetActive(false);
+        ((BuildingCreator)BuildingCreatorOb.GetComponent("BuildingCreator")).OK();
+        StartCoroutine(SetPauseInputFalse(DelayTime));
+    }
 
 	void OnActivateButton(int scrno)
 	{
+
 		bool pauseInput = false;
 		
 		pauseInput = ((Relay)gameManager.GetComponent("Relay")).pauseInput;
@@ -86,9 +94,10 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	void OnDeactivateButton(int scrno)
-	{	
-		((Relay)gameManager.GetComponent("Relay")).pauseInput = false;		
-		Screens[scrno].SetActive(false);
+	{
+        //((Relay)gameManager.GetComponent("Relay")).pauseInput = false;		
+        StartCoroutine(SetPauseInputFalse(DelayTime));
+        Screens[scrno].SetActive(false);
 		ActivateInterface();
 	}
 
@@ -100,6 +109,14 @@ public class MainMenu : MonoBehaviour {
 			InterfaceElements[i].SetActive(true);
 		}
 	}
+
+    IEnumerator SetPauseInputFalse(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        ((Relay)gameManager.GetComponent("Relay")).pauseInput = false;
+
+    }
 
     public void DeactivateInterface()
     {
@@ -118,9 +135,6 @@ public class MainMenu : MonoBehaviour {
 	void Update () {
 	
 	}
-
-	
-	
 	
 
 	
