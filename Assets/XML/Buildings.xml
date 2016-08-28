@@ -19,7 +19,7 @@
 		<Time>0</Time><!--the time (in minutes) needed to create the building-->
 		<XpAward>650</XpAward><!--experience awarded for the completion of an object-->
 		<GoldBased>true</GoldBased><!--which resource is needed to complete this kind of building-->
-		<ResCost>600</ResCost><!--amount of resource necessary to create the building-->
+		<ResCost>0</ResCost><!--amount of resource necessary to create the building-->
 		<StoreCategory>Buildings</StoreCategory><!--the category where the object is available on the store-->
 		
 		<ObjPrereq>0</ObjPrereq><!--the object that the player has to create before he can create this object-->		
@@ -713,7 +713,7 @@
 		<BuilderPop>0</BuilderPop>
 		<PopBonus>0</PopBonus>
 		<ProdPerSec>0</ProdPerSec>
-		<StoreCap>0</StoreCap>
+		<StoreCap>1500</StoreCap>
 		<MaxCap>2000</MaxCap>
 		<GrassSize>2</GrassSize>
     
