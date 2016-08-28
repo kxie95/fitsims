@@ -30,6 +30,7 @@ TagManager:
   - BDra
   - TimeLimit
   - BonusObject
+  - OhDeer
   layers:
   - Default
   - TransparentFX
