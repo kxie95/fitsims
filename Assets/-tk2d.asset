@@ -1069,3 +1069,49 @@ MonoBehaviour:
     loadable: 0
     assetName: 
     version: 3
+  - name: Decorations
+    spriteCollectionGUID: 1c418ce89963a8845b6bd5f8c407e4fc
+    spriteCollectionDataGUID: a9fd70753ebeb6b489906b343ebf109d
+    spriteNames:
+    - unbudded_flower
+    - weird_plant
+    - grass
+    - autumn_tree
+    - pond
+    - cactus
+    - mushrooms
+    - flower
+    - summer_tree
+    - flower_petals
+    - spring_tree
+    - winter_tree
+    spriteTextureGUIDs:
+    - 09f1da00326aaf540a7dd58657e2065c
+    - d18b36d062adeab478269e7d00a8300e
+    - 1b4133f2cf22d2543bdcbcfe3ac5e1b3
+    - 865ada151bc0d7c488baca6a87f37172
+    - e4bff865a646bb94a893a55080134c14
+    - 2031e0957f6116342bd2f19ddc25a21c
+    - b2b657888ad1711448d28d369f413ce9
+    - e4cbc8d840eb86549aac186ef34fb119
+    - a57b405a9fc52e043a631c4aa73ac39c
+    - 8f8cf89ceeb4782489988bada7039a98
+    - baa40b6d37caf7d428eb9a61ff5d12e2
+    - 9df0d4bdf7fd35f47b6d9f9ba69fd929
+    spriteTextureTimeStamps:
+    - 1472399412.682
+    - 1472399580.56169
+    - 1472401857.1301
+    - 1472402053.74626
+    - 1472400430.12463
+    - 1472401956.35221
+    - 1472399175.94346
+    - 1472398973.3324
+    - 1472398013.81323
+    - 1472399026.57858
+    - 1472397675.22533
+    - 1472398362.41873
+    managedSpriteCollection: 0
+    loadable: 0
+    assetName: 
+    version: 3
