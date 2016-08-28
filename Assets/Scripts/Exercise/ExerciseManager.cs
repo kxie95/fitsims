@@ -186,6 +186,8 @@ public class ExerciseManager : MonoBehaviour {
         string taskAmount = creator.GetCurrentBuildingDictionary()["TaskRequirement"];
         string taskUnit = creator.GetCurrentBuildingDictionary()["TaskUnit"];
 
+        creator.BuildingSelectedPanel.SetActive(false);
+
         if (sprite != null)
         {
             sprite.spriteName = taskType; // Set the image to the corresponding instruction.

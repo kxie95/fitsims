@@ -56,7 +56,7 @@
     <TaskRequirement>150</TaskRequirement>
     <TaskUnit>Steps</TaskUnit>
   
-    <HasBonus>True</HasBonus>
+    <HasBonus>False</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>1.2</BonusAmount>
     <BonusThreshold>300</BonusThreshold>
