@@ -37,6 +37,12 @@ TagManager:
   - Cactus
   - WeirdPlant
   - SummerTree
+  - BuddingPlant
+  - Flower
+  - FlowerPetals
+  - GrassDeco
+  - Mushroom
+  - Pond
   layers:
   - Default
   - TransparentFX
