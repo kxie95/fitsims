@@ -45,11 +45,15 @@ public class MainMenu : MonoBehaviour {
     public void OnCloseExerciseDone (){ OnDeactivateButton(4); }
 
     // For help screen.
-    public void OnHelp() { OnActivateButton(5); }
+    public void OnHelp()
+    {
+        OnActivateButton(5);
+        PlayerPrefs.SetString("HelpOpened", "Opened");
+    }
     public void OnCloseHelp() { OnDeactivateButton(5); }
 
     // For data logging screen.
-    public void OnDataLog() { OnActivateButton(6); }
+    public void OnDataLog() { ((Relay)gameManager.GetComponent("Relay")).pauseInput = false; OnActivateButton(6); }
     public void OnCloseDataLog() { OnDeactivateButton(6); }
 
     
@@ -128,7 +132,10 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        OnHelp();
+        if (!PlayerPrefs.HasKey("HelpOpened"))
+        {
+            OnHelp();
+        }
     }
 	
 	// Update is called once per frame

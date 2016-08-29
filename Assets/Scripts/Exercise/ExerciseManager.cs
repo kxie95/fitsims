@@ -196,7 +196,9 @@ public class ExerciseManager : MonoBehaviour {
 
         if (instructionLabel != null)
         {
-            instructionLabel.text = taskInstruction + "\nDo " + taskAmount + " " + taskUnit;
+            instructionLabel.text = "Exercise: " + taskType + 
+                                    "\nRepetitions: " + taskAmount +
+                                    "\n" + taskInstruction;
         }    
     }
 
