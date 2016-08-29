@@ -62,7 +62,7 @@
     <BonusThreshold>300</BonusThreshold>
     
     <!-- Pet happiness stats-->
-    <HappinessDecrease>20</HappinessDecrease>
+    <HappinessDecrease>10</HappinessDecrease>
     <MaxHp>480</MaxHp>
 	</Building>	
 	

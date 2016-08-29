@@ -210,23 +210,7 @@ public class Happiness : MonoBehaviour {
         if (isGamePause)
         {
             Debug.Log("Happiness Saving pause");
-            //PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
 			saveLoad.Save ();
-        }
-    }
-
-    void OnApplicationFocus(bool isGameFocus)
-    {
-		if (isGameFocus) {
-            //if (saveLoad != null)
-            //{
-            //    saveLoad.LoadGame();
-            //}
-        } else
-        {
-            Debug.Log("Happiness Saving unfocus");
-            //PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
-            saveLoad.Save();
         }
     }
 
@@ -235,7 +219,6 @@ public class Happiness : MonoBehaviour {
         if (isGameExit)
         {
             Debug.Log("Happiness Saving exit");
-			//PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
 			saveLoad.Save ();
         }
     }
@@ -243,7 +226,6 @@ public class Happiness : MonoBehaviour {
     void OnApplicationQuit()
     {
         Debug.Log("Happiness Saving quit");
-        //PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
         saveLoad.Save();
     }
 }
