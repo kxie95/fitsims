@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour {
     public void OnCloseHelp() { OnDeactivateButton(5); }
 
     // For data logging screen.
-    public void OnDataLog() { OnActivateButton(6); }
+    public void OnDataLog() { ((Relay)gameManager.GetComponent("Relay")).pauseInput = false; OnActivateButton(6); }
     public void OnCloseDataLog() { OnDeactivateButton(6); }
 
     
