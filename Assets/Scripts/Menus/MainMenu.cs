@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour {
 	public bool constructionGreenlit = true;
 	public GameObject BuildingCreatorOb;
 	public GameObject ConfirmationScreen;
-
+    public float DelayTime = 0.3f;
     //[HideInInspector]
 
     public void OnShop(){OnActivateButton (0);}
@@ -33,15 +33,15 @@ public class MainMenu : MonoBehaviour {
 	public void OnOptions(){OnActivateButton (1);}
 	public void OnCloseOptions(){OnDeactivateButton (1);}
 
-	public void OnUpgrade(){OnActivateButton (2);}
+	public void OnUpgrade(){ ((Relay)gameManager.GetComponent("Relay")).pauseInput = false; OnActivateButton (2);}
 	public void OnCloseUpgrade(){OnDeactivateButton (2);}
 
     // For controlling exercise in progress screen.
-    public void onDoingExercise() { OnActivateButton(3); }
+    public void onDoingExercise() { ((Relay)gameManager.GetComponent("Relay")).pauseInput = false;  OnActivateButton(3); }
     public void onCloseDoingExercise() { OnDeactivateButton(3); }
 
     // For controlling exercise done screen.
-    public void OnExerciseDone() { OnActivateButton(4); }
+    public void OnExerciseDone() { ((Relay)gameManager.GetComponent("Relay")).pauseInput = false; OnActivateButton(4); }
     public void OnCloseExerciseDone (){ OnDeactivateButton(4); }
 
     // For help screen.
@@ -52,7 +52,7 @@ public class MainMenu : MonoBehaviour {
     public void OnDataLog() { OnActivateButton(6); }
     public void OnCloseDataLog() { OnDeactivateButton(6); }
 
-    public float DelayTime = 0.3f;
+    
 
     public void OnConfirmationScreen()	
 	{
