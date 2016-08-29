@@ -163,7 +163,7 @@ public class ExerciseManager : MonoBehaviour {
         userData.TasksFinished ++;
         userData.InTask = false;
 
-        saveLoad.SaveGame();
+        saveLoad.Save();
 
         // Show the exercise done dialog.
         mainMenu.OnExerciseDone();

@@ -82,7 +82,7 @@ public class SaveLoad : MonoBehaviour
         FileInfo file = new FileInfo(filePath + fileName + fileExt);
         if (file.Exists && file.Length != 0)
         {
-            LoadGame();
+            Load();
         }
     }
 
@@ -93,12 +93,23 @@ public class SaveLoad : MonoBehaviour
     }
 
 
-    public void SaveGame()
+    public void Save()
     {
+        StartCoroutine("SaveGame");
+    }
+
+    public void Load()
+    {
+        StartCoroutine("LoadGame");
+    }
+
+    IEnumerator SaveGame()
+    {
+        Debug.Log("Savingggggggggg");
         StreamWriter sWriter = new StreamWriter(filePath + fileName + fileExt);
         ReadObjects();//reads all buildings/grass/under construction
                       //headers - the data structure in the file
-        sWriter.WriteLine("Buildings: buildingType, buildingIndex, position.x, position.y, HP");
+        sWriter.WriteLine("Buildings: buildingType, buildingIndex, position.x, position.y, HP, previousTime");
         sWriter.WriteLine("Grass: grassType, grassIndex, position.x, position.y");
         sWriter.WriteLine("Construction: buildingType, constructionIndex, buildingTime, remainingTime, storageIncrease, position.x, position.y");
         sWriter.WriteLine("Units: currentSlidVal, currentTrainingTime");
@@ -117,16 +128,19 @@ public class SaveLoad : MonoBehaviour
                 Component BSel = buildingArray[j].GetComponent("BuildingSelector");
 
 				int hp = -1; // Need this so decorations don't break.
+                string previousTime = "";
 				Happiness hap = (Happiness) buildingArray [j].GetComponent ("Happiness");
 				if (hap != null) {
 					hp = hap.hp;
+                    previousTime = hap.previousTime.ToString();
 				}
 
                 sWriter.WriteLine(((BuildingSelector)BSel).buildingType + "," +
                                   ((BuildingSelector)BSel).buildingIndex.ToString() + "," +
                                   buildingArray[j].transform.position.x + "," +
                                   buildingArray[j].transform.position.y + "," +
-								  hp
+								  hp + "," +
+                                  previousTime
                                   );
             }
         }
@@ -234,6 +248,7 @@ public class SaveLoad : MonoBehaviour
 
         PlayerPrefs.SetInt("claimedBonus", ex.claimedDailyBonus);
         PlayerPrefs.SetString("lastSavedDate", DateTime.Today.ToLongDateString());
+        yield return null;
     }
 
     private void ReadObjects()//reads all buildings/grass/under construction
@@ -249,9 +264,11 @@ public class SaveLoad : MonoBehaviour
         Construction = GameObject.FindGameObjectsWithTag("Construction");//find all buildings under construction
     }
 
-    public void LoadGame()
+    IEnumerator LoadGame()
     {
-        if (!oneLoad) { return; }//prevents loading twice, since there are no safeties and the procedure should be automated at startup, not button triggered
+        Debug.Log("Loadinggggg");
+
+        if (!oneLoad) { yield return null; }//prevents loading twice, since there are no safeties and the procedure should be automated at startup, not button triggered
         oneLoad = false;
 
         StreamReader sReader = new StreamReader(filePath + fileName + fileExt);
@@ -280,6 +297,8 @@ public class SaveLoad : MonoBehaviour
 
 				int hp = Int32.Parse (currentBuilding [4]);
 
+                string previousTime = currentBuilding[5];
+
                 // Name of the building
                 string buildingType = currentBuilding[0];
 
@@ -288,8 +307,12 @@ public class SaveLoad : MonoBehaviour
                 {
                     GameObject Barrel = (GameObject)Instantiate(BuildingPrefabsDict[buildingType], new Vector3(posX, posY, buildingZ), Quaternion.identity);
                     Happiness petHappiness = (Happiness)Barrel.GetComponent("Happiness");
-                    petHappiness.hp = hp;
-                    petHappiness.needsReinit = true;
+                    if (petHappiness != null)
+                    {
+                        petHappiness.hp = hp;
+                        petHappiness.savedTime = DateTime.Parse(previousTime);
+                        petHappiness.needsReinit = true;
+                    }
 					ProcessBuilding(buildingType, int.Parse(currentBuilding[1]));//tag + building index
                     existingBuildings.GetValueOrInitAndIncrement(buildingType);//a local array that holds how many buildings of each type
                 }
@@ -479,6 +502,8 @@ public class SaveLoad : MonoBehaviour
         int claimed = PlayerPrefs.GetInt("claimedBonus");
 
         ex.SetClaimedBonus(claimed, lastSave);
+
+        yield return null;
     }
 
 
@@ -632,7 +657,7 @@ public class SaveLoad : MonoBehaviour
 
             if (elapsedTime >= remainingTime)
             {
-                ((UISlider)slider.GetComponent("UISlider")).value = 1;
+                //((UISlider)slider.GetComponent("UISlider")).value = 1;
                 ((ConstructionSelector)constructionsInProgress[i].GetComponent("ConstructionSelector")).progCounter = 1.1f;
 
                 if (((ConstructionSelector)constructionsInProgress[i].GetComponent("ConstructionSelector")).buildingType == "Forge")
@@ -648,7 +673,7 @@ public class SaveLoad : MonoBehaviour
             }
             else
             {//everything under 1 minute will appear as finished at reload - int approximation, not an error
-                ((UISlider)slider.GetComponent("UISlider")).value += (float)elapsedTime / (float)buildingTime;
+                //((UISlider)slider.GetComponent("UISlider")).value += (float)elapsedTime / (float)buildingTime;
 
             }
         }

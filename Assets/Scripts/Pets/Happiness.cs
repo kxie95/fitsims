@@ -19,12 +19,12 @@ public class Happiness : MonoBehaviour {
     public int hpGained = 80;
     public int decreaseTimeMins = 1;
 
-	private DateTime previousTime;
+	public DateTime previousTime;
 	private DateTime previousTimePlus;
+    public DateTime savedTime;
     
-	// Pet happiness stats.
-
-	public int maxHp;
+    // Pet happiness stats.
+    public int maxHp;
 	public int hp = -1;
 	public int decreaseAmount; // amount that happiness decreases by every decreaseTimeMins.
 
@@ -68,6 +68,7 @@ public class Happiness : MonoBehaviour {
 
                 previousTime = now;
                 previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+
                 needsUiUpdate = true;
 
                 if (!IsHappy())
@@ -101,8 +102,8 @@ public class Happiness : MonoBehaviour {
         else
         {
             hp = 0;
-            happinessBar.value = 0;
         }
+        needsUiUpdate = true;
     }
 
     private void UpdateUi()
@@ -136,6 +137,7 @@ public class Happiness : MonoBehaviour {
 
             previousTime = DateTime.Now;
             previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
+
             if (hp == -1)
             {
                 Debug.Log("setting hp as maxhp");
@@ -150,12 +152,12 @@ public class Happiness : MonoBehaviour {
     /// </summary>
     public void Reinitialise()
     {
-        if (!PlayerPrefs.HasKey("HappinessTimePrevious"))
+        //DateTime savedTime = DateTime.Parse(PlayerPrefs.GetString(PREV_TIME));
+        if (savedTime == null)
         {
             return;
         }
 
-        DateTime savedTime = DateTime.Parse(PlayerPrefs.GetString("HappinessTimePrevious"));
         double minutesPassed = (DateTime.Now - savedTime).TotalMinutes;
         int numDecreaseTimeMinsPassed = (int)(minutesPassed / decreaseTimeMins);
 
@@ -164,6 +166,9 @@ public class Happiness : MonoBehaviour {
         previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
 
         needsReinit = false;
+        needsUiUpdate = true;
+
+        Debug.Log("Happiness reinit");
     }
 
     public void IncreaseHP()
@@ -179,8 +184,6 @@ public class Happiness : MonoBehaviour {
             {
                 hp = +hpGained;
             }
-
-            happinessBar.value = (float)(hp) / (float)maxHp;
 
             if (IsHappy())
             {
@@ -198,8 +201,6 @@ public class Happiness : MonoBehaviour {
             {
                 hp = +hpGained;
             }
-
-            happinessBar.value = (float)(hp) / (float)maxHp;
         }
         needsUiUpdate = true;
     }
@@ -208,8 +209,9 @@ public class Happiness : MonoBehaviour {
     {
         if (isGamePause)
         {
-			PlayerPrefs.SetString("HappinessTimePrevious", previousTime.ToString());
-			saveLoad.SaveGame ();
+            Debug.Log("Happiness Saving pause");
+            //PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
+			saveLoad.Save ();
         }
     }
 
@@ -220,6 +222,11 @@ public class Happiness : MonoBehaviour {
             //{
             //    saveLoad.LoadGame();
             //}
+        } else
+        {
+            Debug.Log("Happiness Saving unfocus");
+            //PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
+            saveLoad.Save();
         }
     }
 
@@ -227,9 +234,16 @@ public class Happiness : MonoBehaviour {
     {
         if (isGameExit)
         {
-			PlayerPrefs.SetString("HappinessTimePrevious", previousTime.ToString());
-			saveLoad.SaveGame ();
+            Debug.Log("Happiness Saving exit");
+			//PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
+			saveLoad.Save ();
         }
     }
 
+    void OnApplicationQuit()
+    {
+        Debug.Log("Happiness Saving quit");
+        //PlayerPrefs.SetString(PREV_TIME, previousTime.ToString());
+        saveLoad.Save();
+    }
 }

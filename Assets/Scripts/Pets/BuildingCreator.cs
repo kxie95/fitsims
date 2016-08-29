@@ -509,7 +509,7 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 	public void MoveNE(){Move(1);}//++
 	public void MoveSE(){Move(2);}//+-
 	public void MoveSW(){Move(3);}//--
-	public void Cancel(){CancelObject(); saveLoad.SaveGame(); }
+	public void Cancel(){CancelObject(); saveLoad.Save(); }
 	public void OK()
 	{
 		inCollision = selectedGrass.GetComponentInChildren<GrassCollider>().inCollision;
@@ -517,7 +517,7 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		{
 			if(isReselect){	DeactivateStatsPad();}
 			PlaceObject ();
-            saveLoad.SaveGame();
+            saveLoad.Save();
         }
     }
 	
