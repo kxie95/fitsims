@@ -156,7 +156,11 @@ public class ExerciseManager : MonoBehaviour {
  
         stats.gold = stats.gold + totalReward;
         stats.update = true;
-        ((Happiness)creator.selectedBuilding.GetComponent("Happiness")).IncreaseHP();
+
+        if (percentCompleted >= 0.25)
+        {
+            ((Happiness)creator.selectedBuilding.GetComponent("Happiness")).IncreaseHP();
+        }
 
         //Update user data
         userData.GoldEarned += totalReward;

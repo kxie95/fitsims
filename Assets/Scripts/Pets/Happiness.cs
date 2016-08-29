@@ -182,7 +182,7 @@ public class Happiness : MonoBehaviour {
             }
             else
             {
-                hp = +hpGained;
+                hp += hpGained;
             }
 
             if (IsHappy())
@@ -199,7 +199,7 @@ public class Happiness : MonoBehaviour {
             }
             else
             {
-                hp = +hpGained;
+                hp += hpGained;
             }
         }
         needsUiUpdate = true;
