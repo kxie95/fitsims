@@ -790,7 +790,7 @@ MonoBehaviour:
   happinessBar: {fileID: 11450202}
   happinessIndicator: {fileID: 11491374}
   hpGained: 80
-  decreaseTimeMins: 1
+  decreaseTimeMins: 60
   maxHp: 0
   hp: -1
   decreaseAmount: 0
