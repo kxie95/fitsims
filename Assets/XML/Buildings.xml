@@ -185,7 +185,7 @@
 
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.5</BonusAmount>
+    <BonusAmount>1.3</BonusAmount>
     <BonusThreshold>300</BonusThreshold>
 
     <!-- Pet happiness stats-->
@@ -241,7 +241,7 @@
 		<Lev3PopBonus>60</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
-    <TaskReward>500</TaskReward>
+    <TaskReward>400</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
@@ -250,7 +250,7 @@
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.1</BonusAmount>
+    <BonusAmount>1.4</BonusAmount>
     <BonusThreshold>100</BonusThreshold>
 
     <!-- Pet happiness stats-->
@@ -349,7 +349,6 @@
 		<Cap3Prereq>9</Cap3Prereq>
 		<Cap4Prereq>12</Cap4Prereq>
 		<Cap5Prereq>17</Cap5Prereq>	
-	
 		
 		<Up2LevelReq>0</Up2LevelReq>			
 		<Up2ObjReq>5.4</Up2ObjReq>		
@@ -379,7 +378,7 @@
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.5</BonusAmount>
+    <BonusAmount>1.3</BonusAmount>
     <BonusThreshold>500</BonusThreshold>
 
     <!-- Pet happiness stats-->
@@ -434,7 +433,7 @@
 		<Lev3PopBonus>0</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
-    <TaskReward>1600</TaskReward>
+    <TaskReward>700</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
@@ -443,8 +442,8 @@
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>2.0</BonusAmount>
-    <BonusThreshold>500</BonusThreshold>
+    <BonusAmount>1.5</BonusAmount>
+    <BonusThreshold>200</BonusThreshold>
 
     <!-- Pet happiness stats-->
     <HappinessDecrease>10</HappinessDecrease>
@@ -497,7 +496,7 @@
 		<Lev3PopBonus>0</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
-    <TaskReward>1100</TaskReward>
+    <TaskReward>1400</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Walking</TaskType>
     <TaskInstruction>Walk with your phone on you.</TaskInstruction>
@@ -569,7 +568,7 @@
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>2</BonusAmount>
+    <BonusAmount>1.3</BonusAmount>
     <BonusThreshold>600</BonusThreshold>
 
     <!-- Pet happiness stats-->
@@ -627,13 +626,13 @@
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
-    <TaskRequirement>25</TaskRequirement>
+    <TaskRequirement>35</TaskRequirement>
     <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>2.5</BonusAmount>
-    <BonusThreshold>500</BonusThreshold>
+    <BonusAmount>1.7</BonusAmount>
+    <BonusThreshold>400</BonusThreshold>
 
     <!-- Pet happiness stats-->
     <HappinessDecrease>10</HappinessDecrease>
@@ -783,7 +782,7 @@
 		<Time>0</Time>
 		<XpAward>300</XpAward>
 		<GoldBased>true</GoldBased>
-		<ResCost>10000</ResCost>
+		<ResCost>15000</ResCost>
 		<StoreCategory>Buildings</StoreCategory>
 		
 		<ObjPrereq>0</ObjPrereq>		
@@ -812,17 +811,17 @@
 		<Lev3PopBonus>0</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
-    <TaskReward>2400</TaskReward>
+    <TaskReward>2600</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
-    <TaskRequirement>150</TaskRequirement>
+    <TaskRequirement>55</TaskRequirement>
     <TaskUnit>situps</TaskUnit>
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
     <BonusAmount>4.0</BonusAmount>
-    <BonusThreshold>1000</BonusThreshold>
+    <BonusThreshold>500</BonusThreshold>
 
     <!-- Pet happiness stats-->
     <HappinessDecrease>10</HappinessDecrease>
