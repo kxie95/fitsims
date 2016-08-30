@@ -517,6 +517,7 @@ existingBuildings.GetValueOrInit(currentSelection) >= int.Parse(buildings [curre
 		{
 			if(isReselect){	DeactivateStatsPad();}
 			PlaceObject ();
+            ((MainMenu)UIAnchor.GetComponent("MainMenu")).ActivateInterface();
             saveLoad.Save();
         }
     }

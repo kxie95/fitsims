@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour {
 	public void OnCloseShop(){OnDeactivateButton (0);}
 	public void OnCloseShopToBuild()
 	{
-		if (constructionGreenlit) 
+        if (constructionGreenlit) 
 		{
 			Screens [0].SetActive (false);
             // Activate Buy and don't buy buttons.

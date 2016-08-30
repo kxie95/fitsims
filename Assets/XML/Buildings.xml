@@ -68,7 +68,7 @@
 	
 	<Building>
 		<ID>10</ID>
-		<Name>Dino</Name>	
+		<Name>Doggo</Name>	
     <Key>T1Dino</Key>
 		<Description>*Placeholder description*</Description>
 		<Type>Resource Extra Storage</Type>
@@ -261,7 +261,7 @@
   
 	<Building>
 		<ID>7</ID>
-		<Name>Blue Dino</Name>	
+		<Name>Blue Doggo</Name>	
     <Key>T2Walk</Key>
     <Description>*Placeholder description*</Description>
 		<Type>Resource Generation</Type>
