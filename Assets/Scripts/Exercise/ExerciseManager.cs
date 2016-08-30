@@ -140,7 +140,7 @@ public class ExerciseManager : MonoBehaviour {
             sadPetsPenalty = (actualReward / 10.0) * maxSadPet;
         }
 
-        print("Sad pets penalty "+ sadPetsPenalty + " Actual Reward "+actualReward+" Daily bonus amount: "+ dailyTaskBonus + " Task bonus amount: "+ exerciseTaskBonus);
+        print("Sad pets penalty "+ sadPetsPenalty + " Actual Reward "+actualReward+"Daily bonus amount: "+ dailyTaskBonus + "Task bonus amount: "+ exerciseTaskBonus);
 
         //Calculate total reward
         int totalReward = (int)(actualReward + dailyTaskBonus + exerciseTaskBonus - sadPetsPenalty);

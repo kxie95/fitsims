@@ -241,7 +241,7 @@
 		<Lev3PopBonus>60</Lev3PopBonus>
 
     <!--Description of the task given by this structure-->
-    <TaskReward>550</TaskReward>
+    <TaskReward>500</TaskReward>
     <GoldReward>true</GoldReward>
     <TaskType>Situp</TaskType>
     <TaskInstruction>Place your phone as pictured and do situps.</TaskInstruction>
@@ -250,8 +250,8 @@
   
     <HasBonus>True</HasBonus>
     <BonusType>TimeLimit</BonusType>
-    <BonusAmount>1.5</BonusAmount>
-    <BonusThreshold>500</BonusThreshold>
+    <BonusAmount>1.1</BonusAmount>
+    <BonusThreshold>100</BonusThreshold>
 
     <!-- Pet happiness stats-->
     <HappinessDecrease>10</HappinessDecrease>
