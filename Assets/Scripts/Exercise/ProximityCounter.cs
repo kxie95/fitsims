@@ -56,12 +56,12 @@ public class ProximityCounter : MonoBehaviour, ExerciseCounter {
                         float actualValue = sensorValue[0];
                         if (actualValue <= proximityThreshold && previousValue > proximityThreshold)
                         {
-                            counter++;
+                            counter = counter +5;
                             previousValue = actualValue;
                             exerciseLabel.text = counter.ToString();
                             ((UISlider)exerciseBar.GetComponent("UISlider")).value = (float)counter / (float)goal;
                             
-                            if (counter == goal)
+                            if (counter >= goal)
                             {
                                 FinishTask();
                             }

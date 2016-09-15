@@ -82,7 +82,7 @@ public class SaveLoad : MonoBehaviour
         FileInfo file = new FileInfo(filePath + fileName + fileExt);
         if (file.Exists && file.Length != 0)
         {
-            Load();
+            //Load();
         }
     }
 

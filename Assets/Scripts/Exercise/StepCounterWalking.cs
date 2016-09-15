@@ -83,7 +83,7 @@ public class StepCounterWalking : MonoBehaviour, ExerciseCounter {
                     isLeft = !isLeft;
                     if ((Time.time - time) > 0.4)
                     {
-                        stepCount++;
+                        stepCount = stepCount + 34;
 
                         time = Time.time;
 
@@ -91,7 +91,7 @@ public class StepCounterWalking : MonoBehaviour, ExerciseCounter {
                         exerciseLabel.text = stepCount.ToString();
 
                         // If goal reached, move to victory screen.
-                        if (stepCount == stepGoal)
+                        if (stepCount >= stepGoal)
                         {
                             FinishTask();
                         }

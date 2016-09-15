@@ -94,7 +94,7 @@ public class StepCounterRunning : MonoBehaviour , ExerciseCounter
                         if (timeSinceLast < runningThreshold)
                         {
                             //reset timer = 0
-                            stepCount++;
+                            stepCount = stepCount+34;
 
                             time = Time.time;
 
@@ -102,7 +102,7 @@ public class StepCounterRunning : MonoBehaviour , ExerciseCounter
                             exerciseLabel.text = stepCount.ToString();
 
                             // If goal reached, move to victory screen.
-                            if (stepCount == stepGoal)
+                            if (stepCount >= stepGoal)
                             {
                                 FinishTask();
                             }
