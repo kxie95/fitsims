@@ -9,6 +9,9 @@ public class ProximityCounter : MonoBehaviour, ExerciseCounter {
 
     private AndroidJavaObject sensorPlugin;
 
+    private AudioSource coinSfx;
+    public AudioClip coinSoundClip;
+
     // Counter controls
     private int counter = 0;
     private bool inQuest = false;
@@ -30,6 +33,7 @@ public class ProximityCounter : MonoBehaviour, ExerciseCounter {
 
     // Use this for initialization
     void Start () {
+        coinSfx = GetComponent<AudioSource>();
         exManager = (ExerciseManager)GameObject.Find("ExerciseManager").GetComponent("ExerciseManager");
         mainMenu = (MainMenu)GameObject.Find("UIAnchor").GetComponent("MainMenu");
         creator = (BuildingCreator)GameObject.Find("BuildingCreator").GetComponent("BuildingCreator");
@@ -60,7 +64,12 @@ public class ProximityCounter : MonoBehaviour, ExerciseCounter {
                             previousValue = actualValue;
                             exerciseLabel.text = counter.ToString();
                             ((UISlider)exerciseBar.GetComponent("UISlider")).value = (float)counter / (float)goal;
-                            
+
+                            if (coinSoundClip != null && coinSfx != null)
+                            {
+                                coinSfx.PlayOneShot(coinSoundClip, 0.4f);
+                            }
+
                             if (counter >= goal)
                             {
                                 FinishTask();

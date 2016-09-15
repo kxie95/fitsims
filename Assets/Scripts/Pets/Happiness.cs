@@ -162,6 +162,10 @@ public class Happiness : MonoBehaviour {
         int numDecreaseTimeMinsPassed = (int)(minutesPassed / decreaseTimeMins);
 
         hp -= decreaseAmount * numDecreaseTimeMinsPassed;
+        if (hp < 0)
+        {
+            hp = 0;
+        }
         previousTime = previousTime.AddMinutes(decreaseTimeMins * numDecreaseTimeMinsPassed);
         previousTimePlus = previousTime.AddMinutes(decreaseTimeMins);
 
